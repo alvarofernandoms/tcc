@@ -1,0 +1,113 @@
+\chapter{Metodologia}
+
+\section{Objetivos}
+
+O objetivo deste capítulo é apresentar a metodologia utilizada para a
+realização da pesquisa e contribuição tecnológica. A principal questão
+a ser respondida é: como a visualização de software pode auxiliar na
+interpretação das métricas coletas e calculadas por ferramentas de análise
+de código?
+
+Considerando esta questão, é importante ressaltar que existem incontáveis
+destas ferramentas. Porém estas analisam apenas aspectos mui específicos
+do software, e falham (algumas delas) em demostrar ao engenheiro de
+qualidade a interpretação dos dados analisados \cite{deissenboeck2011}.
+
+Neste trabalho serão unidas determinadas métricas (TODO: definir quais
+métricas), para gerar uma ou várias visualizações que auxiliem o usuário
+do Mezuro a ter uma melhor interpretação do resultado gerado por esta
+ferramenta.
+
+Como exemplo dessa união e para a construção da prova de conceito
+(TODO: é esse mesmo o nome?), é proposto utilizar-se da decisão dos
+colegas Renan Costa Filgueiras e Vinícius Vieira Meneses: foram escolhidas
+três métricas para a configuração da visualização em radar: \textit{number
+of methods} (código: npm), \textit{number of public methods} (código nom)
+e \textit{total number of modules} (código: total\_modules); e a decisão
+de utilizar a biblioteca Javascript \textit{D3.js - Data-Driven Documents}.
+(TODO: adicionar referência)
+
+
+\section{Questão de pesquisa e hipóteses}
+
+Reforçando a questão de pesquisa (QP) apresentada na seção anterior,
+foram levantadas estas outras a baixo:
+
+\begin{itemize}
+  \item QP1 - Como a visualização de software pode auxiliar na
+  interpretação das métricas coletadas e calculadas pelo Mezuro?
+  \item QP2 - Quais técnicas de visualização que melhor se adequam ao
+  contexto do Mezuro, possibilitando a aplicação em qualquer contexto de
+  configuração?
+  \item QP3 - Como representar as diferentes perspectivas sobre o processo
+  de desenvolvimento e o produto de software?
+\end{itemize}
+
+As hipóteses são:
+
+\begin{itemize}
+  \item H1 - 
+  \item H2 - 
+\end{itemize}
+
+% TODO: elaborar e documentar as hipótees
+
+\section{Trabalhos Relacionados}
+
+\section{O Mezuro}
+
+O projeto Mezuro é uma ferramenta para extração, análise e interpretação de
+métricas de código-fonte. De uma forma geral, ele é dividido em duas partes:
+para o processamento e para o cálculo é utilizado o Kalibro, que é um
+\textit{webservice}; e o Prezento para a interface gráfica (uma aplicação
+\textit{Web}) \cite{meirellesCibse2015}. Sob (TODO: "sob" ou "sobre") a licença
+\textit{Affero General Public License version 3} (AGPLv3), o Mezuro permite que
+o usuário criar, salvar e editar "configurações" que são um conjunto de
+métricas escolhidas por este e uma "grupo de leitura" para provimento de uma
+interface gráfica de um conjunto de leitura que tenha algum sentido quando
+agrupadas, por exemplo: com a pontuação x, a métrica terá o "rótulo" "BOM" e
+será atribuído à ela a cor amarela; com a pontuação x+2, a métrica terá o 
+"rótulo" "ÓTIMO" e estará com a cor verde. As cores são para destacar a
+interpretação e são definidas com valores hexadecimal \cite{camarinhaOSS2015}.
+
+O Kalibro, citado no parágrafo anterior, foi inicialmente escrito em Java para
+compor uma das ferramentas do projeto QualiPSo (\textit{Quality Platform for
+Open Source Software}). Já possuía maioria das funcionalidades presentes na
+versão atual do Mezuro. Uma delas, bastante prática, era a de fornecer apenas o
+URL do código compactado em arquivo ZIP ou TARBALL, ou o link para as
+aplicações de controle de versão em SVN ou GIT, mais a escolha de uma
+configuração, para iniciar a análise \cite{camarinhaOSS2015}. Em 2013 o Mezuro
+passou a ser reescrito em Ruby, com objetivo de manter na mesma tecnologia as
+camadas da arquitetura. Mudança justificada também pela necessidade do
+processamento dos cálculos e da análise. A carga de requisições, mais a
+quantidade que o servidor possuía, faziam com que a versão original do Kalibro
+ficasse debilitado em seu fluxo de execuções. Outra vantagem dessa reescrita é
+a facilidade com que novos contribuidores puderam/poderão entender todo o
+funcionamento dessa parte do Mezuro. Algumas funcionalidades foram eliminadas
+por serem consideradas não essenciais. E grande parte da primeira versão do
+Kalibro está presente na gema kalibro\_gem\footnote{\url{https://rubygems.org/gems/kalibro_gem}}
+\cite{meirellesCibse2015}.
+(TODO: a gem kalibro\_gem e a kalibro\_client são a mesma coisa? A kalibro\_gem
+foi descontinuada?)
+
+% Sobre o Prezento
+
+O Kalibro foi construído, nos primórdios, como um plugin da rede social
+Noosfero. Com a decisão de reescrevê-lo em Ruby, a antiga interface gráfica,
+que era "aproveitada" do Noosfero (TODO: era mesmo?), foi também escrito nesta
+tecnologia. O Prezento, escrito utilizando o \textit{framework} para
+desenvolvimento de aplicações \textit{Web} Ruby on Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}},
+é a redesenha e atual interface.
+
+% Sobre a arquitetura do Mezuro
+
+(TODO: eu preciso falar do QualiPSo?)
+
+O projeto QualiPSo iniciado em meados de 2007 que tinha como objetivo aprimorar
+as práticas de desenvolvimento aberto à época para atingir o reconhecimento e
+confiabilidade que o FOSS possui hoje na indústria \cite{messias2012}. 
+
+\subsection{Arquitetura e principais funcionalidades do Mezuro}
+
+\section{D3 - Data-Driven Documents}
+
