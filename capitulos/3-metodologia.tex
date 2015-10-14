@@ -60,14 +60,14 @@ O projeto Mezuro é uma ferramenta para extração, análise e interpretação d
 métricas de código-fonte. De uma forma geral, ele é dividido em duas partes:
 para o processamento e para o cálculo é utilizado o Kalibro, que é um
 \textit{webservice}; e o Prezento para a interface gráfica (uma aplicação
-\textit{Web}) \cite{meirellesCibse2015}. Sob (TODO: "sob" ou "sobre") a licença
+\textit{Web}) \cite{meirellesCibse2015}. Sob (TODO: ``sob'' ou ``sobre'') a licença
 \textit{Affero General Public License version 3} (AGPLv3), o Mezuro permite que
-o usuário criar, salvar e editar "configurações" que são um conjunto de
-métricas escolhidas por este e uma "grupo de leitura" para provimento de uma
+o usuário criar, salvar e editar ``configurações'' que são um conjunto de
+métricas escolhidas por este e uma ``grupo de leitura'' para provimento de uma
 interface gráfica de um conjunto de leitura que tenha algum sentido quando
-agrupadas, por exemplo: com a pontuação x, a métrica terá o "rótulo" "BOM" e
+agrupadas, por exemplo: com a pontuação x, a métrica terá o ``rótulo'' ``BOM'' e
 será atribuído à ela a cor amarela; com a pontuação x+2, a métrica terá o 
-"rótulo" "ÓTIMO" e estará com a cor verde. As cores são para destacar a
+``rótulo'' ``ÓTIMO'' e estará com a cor verde. As cores são para destacar a
 interpretação e são definidas com valores hexadecimal \cite{camarinhaOSS2015}.
 
 O Kalibro, citado no parágrafo anterior, foi inicialmente escrito em Java para
@@ -94,7 +94,7 @@ foi descontinuada?)
 
 O Kalibro foi construído, nos primórdios, como um plugin da rede social
 Noosfero. Com a decisão de reescrevê-lo em Ruby, a antiga interface gráfica,
-que era "aproveitada" do Noosfero (TODO: era mesmo?), foi também escrito nesta
+que era ``aproveitada'' do Noosfero (TODO: era mesmo?), foi também escrito nesta
 tecnologia. O Prezento, escrito utilizando o \textit{framework} para
 desenvolvimento de aplicações \textit{Web} Ruby on Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}},
 é a redesenha e atual interface.
@@ -108,6 +108,50 @@ as práticas de desenvolvimento aberto à época para atingir o reconhecimento e
 confiabilidade que o FOSS possui hoje na indústria \cite{messias2012}. 
 
 \subsection{Arquitetura e principais funcionalidades do Mezuro}
+
+Com a reescrita, a arquitetura do Mezuro foi dividida em três serviços:
+
+\begin{itemize}
+  \item Prezento: para a interface gráfica do usuário
+  \item Kalibro Processor: para a análise do código
+  \item Kalibro Configuratios: para o gerenciamento das configurações
+\end{itemize}
+
+A decisão de dividir o Kalibro em serviços separados foi tomada para deixar
+cada um deles com menos responsabilidades, facilitando a manutenção e evolução
+\cite{camarinhaOSS2015}. E a comunicação entre estes serviços é feita através
+do Kalibro Client: um quarto software também escrito em Ruby, mantendo a
+escolha de centralização em uma única tecnologia. E para simplificar a
+implementação, também foi decidido que a comunicação entre os serviços seria
+RESTful.
+
+As figuras a seguir demonstram como a comunicação funciona, um diagrama UML de
+sequência do processo de criação de uma configuração chegando ao estágio em que
+são expostos os resultados finais de uma análise após a reescrita da interface
+gráfica, e outra que demonstra o estado atual do projeto.
+
+\begin{figure}[!htb]
+	\centering
+	\label{mezuroNoosferoArch}
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/mezuroNoosferoArch.eps}
+	\caption{Arquitetura do Mezuro \cite{camarinhaOSS2015}}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\label{prevProcessingSeqDiag}
+		\includegraphics[keepaspectratio=true,scale=0.7]{figuras/prevProcessingSeqDiag.eps}
+	\caption{Arquitetura do sistema ao fim da reescrita da interface gráfica \cite{meirellesCibse2015}}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\label{processingSeqDiag}
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/processingSeqDiag.eps}
+	\caption{Arquitetura do sistema ao fim da reestruturação do Kalibro \cite{meirellesCibse2015}}
+\end{figure}
+
+\newpage
 
 \section{D3 - Data-Driven Documents}
 
