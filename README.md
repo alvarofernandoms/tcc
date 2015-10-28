@@ -1,3 +1,25 @@
+# Trabalho de Conclusão de Curso
+
+Aluno: Álvaro Fernando
+
+Título: Estudo sobre visualização de software aplicada à plataforma de
+monitoriamento de código fonte Mezuro
+
+Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
+
+## Resumo
+
+ O Mezuro é uma plataforma web livre de avaliação de código-fonte.
+ As métricas são expostas por meio de números e grupos de leituras.
+ O objetivo deste trabalho é evoluir a visualização das métricas de
+ código dos softwares analisados pelo Mezuro. Como contribuição científica,
+ ou atividade de pesquisa, será realizado o estudo das possíveis técnicas
+ de visualização de software e suas combinações com as métricas de
+ código-fonte. E como atividade tecnológica será proposto a visualização
+ de um conjunto de métricas determinado, evolução das configurações de
+ métrica do Mezuro e será proposto a contribuição aos mantenedores desta
+ plataforma.
+
 #Template TCC FGA-UnB
 
 Template para Trabalhos de Conclusão de Cursos (TCC) na Faculdade do
