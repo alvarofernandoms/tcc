@@ -18,14 +18,13 @@ métricas), para gerar uma ou várias visualizações que auxiliem o usuário
 do Mezuro a ter uma melhor interpretação do resultado gerado por esta
 ferramenta.
 
-Como exemplo dessa união e para a construção da prova de conceito
-(TODO: é esse mesmo o nome?), é proposto utilizar-se da decisão dos
-colegas Renan Costa Filgueiras e Vinícius Vieira Meneses: foram escolhidas
-três métricas para a configuração da visualização em radar: \textit{number
-of methods} (código: npm), \textit{number of public methods} (código nom)
-e \textit{total number of modules} (código: total\_modules); e a decisão
-de utilizar a biblioteca Javascript \textit{D3.js - Data-Driven Documents}.
-(TODO: adicionar referência)
+Como exemplo dessa união e para a construção do exemple de uso, é proposto
+utilizar-se da decisão dos colegas Renan Costa Filgueiras e Vinícius Vieira
+Meneses: foram escolhidas três métricas para a configuração da visualização em
+radar: \textit{number of methods} (código: npm), \textit{number of public
+methods} (código nom) e \textit{total number of modules} (código:
+total\_modules); e a decisão de utilizar a biblioteca Javascript \textit{D3.js -
+Data-Driven Documents} \cite{filgueiras2014mezuro}.
 
 \section{Trabalhos Relacionados}
 
@@ -48,7 +47,7 @@ As hipóteses são:
 \begin{itemize}
   \item H1 - Não haverá uma visualização única para todas as métricas.
   \item H2 - Algumas métricas poderão ser apresentadas de uma forma combinada
-  em uma única represetação/visualização.
+  em uma única representação/visualização.
 \end{itemize}
 
 % TODO: elaborar e documentar as hipótees
@@ -65,7 +64,7 @@ o usuário crie, salve e edite ``configurações'' que são um conjunto de
 métricas escolhidas por este e um ``grupo de leitura'' para provimento de uma
 interface gráfica de um conjunto de leitura que tenha algum sentido quando
 agrupadas, por exemplo: com a pontuação x, a métrica terá o ``rótulo'' ``BOM'' e
-será atribuído à ela a cor amarela; com a pontuação x+2, a métrica terá o 
+será atribuído à ela a cor amarela; com a pontuação x + 2, a métrica terá o
 ``rótulo'' ``ÓTIMO'' e estará com a cor verde. As cores são para destacar a
 interpretação e são definidas com valores hexadecimal \cite{camarinhaOSS2015}.
 
@@ -116,7 +115,7 @@ Com a reescrita, a arquitetura do Mezuro foi dividida em três serviços:
 \begin{itemize}
   \item Prezento: para a interface gráfica do usuário
   \item Kalibro Processor: para a análise do código
-  \item Kalibro Configuratios: para o gerenciamento das configurações
+  \item Kalibro Configurations: para o gerenciamento das configurações
 \end{itemize}
 
 A decisão de dividir o Kalibro em serviços separados foi tomada para deixar
@@ -132,29 +131,30 @@ sequência do processo de criação de uma configuração chegando ao estágio e
 são expostos os resultados finais de uma análise após a reescrita da interface
 gráfica, e outra que demonstra o estado atual do projeto.
 
-% TODO: Alterar essa primeira imagem para representação da atual arquitetura
-
 \begin{figure}[!htb]
 	\centering
-	\label{mezuroNoosferoArch}
-		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/mezuroCloudArch.eps}
-	\caption{Arquitetura do Mezuro \cite{camarinhaOSS2015}}
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/mezuroCloudArch.eps}
+  \caption{Arquitetura do Mezuro \cite{camarinhaOSS2015}}
+	\label{fig:mezuroNoosferoArch}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\label{prevProcessingSeqDiag}
-		\includegraphics[keepaspectratio=true,scale=0.7]{figuras/prevProcessingSeqDiag.eps}
-	\caption{Arquitetura do sistema ao fim da reescrita da interface gráfica
-	\cite{meirellesCibse2015}}
+    \includegraphics[keepaspectratio=true,scale=0.7]
+    {figuras/prevProcessingSeqDiag.eps}
+  \caption{Arquitetura do sistema ao fim da reescrita da interface gráfica
+  \cite{meirellesCibse2015}}
+	\label{fig:prevProcessingSeqDiag}
 \end{figure}
 
 \begin{figure}[!htb]
 	\centering
-	\label{processingSeqDiag}
-		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/processingSeqDiag.eps}
-	\caption{Arquitetura do sistema ao fim da reestruturação do Kalibro
-	\cite{meirellesCibse2015}}
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/processingSeqDiag.eps}
+  \caption{Arquitetura do sistema ao fim da reestruturação do Kalibro
+  \cite{meirellesCibse2015}}
+	\label{fig:processingSeqDiag}
 \end{figure}
 
 \newpage
@@ -191,12 +191,12 @@ divididas em dois grupos:
     \end{itemize}
 \end{itemize}
 ''
-% TODO: consertar estas aspas na citação direta
-% TODO: posso fazer esta citação direta?
+TODO: consertar estas aspas na citação direta
+TODO: posso fazer esta citação direta?
 
 \newpage
 
-\section{A Decisão de utilizar o Mezruo}
+\section{A Decisão de utilizar o Mezuro}
 
 Para este trabalho de conclusão de curso a ferramenta de de análise de código
 fonte escolhida foi o Mezuro pois: o aluno já participou da evolução de parte
@@ -204,10 +204,8 @@ de algumas funcionalidades; a ferramenta proporciona ao usuário a análise
 periódica do projeto, o que atende ao desejado como contribuição tecnológica
 das visualizações geradas serem demonstradas ao longo do tempo; por ser uma
 plataforma livre; fácil contato com os mantenedores; e por esta plataforma
-estar sempre utilizar as últimas versões estáveis do Ruby e do Rails, ou seja,
+sempre utilizar as últimas versões estáveis do Ruby e do Rails, ou seja,
 por utilizar o que há de mais atual nestas tecnologias.
-
-% TODO: deve adicionar mais motivações? Quais? Sei que devo, porém estou sem ideias
 
 É importante ressaltar que outras ferramentas de análise de código poderão ser
 utilizadas para geração da visualização proposta neste trabalho. Pois o fluxo
@@ -218,7 +216,69 @@ geração da visualização em um terceiro serviço local ou remoto.
 E o ideal é que este trabalho sirva como base para a criação de futuras
 visualizações para o Mezuro em si.
 
+O foco do desenvolvimento, por tanto, será na camada de \textit{GUI} do Mezuro,
+chamada Prezento.
+
 \section{Proposta de Evolução da Visualização}
+
+A atividade de contribuição tecnológica tem como objetivo selecionar métricas
+com um certo nível  de similaridade e importância quando unidas, e a exibição de
+tais por meio de uma das técnicas de visualização estudadas. Esta exibição
+poderá ser uma nova página ou passo dentro do fluxo percorrido pelo usuário ao
+utilizar o Mezuro para o monitoramento do código, ou ainda estar contida nas
+informações gerais dos repositórios registrados na plataforma.
+
+As etapas para que serão seguidas para elaboração desta atividade estão descrita
+nos itens abaixo e a figura \ref{fig:metodotologia_atividades} ilustra e
+encadeamento destas etapas:
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/metodotologia_atividades.eps}
+  \caption{Encadeamento das etapas da atividade de contribuição tecnológica}
+  \label{fig:metodotologia_atividades}
+\end{figure}
+
+\begin{enumerate}
+  \item \textbf{Selecionar métricas}: Selecionar as métricas com maior nível de
+  similaridade e afinidade com os objetivos de qualidade conhecidos.
+
+  \item \textbf{Criar configuração}: Criar o contêiner em as métricas
+  selecionadas estarão presentes. A configuração servirá para a associação aos
+  projetos selecionados e a abstração de alto nível da visualização desejada.
+  Criação esta seja em ambiente de desenvolvimento, seja no próprio Mezuro em
+  produção.
+
+  \item \textbf{Selecionar projetos}: Selecionar quais projetos que se melhor se
+  adequem às métricas selecionadas e/ou possivelmente forneçam dados
+  interessantes e significativos para a geração da visualização. Por exemplo:
+  se as métricas selecionadas forem específicos de terminada linguagem, os
+  projetos devem necessariamente terem seus códigos com maioria da escrita
+  nessa linguagem. O número ideal é de três projetos, podendo conter a
+  combinação entre, projetos que são reconhecidos por possuírem uma boa
+  organização, com outros que são reconhecidos por não conterem determinado
+  nível de qualidade.
+
+  \item \textbf{Adicionar projetos para análise}: Adicionar projetos como um
+  novo repositório para análise na plataforma Mezuro.
+
+  \item \textbf{Realizar captura dos resultados}: Uma vez que os resultados
+  forem interessantes e significativos, será feita a captura (parser) desses
+  dados utilizando talvez as Ruby Gems Sinatra ou Seed\_dump.
+
+  \item \textbf{Selecionar visualização}: Antes de gerar a visualização, será
+  feito a escolha da melhor visualização dado o contexto, relevância e
+  granularidade dos dados resultantes da análise. Levando em consideração também
+  as técnicas estudadas e um número finito pré-estabelecidos de visualizações.
+
+  \item \textbf{Gerar visualização}: utilizar biblioteca de criação de
+  visualização para criação da representação alternativa dos dados da análise.
+
+  \item \textbf{Retornar exibição ao usuário}: Nesta fase será elaborada o
+  retorno da visualização ao usuário, como mencionado antes, seja em uma nova
+  página ou nas informações gerais do repositório analisado.
+\end{enumerate}
 
 \section{Seleção das Métricas}
 
