@@ -2,4 +2,104 @@
 
 \section{Trabalhos Futuros}
 
+Levando em consideração o proposto neste trabalho, é planejado realizar a
+adaptação dos resultados da análise estática da ferramenta Mezuro, para a
+criação da visualização dos softwares aferidos pelo mesmo. A adequação aos
+padrões estipulados pelos mantenedores da ferramenta, para uma possível
+contribuição. Generalização da utilização das visualizações, considerando uma
+abordagem semelhante, porém utilizando outra ferramenta.
+
+É interessante também continuar os estudos teóricos e a expansão do presente
+trabalho. Possivelmente a tentativa de realizar novas interações com o usuário
+
+Considerando o sucesso na generalização, outro trabalho interessante também
+seria um estudo de caso com as ferramentas em que se foi possível aplicar as
+visualizações descritas nesse trabalho.
+
 \section{Cronograma}
+
+Retomando ao objetivo da geração das várias visualizações propostas como
+objetivo deste trabalho, considerando também as exigências da disciplina do
+Trabalho de Conclusão de Curso 2 e utilizando-se de uma adaptação do conceitos
+da metodologia \textit{Scrum}, as tarefas listadas a baixo devem ser realizadas.
+Segundo os autores \citeonline{sutherland2011scrum}, ``O coração do
+\textit{Scrum} é o \textit{sprint}''; portanto, as atividades descritas serão
+alocadas em \textit{sprints} de 14 dias cada, de janeiro à julho de 2016. A
+Tabela \ref{cronograma} mostra o cronograma dessas atividades
+
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Reforço da Revisão Bibliográfica}: estudo de reforço dos
+principais conceitos, técnicas, e ferramentas que tratem sobre visualização de
+software e das suas métricas.
+\item \textbf{Elaboração}: seleção das técnicas de visualização, seleção das
+métricas, seleção dos projetos que serão analisados, criação das Configurações
+no Mezuro. Essa atividade de Elaboração pode ser realocada durante o período
+intermediário do desenvolvimento, pois é prevista a seleção de novos projetos
+para análise, caso os resultados não sejam satisfatórios.
+\item \textbf{Levantamento do Ambiente de Desenvolvimento}: atividade que
+agrupa outras citadas no Capítulo \ref{metodologia}. Adição dos projetos
+selecionados no ambiente para análise e realizar captura e análise dos
+resultados.
+\item \textbf{Desenvolvimento das Visualizações}: gerar visualizações com os
+dados obtidos, ou um conjunto deles que gera certa visualização desejada, para
+fins de teste com a interação do usuário. Retornar exibição ao usuário.
+\item \textbf{Desenvolvimento e Melhorias}: desenvolvimento de testes, avaliação
+das visualizações geradas até o memento e submissão do código para análise por
+ferramentas específicas de controle da qualidade (possivelmente o
+CodeClimate\footnote{\url{https://codeclimate.com/}}).
+\item \textbf{Revisão e Escrita}: revisão e adição de novas informações, fontes
+e dados ao presente trabalho.
+\item \textbf{Apresentação do TCC2}.
+\end{enumerate}
+
+Os \textit{sprints} serão dividas nas seguintes datas do ano de 2016:
+
+\begin{multicols}{2}
+\begin{itemize}
+  \item \textbf{Sprint 1}: 03/01 a 16/01;
+  \item \textbf{Sprint 2}: 17/01 a 30/01;
+  \item \textbf{Sprint 3}: 31/01 a 13/02;
+  \item \textbf{Sprint 4}: 14/02 a 27/02;
+  \item \textbf{Sprint 5}: 28/02 a 12/03;
+  \item \textbf{Sprint 6}: 13/03 a 26/03;
+  \item \textbf{Sprint 7}: 27/03 a 09/04;
+  \item \textbf{Sprint 8}: 10/04 a 23/04;
+  \item \textbf{Sprint 9}: 24/04 a 07/05;
+  \item \textbf{Sprint 10}: 08/05 a 21/05;
+  \item \textbf{Sprint 11}: 22/05 a 04/06;
+  \item \textbf{Sprint 12}: 05/06 a 18/06;
+  \item \textbf{Sprint 13}: 19/06 a 02/07;
+  \item \textbf{Sprint 14}: 03/07 a 16/07;
+  \item \textbf{Sprint 15}: 17/07 a 30/07;
+\end{itemize}
+\end{multicols}
+
+\begin{table}[]
+\centering
+\tiny
+\caption{Cronograma de atividades}
+\label{cronograma}
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|l|}{\textbf{}} & \multicolumn{2}{c|}{\textbf{Janeiro/2016}}                                                & \multicolumn{2}{c|}{\textbf{Fevereiro/2016}}                                      & \multicolumn{2}{c|}{\textbf{Março/2016}}                                         & \multicolumn{3}{c|}{\textbf{Abril/2016}}                                                                                 \\ \hline
+\multicolumn{1}{|l|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{Sprint 1}}          & \multicolumn{1}{c|}{\textbf{Sprint 2}}  & \multicolumn{1}{c|}{\textbf{Sprint 3}}  & \multicolumn{1}{c|}{\textbf{Sprint 4}}  & \multicolumn{1}{c|}{\textbf{Sprint 5}} & \multicolumn{1}{c|}{\textbf{Sprint 6}}  & \multicolumn{1}{c|}{\textbf{Sprint 7}} & \multicolumn{1}{c|}{\textbf{Sprint 8}} & \multicolumn{1}{c|}{\textbf{Sprint 9}} \\ \hline
+(a)                             & \cellcolor[HTML]{C0C0C0}                        &                                         &                                         &                                         &                                        &                                         &                                        &                                        &                                        \\ \hline
+(b)                             & \cellcolor[HTML]{C0C0C0}{\color[HTML]{C0C0C0} } & \cellcolor[HTML]{C0C0C0}                &                                         &                                         &                                        &                                         & \cellcolor[HTML]{C0C0C0}               &                                        &                                        \\ \hline
+(c)                             &                                                 &                                         & \cellcolor[HTML]{C0C0C0}                &                                         &                                        &                                         & \cellcolor[HTML]{C0C0C0}               &                                        &                                        \\ \hline
+(d)                             &                                                 &                                         &                                         & \cellcolor[HTML]{C0C0C0}                & \cellcolor[HTML]{C0C0C0}               &                                         &                                        & \cellcolor[HTML]{C0C0C0}               & \cellcolor[HTML]{C0C0C0}               \\ \hline
+(e)                             &                                                 &                                         &                                         &                                         &                                        & \cellcolor[HTML]{C0C0C0}                &                                        &                                        &                                        \\ \hline
+(f)                             &                                                 &                                         &                                         &                                         &                                        &                                         &                                        &                                        &                                        \\ \hline
+(g)                             &                                                 &                                         &                                         &                                         &                                        &                                         &                                        &                                        &                                        \\ \hline
+\rowcolor[HTML]{343434} 
+                                &                                                 &                                         &                                         &                                         &                                        &                                         &                                        &                                        &                                        \\ \hline
+                                & \multicolumn{2}{c|}{\textbf{Maio/2016}}                                                   & \multicolumn{2}{c|}{\textbf{Junho/2016}}                                          & \multicolumn{2}{c|}{\textbf{Julho/2016}}                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+                                & \multicolumn{1}{c|}{\textbf{Sprint 10}}         & \multicolumn{1}{c|}{\textbf{Sprint 11}} & \multicolumn{1}{c|}{\textbf{Sprint 12}} & \multicolumn{1}{c|}{\textbf{Sprint 13}} & \multicolumn{1}{c|}{\textbf{Sprin 14}} & \multicolumn{1}{c|}{\textbf{Sprint 15}} & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(a)                             &                                                 &                                         &                                         &                                         &                                        &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(b)                             &                                                 & \cellcolor[HTML]{C0C0C0}                &                                         &                                         &                                        &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(c)                             &                                                 & \cellcolor[HTML]{C0C0C0}                &                                         &                                         &                                        &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(d)                             &                                                 &                                         & \cellcolor[HTML]{C0C0C0}                & \cellcolor[HTML]{C0C0C0}                &                                        &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(e)                             & \cellcolor[HTML]{C0C0C0}                        &                                         &                                         &                                         & \cellcolor[HTML]{C0C0C0}               &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(f)                             &                                                 &                                         & \cellcolor[HTML]{C0C0C0}                & \cellcolor[HTML]{C0C0C0}                & \cellcolor[HTML]{C0C0C0}               &                                         & \multicolumn{3}{l|}{}                                                                                                    \\ \cline{1-7}
+(g)                             &                                                 &                                         &                                         &                                         & \cellcolor[HTML]{C0C0C0}               & \cellcolor[HTML]{C0C0C0}                & \multicolumn{3}{l|}{\multirow{-9}{*}{}}                                                                                  \\ \hline
+\end{tabular}
+\end{table}
