@@ -1,7 +1,101 @@
 \chapter{Introdução}
 
+% Primeiros parágrafos devem conter de forma clara o que o autor pretende com
+% relação aos aspectos científicos e técnicos.
+
+Aspectos da qualidade não são claros em muitos softwares atualmente e existe
+uma grande complexidade em entender o seu funcionamento. A visualização de
+software pode auxiliar e ou facilitar o entendimento destes aspectos e pode
+reduzir essa complexidade. Não faltam dados disponíveis publicamente para
+auxiliar na geração desse conhecimento: código-fonte, históricos de evolução do
+repositório, conjuntos de testes, relatórios de erros e suas soluções, trocas
+de mensagens entre membros do projeto em listas de e-mail, artigos escritos por
+acadêmicos que buscam fama, entre outros \cite{messias2012}
+\cite{benkler2006wealth}. É preciso processar esses dados de forma correta. E
+considerando também que desenvolvedores são cruciais para o sucesso de um
+projeto e os valores numéricos dos vários locais que se pode coletar dados
+citados no parágrafo anterior, as vezes podem não ter uma boa apresentação. Os
+dados podem ser de pouco valor, pois são numerosos e difíceis de avaliar. Uma
+possível solução: visualização de informação \cite{messias2012}. Visualizações
+de informação são ``representações visuais e interativas de dados, apoiadas por
+computador, utilizadas para amplificar a aquisição de conhecimento e apoiar
+descobertas, tomadas de decisão e explicações a partir de dados complexos''
+\cite{card1999readings}. Um problema da visualização de software é selecionar
+uma técnica, pois nenhuma técnica específica funciona para todos os problemas.
+
+O software livre apresenta certas vantagens em detrimento ao software restrito.
+Geralmente licenciado sob as definições da
+\textit{Free Software Foundation}\footnote{\url{http://www.gnu.org/philosophy/free-sw.pt-br.html}},
+ou da \textit{Open Source Initiative}\footnote{\url{https://opensource.org/docs/definition.html}},
+o software livre e aberto (\textit{Free and Open Source Software} - FOSS) tem
+seu código aberto e acessível ao público e garante ao programador certos
+aspectos que podem simplificar o desenvolvimento de um novo software ou a
+evolução de um outro onde o envolvimento é desejado, seja por questões de
+melhoria, éticas, personalização ou simplesmente pelo interesse pessoal
+\cite{meirelles2013monitoramento}. E muitas outras características agregam
+valor ao uso, desenvolvimento e estímulo às contribuições ao FOSS: o
+estabelecimento de uma \textit{cultura livre}, valorizando o mérito de questões
+técnicas inerentes ao desenvolvedor; reconhecimento de bons programadores
+capazes de escreve bom código e outros programadores melhores ainda capazes de
+mantê-lo; reconhecimento do valor das pessoas envolvidas e interessadas, sejam
+usuários finais ou testadores de versões instáveis de software; entre outras
+características \cite{raymond1999cathedral}.
+
+Metodologias ágeis estão fortemente ligadas ao desenvolvimento de FOSS e
+possuem formas de trabalho semelhantes \cite{meirelles2013monitoramento}. Esse
+vínculo é expresso majoritariamente pelos os valores \cite{beck2001manifesto}:
+
+\begin{itemize}
+  \item Indivíduos e interações são mais importantes que processos e
+  ferramentas;
+  \item Software em funcionamento é mais importante que documentação abrangente;
+  \item Colaboração com o cliente (usuários) é mais importante que negociação
+  de contratos;
+  \item Responder às mudanças é mais importante que seguir um plano.
+\end{itemize}
+
+Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
+produtividade e qualidade do software. Existem dois grandes conjuntos delas:
+métricas tradicionais e métricas de orientação a objetos. São métricas
+tradicionais: métricas de tamanho (ex. Linhas de Código - LOC), métricas de
+complexidade (ex. Complexidade Ciclomática), métricas manutenibilidade, dentre
+outras (Tamanho Médio dos Módulos, Uso de Variável, Número de Funções, por
+exemplo). E são métricas de orientação a objetos: métricas de classes (ex.
+Encapsulamento dos Atributos), métricas de métodos (ex. Média de Complexidade
+dos Métodos), métricas de acoplamento (ex. Acoplamento Aferente), métricas de
+herança (ex. Medida de Polimorfismo) e métricas de sistema (ex. Reúso de
+Classe) \cite{meirelles2013monitoramento}.
+
+% Introdução com forte embasamento em Métodos Ágeis e FOSS, e Visualização pra apoiar
+% citar PRMM, Fábio Kon... (verificar referências do Messias)
+
 \section{Contexto}
+
+Neste trabalho de conclusão de curso são apresentadas as relações entre
+visualização de software, FOSS e metodologias ágeis com as devidas adaptações e
+métricas de código-fonte para observação de que o entendimento do software e a
+averiguação da qualidade do mesmo são passiveis através da visualização de
+software. Para tanto, é proposto a adequação de técnicas usualmente utilizadas
+para a geração de visualizações da informação às ferramentas de monitoramento
+estático de código-fonte, em especial ao
+Mezuro\footnote{\url{http://mezuro.org/}}.
 
 \section{Objetivos}
 
+Inicialmente a proposta deste trabalho é a geração de visualizações que podem
+ser \textit{instanciadas} em determinadas ferramentas de monitoramento de
+código-fonte, dada as adaptações para a coleta dos resultados da mesma. Com o
+foco no Mezuro, o objetivo deste trabalho é investigar e utilizar-se da
+visualização de software para auxiliar o controle da qualidade de um software.
+É feito a união de determinadas métricas para gerar uma ou várias visualizações
+que auxiliem o usuário a ter uma melhor interpretação do resultado gerado por
+esta ferramenta.
+
 \section{Organização do Trabalho}
+
+O trabalho está organizado da seguinte maneira: Capítulo 2, onde será tratada a
+VS como principal base para o referencial teórico e revisão bibliográfica;
+Capítulo 3, que trata da metodologia para o desenvolvimento do mesmo; no
+Capítulo 4 são apresentados os resultados preliminares com explicação do
+principal exemplo de uso; e o Capítulo 5 com as conclusões, trabalhos futuros e
+cronograma de atividades.
