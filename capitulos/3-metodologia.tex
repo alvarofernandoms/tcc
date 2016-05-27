@@ -32,7 +32,7 @@ No artigo \textit{CodeCrawler – An Extensible and Language Independent 2D and
 desenvolveram uma ferramenta para visualização de software capaz de exibir
 detalhes de uma forma polimétrica, que é capaz de mostrar informações como as
 métricas do software, sua semântica e a relação entre as classes, por exemplo.
-Segundo o autor essa visualização pode ser aplicada em vários contextos e não
+Segundo o autor, essa visualização pode ser aplicada em vários contextos e não
 somente em aspectos de software. Idealmente, a ferramenta é capaz de gerar
 visualizações para software com grande número de linhas código. Porém é levado
 em consideração a integração das visualizações em IDEs e essa solução não é
@@ -46,7 +46,8 @@ coletadas pela ferramenta Qt Creator\footnote{\url{http://www.qt.io/ide/}}. As
 métricas definidas foram: média de atributos por métodos em uma classe (MAC);
 quantidade de métodos por classe (QMC); tamanho dos métodos por classe (TMC);
 quantidade de atributos por classe (QAC); e quantidade de métodos públicos
-(QMC). E nesse plugin os casos de uso ou funcionalidades no caso dessa
+(QMC). Métricas essas relacionadas com a categoria \textbf{estrutura} da VS.
+E nesse plugin os casos de uso ou funcionalidades no caso dessa
 ferramenta são: calcular métricas: QAC; QMC; MAM; TMC; QMP. Além da
 possibilidade de calcular a média das métricas, obter detalhes das métricas e
 obter ajuda sobre as métricas. Um dos pontos importantes destacados no
@@ -65,7 +66,7 @@ O artigo dos autores \citeonline{ramosanalise}, cujo o título é \textit{Análi
 Métricas Estáticas para Sistemas JavaScript}, não trata necessariamente de
 visualização de software, embora em várias figuras mostrem distribuições dos
 projetos e seus respectivos valores das métricas escolhidas. Por tanto,
-destacamos a escolha da ferramenta 
+destacamos a escolha da ferramenta
 \textit{https://github.com/jared-stilwell/escomplex}\footnote{\url{https://github.com/jared-stilwell/escomplex}},
 que analisa métricas de projetos escritos em JavaScript (linguagem que ainda
 não é suportada para análise no Mezuro), e escolha das métricas que são: número
@@ -76,7 +77,7 @@ densidade de complexidade ciclomática; métricas de complexidade de Halstead; e
 É importante ressaltar também o artigo \textit{Understanding software evolution
 using a combination of software visualization and software metrics}. Os
 autores, \citeonline{Lanza02understandingsoftware}, ressaltam que há uma grande
-quantidade de dados hoje em circulação nos sistemas informatizados é este um
+quantidade de dados hoje em circulação nos sistemas informatizados. Consideram ser este um
 dos maiores problemas nas pesquisas de evolução de um software, e em alguns
 casos as várias versões destes sistemas precisam ser analisadas em paralelo.
 Então, considerando esta complexidade, uma técnica que pode auxiliar na
@@ -104,7 +105,7 @@ Características que podem ser observadas na técnica:
   \item Tamanho dos sistemas em termos de classes. Quanto mais linhas, maior o
   sistema;
   \item Classes adicionadas e removidas;
-  \item Períodos decréscimo, estabilização ou crescimento do sistema durante a
+  \item Períodos de decréscimo, estabilização ou crescimento do sistema durante a
   sua ``evolução''
   \item Classes \textit{Dayfly}. Classes com um tempo de vida pequeno, por
   exemplo que apenas apareceram em uma única versão do sistema;
@@ -112,12 +113,12 @@ Características que podem ser observadas na técnica:
   anterior).
 \end{itemize}
 
-Porém, no artigo foi constato que essa representação não é precisa o suficiente.
+Porém, no artigo foi constatado que essa representação não é precisa o suficiente.
 A evolução então seria o uso das métricas de código-fonte.
 
 A Figura \ref{fig:evolutionMatrixAspects} foi extraída do artigo e mostra essas
 características ou aspectos na evolução de um sistema, utilizando a técnica da
-matriz de evolução. 
+matriz de evolução.
 
 \begin{figure}[!htb]
   \centering
@@ -130,7 +131,7 @@ matriz de evolução.
 
 
 Ainda comentando sobre o artigo \textit{Understanding software evolution using
-a combination of software visualization and software metrics}, destacamos o
+a combination of software visualization and software metrics}, destacamos
 como foi inserida esta evolução da utilização das métricas de código-fonte:
 altura e a largura das caixas na visualização representam métricas das
 classes. Métricas utilizadas: número de métodos (\textit{NOM}) e número de
@@ -139,11 +140,11 @@ atributos (\textit{NOA}).
 E com as métricas definidas, foi feita uma categorização das classes em:
 
 \begin{itemize}
-  \item \textit{Pulsar}: uma classe que cresce de diminui durante o ciclo de
+  \item \textit{Pulsar}: uma classe que cresce e diminui durante o ciclo de
   vida do sistema;
   \item \textit{Supernova}: classe que de repente cresce bastante;
   \item \textit{White Dwarf}: classe que era grande, mas por algum motivo as
-  suas responsabilidades foram dividas em outras classes e aquela diminui;
+  suas responsabilidades foram dividas em outras classes e esta diminui;
   \item \textit{Red Giant}: é uma classe considerada \textit{god class}
   \cite{riel1996object}, por muito tempo, ou seja: uma classe grande que
   implementa muitas funcionalidades;
@@ -184,7 +185,7 @@ As hipóteses são:
 
 \section{O Mezuro}
 
-O projeto Mezuro é uma ferramenta para extração, análise e interpretação de
+O Mezuro foi planejado para ser uma ferramenta de extração, análise e interpretação de
 métricas de código-fonte. De uma forma geral, ele é dividido em duas partes:
 para o processamento e para o cálculo é utilizado o Kalibro, que é um
 \textit{webservice}; e o Prezento para a interface gráfica (uma aplicação
@@ -327,7 +328,7 @@ divididas em dois grupos:
 
 \section{A Decisão de utilizar o Mezuro}
 
-Para este trabalho de conclusão de curso a ferramenta de de análise de código
+Para este trabalho de conclusão de curso a ferramenta de análise de código
 fonte escolhida foi o Mezuro pois: o aluno já participou da evolução de parte
 de algumas funcionalidades; a ferramenta proporciona ao usuário a análise
 periódica do projeto, o que atende ao desejado como contribuição tecnológica
@@ -373,19 +374,19 @@ encadeamento destas etapas:
   \item \textbf{Selecionar métricas}: Selecionar as métricas com maior nível de
   similaridade e afinidade com os objetivos de qualidade conhecidos.
 
-  \item \textbf{Criar configuração}: Criar o contêiner em as métricas
+  \item \textbf{Criar configuração}: Criar o contêiner em que as métricas
   selecionadas estarão presentes. A configuração servirá para a associação aos
   projetos selecionados e a abstração de alto nível da visualização desejada.
   Criação esta seja em ambiente de desenvolvimento, seja no próprio Mezuro em
   produção.
 
-  \item \textbf{Selecionar projetos}: Selecionar quais projetos que se melhor se
+  \item \textbf{Selecionar projetos}: Selecionar quais projetos que melhor se
   adequem às métricas selecionadas e/ou possivelmente forneçam dados
   interessantes e significativos para a geração da visualização. Por exemplo:
   se as métricas selecionadas forem específicos de terminada linguagem, os
   projetos devem necessariamente terem seus códigos com maioria da escrita
   nessa linguagem. O número ideal é de três projetos, podendo conter a
-  combinação entre, projetos que são reconhecidos por possuírem uma boa
+  combinação entre projetos que são reconhecidos por possuírem uma boa
   organização, com outros que são reconhecidos por não conterem determinado
   nível de qualidade.
 
@@ -416,3 +417,15 @@ encadeamento destas etapas:
 % TODO: preciso definir as métricas agora?
 
 % TODO: selecionar métricas com certo nível de similaridade.
+
+% TODO: explique que, devido à comodidade em já ter algumas configurações pré-estabelicidas
+% no Mezuro, e dado as limitações de tempo e escopo, não poderei passar por toda uma
+% "Seleção das Métricas"
+% SOLUÇÃO: explicar quais são essas configurações presentes por default no Mezuro
+
+\section{Seleção dos Projetos}
+
+% TODO: escrever um pouco sobre os projetos para geração das VS.
+% Já tenho utilizado a Engine de IJE do professor Edson Alves como parâmetro.
+% O professor Paulo sugeriu o Colab, dado o grande número de contribuições que ele atingiu nos
+% últimos meses por conta do SPB.
