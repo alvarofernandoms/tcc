@@ -2,12 +2,8 @@
 
 \section{Mezuro: Prezento}
 
-% TODO: falar sobre o Prezento, pois será a camada em que irei trabalhar
-
-% TODO: atualizar versões citadas do RoR que o Mezuro utiliza
-
 Como dito no capítulo anterior, o Prezento é a camada da interface web do
-Mezuro. Desenvolvido em Ruby on Rails, atualmente utiliza as versões 2.2.3 do
+Mezuro. Desenvolvido em Ruby on Rails, atualmente utiliza as versões 2.3.0 do
 Ruby e 4.2.4 do Rails. Versões estas que estão em constante mudança, pois os
 autores têm como intuito usufruir o que há de mais recente das funcionalidades
 dessa tecnologia. Esta será a principal camada trabalhada neste trabalho de
@@ -54,39 +50,12 @@ diagramas das camadas de Controle e de Modelo do Prezento. Foram geradas com a
   \label{fig:controllers_complete}
 \end{figure}
 
-% TODO: realocar posição de algumas classes na figura da camada de Modelo (+1)
-
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.25]
-    {figuras/models_complete.eps}
+    \includegraphics[keepaspectratio=true,scale=0.35]
+    {figuras/models_complete_v2.eps}
   \caption{Diagrama da Camada de Modelo}
   \label{fig:models_complete}
-\end{figure}
-
-\newpage
-
-E a Figura \ref{fig:prezento_folders} mostra a organização dos diretórios. Os
-principais pacotes envolvidos na realização deste trabalho serão:
-
-\begin{itemize}
-  \item app/assets/javascripts/: para a adição dos arquivos Javascript de
-  geração das visualizações;
-  \item app/views/: para adição do meio de interação do usuário com a
-  visualização;
-  \item spec/ ou tmp/: para a adição temporária dos arquivos extraídos dos
-  resultados da análise em determinado formato que auxiliará na geração das
-  visualizações.
-\end{itemize}
-
-% TODO: essa imagem é realmente necessária?
-
-\begin{figure}[!htb]
-	\centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
-    {figuras/prezento_folders.eps}
-  \caption{Organização dos Diretórios do Prezento}
-  \label{fig:prezento_folders}
 \end{figure}
 
 \newpage
