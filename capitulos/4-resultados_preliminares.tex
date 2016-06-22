@@ -224,6 +224,47 @@ Tree) como a melhor para interpretação das métricas e também para identifica
 com mais claridade os pontos críticos. Os resultados completos estão no Anexo
 \ref{chap:anexoA}.
 
-\subsection{Resultados Encontrados}
+\section{Resultados Encontrados}
 
-\section{Visualização - Gráfico Radar}
+\subsection{Software Público Brasileiro}
+
+O Software Público Brasileiro (SPB) é uma inciativa do Governo Federal que visa
+o compartilhamento de softwares, experiências e informações amparado pela tese
+do bem público como aquele que apresenta características de indivisibilidade e
+de não rivalidade, ou seja, que pode ser usado por todos sem que com isto se
+estabeleça competição pelo bem entre os usuários. A disponibilização dos
+softwares no SPB é justificada pelo caráter cada vez mais estratégico para
+governos e sociedade, pela similaridade de demandas entre os órgãos e entidades
+públicas, pela racionalização dos recursos humanos, materiais e de tecnologia
+da informação para seu atendimento e pelo acervo de soluções desenvolvidas
+pelos diferentes poderes e esferas governamentais \cite{santos2011in01}.
+
+O SPB portanto é uma plataforma Web de colaboração integrada. É composto por um
+conjunto de ferramentas. São elas \cite{aboutSPB}:
+
+\begin{itemize}
+  \item \textbf{Noosfero:} Plataforma Web Livre de Redes Sociais, desenvolvida
+	em Ruby on Rails. Responsável pelas funcionalidades de gerenciamento de
+	conteúdo (CMS) do SPB, permitindo a criação de páginas de usuários, softwares
+	e comunidades de forma flexível e customizável. É a ferramenta com maior
+	integração com o usuário, pois é responsável pelas páginas dos softwares
+	disponibilizados, gerenciamento dos downloads destes softwares, criação de
+	notícias e categorização dos softwares;
+  \item \textbf{Mailman:} É uma aplicação para gerenciamento de listas de
+	e-mail, escrito majoritariamente em Python e faz parte do projeto GNU. Cada
+	software disponibilizado no SPB possui sua própria lista de e-mail e ela é um
+	dos meios de comunicação entre os administradores e usuários dos softwares.
+	Também serve para divulgação de notícias ou relatórios de novas versões.
+	Possibilita ao usuário a participação em tópicos de discussão respondendo
+	através do próprio e-mail, sem a necessidade de acessar diretamente o SPB;
+	\item \textbf{Gitlab:} Gerenciador de repositórios Git com funcionalidades de
+	wiki e mapeamento de issues, escrito em Ruby;
+	\item \textbf{Mezuro:} Plataforma Web Livre para avaliação colaborativa de
+	código fonte, desenvolvido em Ruby on Rails, também adicionada ao SPB para
+	fornecer acompanhamento da qualidade do código dos projetos \cite{aboutSPB}.
+\end{itemize}
+
+A integração das ferramentas acima citadas é realizada por meio do
+\textbf{Colab}, um software desenvolvido em Python e Django que suporta
+ambientes colaborativos e agregados. Em resumo, é uma plataforma para
+autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
