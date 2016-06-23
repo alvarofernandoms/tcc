@@ -268,3 +268,27 @@ A integração das ferramentas acima citadas é realizada por meio do
 \textbf{Colab}, um software desenvolvido em Python e Django que suporta
 ambientes colaborativos e agregados. Em resumo, é uma plataforma para
 autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
+
+% TODO: melhorar esse título? Contribuição ao SPB?
+
+\subsection{Contribuição ao SPB}
+
+Foi realizado uma categorização dos softwares disponibilizados no Portal do Software Público Brasileiro e como insumo que corroborará com as hipóteses levantadas neste trabalho. A adição dos softawres do SPB à ferramentas de monitoramento (Mezuro e CodeClimate\footnote{\url{https://codeclimate.com/}}) foi planejada para que o código seja avaliado e para que haja um incentivo aos desenvolvedores e administradores das comunidades do Portal. Esta adição ou contribuição foi registrada e está disponível para acesso por meio deste trabalho ou na lista de discussão para desenvolvedores do SPB.
+
+Como explicado na seção anterior, uma das ferramentas do SPB é o Gitlab (serviço para armazenamento de repositórios Git) e foi constatado que aproximadamente 75\% dos softwares \textbf{não} possuem seus códigos-fonde versionados nesta ferramenta. Realizado algumas pesquisas e foi encontrado o código-fonte em outros serviços (Github, Bitbucket). Fato esse que já auxiliou neste primeiro desafio de adicionar determinados softwares para avaliação no Mezuro. Porém, se considerarmos o SPB como a plataforma de colaboração integrada, colaboração que é um dos objetivos fundamentais ao Governo Federal com o Portal, com aproximadamente três-quartos dos softwares não versionados, é algo que atinge toda a comunidade que utiliza o SPB: sejam desenvolvedores interessados em contribuir/evoluir os softwares; sejam usuários finais que também contribuiem com registro de problemas, ou issues, ou bugs.
+
+Por padrão, no momento da disponibilização de um novo software no SPB, já são criadas "instâncias" de cada uma das ferramentas que compõem o Portal. Bastando ao administrador adequar o código-fonte ao versionamento com o Git. Por exemplo o software "xpto", teria o seguinte domínio para acesso ao código fonte: softwarepublico.gov.br/gitlab/xpto/xpto.
+
+Como solução, durante a categorização, foi realizado o "commit inicial" para aqueles softwares que disponibilizaram o código-fonte por meio de arquivo compactado. Como forma de centralização e organização, foi criado a organização "spb-metrics" no Github\footnote{\url{https://github.com/spb-metrics}}, pois para avaliação no CodeClimate, os repositórios precisam estar neste serviço e serem públicos. De outra maneira ou em outro serviço a avaliação terá um custo estipulado pelas regras de negócio do próprio CodeClimate. Já no Mezuro é possível adicionar um repositório para avaliação independentemente do serviço (Github, Gitlab, Bitbucket, etc), basta ser utilizado o sistema de controle de versão Git ou SVN. Comparação esta que reforça o estudo da visualização de software como possível auxílio e contribuição ao Mezuro.
+
+As imagens X e Y mostram respectivamente o percentual de softwares com repositório Git no SPB e em qual linguagem foram escritos predominantemente. Com 45\%, PHP é a linguagem em que é desenvolvido a maioria dos softwares do Portal SPB. Seguido por Java, com 18\% e outras (Python, C++, Perl), sendo menos de 5\% cada. Foi decedido por tanto iniciar a avaliação de softwares escritos em PHP e com código-fonte diponibilizado (compactado ou versionado).
+
+% TODO: add imagens
+
+A análise no CodeClimate é a junção da análise dos seguintes motores de análises \cite{enginesCodeClimate}:
+
+% TODO: validar português, coluna 80 e add engines do CodeClimate
+
+\begin{itemize}
+  \item \textbf{CSSLint}:
+\end{itemize}
