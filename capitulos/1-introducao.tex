@@ -23,7 +23,7 @@ difíceis de avaliar. Uma possível solução: visualização de informação
 interativas de dados, apoiadas por computador, utilizadas para amplificar a
 aquisição de conhecimento e apoiar descobertas, tomadas de decisão e
 explicações a partir de dados complexos'' \cite{card1999readings}. Um problema
-da visualização de software é selecionar uma técnica, pois nenhuma técnica
+da Visualização de Software (VS) é selecionar uma técnica, pois nenhuma técnica
 específica funciona para todos os problemas.
 
 % Subtítulo aqui?
@@ -59,18 +59,6 @@ vínculo é expresso majoritariamente pelos os valores \cite{beck2001manifesto}:
   \item Responder às mudanças é mais importante que seguir um plano.
 \end{itemize}
 
-Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
-produtividade e qualidade do software. Existem dois grandes conjuntos delas:
-métricas tradicionais e métricas de orientação a objetos. São métricas
-tradicionais: métricas de tamanho (ex. Linhas de Código - LOC), métricas de
-complexidade (ex. Complexidade Ciclomática), métricas manutenibilidade, dentre
-outras (Tamanho Médio dos Módulos, Uso de Variável, Número de Funções, por
-exemplo). E são métricas de orientação a objetos: métricas de classes (ex.
-Encapsulamento dos Atributos), métricas de métodos (ex. Média de Complexidade
-dos Métodos), métricas de acoplamento (ex. Acoplamento Aferente), métricas de
-herança (ex. Medida de Polimorfismo) e métricas de sistema (ex. Reúso de
-Classe) \cite{meirelles2013monitoramento}.
-
 % Introdução com forte embasamento em Métodos Ágeis e FOSS, e Visualização pra apoiar
 % citar PRMM, Fábio Kon... (verificar referências do Messias)
 
@@ -80,14 +68,32 @@ Neste trabalho de conclusão de curso são apresentadas as relações entre
 visualização de software, FOSS e metodologias ágeis com as devidas adaptações e
 métricas de código-fonte para observação de que o entendimento do software e a
 averiguação da qualidade do mesmo são passiveis através da visualização de
-software. Para tanto, é proposto a adequação de técnicas usualmente utilizadas
-para a geração de visualizações da informação às ferramentas de monitoramento
-estático de código-fonte, em especial ao
-Mezuro\footnote{\url{http://mezuro.org/}}.
+software. Para tanto, é proposto a análise exploratória do projeto
+Mezuro\footnote{\url{http://mezuro.org/}} que é uma ferramenta de monitoramento
+de código-fonte. E também a adequação de técnicas usualmente utilizadas
+para a geração de visualizações das informações geradas a partir da análise.
+
+Esta análise exploratória tem como motivação e visa identificar motivos para o
+baixo número de usuários ativos no Mezuro, considerando que a aplicação não
+possui visualização de software, sendo este um dos possíveis motivos para a
+baixa popularidade. Uma aplicação que serviu como comparação foi o
+CodeClimate\footnote{\url{https://codeclimate.com/}}.
+
+As contribuições idealizadas são portanto: análise exploratória do uso do Mezuro,
+uma vez que possui poucos usuários; validar as configurações do Mezuro na
+análise e interpretação de métricas; análise dos projetos do Portal do Software
+Público Brasileiro (SPB); e especificações da VS no Mezuro.
 
 \section{Objetivos}
 
-Inicialmente a proposta deste trabalho é a geração de visualizações que podem
+Inicialmente a proposta deste trabalho é explorar todo funcionamento do Mezuro,
+com foco nos coletores adicionados recentemente para projetos desenvolvidos nas
+linguagens de programação PHP e Python. Esta análise servirá para guiar suas próprias evoluções. Os softwares que foram utilizados como
+exemplos de uso são os do Portal do Software Público Brasileiro (SPB)
+categorizados como Software Público de fato, de acordo com os requisitos
+técnicos e jurídicos estabelecidos na IN 01/2011 \cite{santos2011in01}.
+
+Posteriormente, a geração de visualizações que podem
 ser \textit{instanciadas} em determinadas ferramentas de monitoramento de
 código-fonte, dada as adaptações para a coleta dos resultados da mesma. Com o
 foco no Mezuro, o objetivo deste trabalho é investigar e utilizar-se da
@@ -98,9 +104,11 @@ esta ferramenta.
 
 \section{Organização do Trabalho}
 
-O trabalho está organizado da seguinte maneira: Capítulo 2, onde será tratada a
-VS como principal base para o referencial teórico e revisão bibliográfica;
-Capítulo 3, que trata da metodologia para o desenvolvimento do mesmo; no
-Capítulo 4 são apresentados os resultados preliminares com explicação do
-principal exemplo de uso; e o Capítulo 5 com as conclusões, trabalhos futuros e
-cronograma de atividades.
+O trabalho está organizado da seguinte maneira: capítulo 2, onde será tratado o
+Mezuro como principal ferramenta, foco da análise exploratória; capítulo 3, onde
+será tratada a Visualização de Software como principal base para o
+referencial teórico e revisão bibliográfica do estudo sobre VS; capítulo 4,
+que trata da metodologia para o desenvolvimento do mesmo; no capítulo 5 é
+apresentada a análise das métricas de código-fonte dos projetos do SPB via
+Mezuro, com explicação de um dos casos de uso; capítulo 6, com a proposta de VS
+para o Mezuro; e o capítulo 7 com as conclusões e trabalhos futuros;

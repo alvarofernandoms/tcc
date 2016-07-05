@@ -1,0 +1,176 @@
+\chapter{Análise das Métricas do Código-fonte dos Projetos do SPB via Mezuro}
+
+% TODO: este título está muito grande. Modificar.
+
+\section{Software Público Brasileiro}
+
+O Software Público Brasileiro (SPB) é uma inciativa do Governo Federal que visa
+o compartilhamento de softwares, experiências e informações amparado pela tese
+do bem público como aquele que apresenta características de indivisibilidade e
+de não rivalidade, ou seja, que pode ser usado por todos sem que com isto se
+estabeleça competição pelo bem entre os usuários. A disponibilização dos
+softwares no SPB é justificada pelo caráter cada vez mais estratégico para
+governos e sociedade, pela similaridade de demandas entre os órgãos e entidades
+públicas, pela racionalização dos recursos humanos, materiais e de tecnologia
+da informação para seu atendimento e pelo acervo de soluções desenvolvidas
+pelos diferentes poderes e esferas governamentais \cite{santos2011in01}.
+
+O SPB portanto é uma plataforma Web de colaboração integrada. É composto por um
+conjunto de ferramentas. São elas \cite{aboutSPB}:
+
+\begin{itemize}
+  \item \textbf{Noosfero:} Plataforma Web Livre de Redes Sociais, desenvolvida
+	em Ruby on Rails. Responsável pelas funcionalidades de gerenciamento de
+	conteúdo (CMS) do SPB, permitindo a criação de páginas de usuários, softwares
+	e comunidades de forma flexível e customizável. É a ferramenta com maior
+	integração com o usuário, pois é responsável pelas páginas dos softwares
+	disponibilizados, gerenciamento dos downloads destes softwares, criação de
+	notícias e categorização dos softwares;
+  \item \textbf{Mailman:} É uma aplicação para gerenciamento de listas de
+	e-mail, escrito majoritariamente em Python e faz parte do projeto GNU. Cada
+	software disponibilizado no SPB possui sua própria lista de e-mail e ela é um
+	dos meios de comunicação entre os administradores e usuários dos softwares.
+	Também serve para divulgação de notícias ou relatórios de novas versões.
+	Possibilita ao usuário a participação em tópicos de discussão respondendo
+	através do próprio e-mail, sem a necessidade de acessar diretamente o SPB;
+	\item \textbf{Gitlab:} Gerenciador de repositórios Git com funcionalidades de
+	wiki e mapeamento de issues, escrito em Ruby;
+	\item \textbf{Mezuro:} Plataforma Web Livre para avaliação colaborativa de
+	código fonte, desenvolvido em Ruby on Rails, também adicionada ao SPB para
+	fornecer acompanhamento da qualidade do código dos projetos \cite{aboutSPB}.
+\end{itemize}
+
+A integração das ferramentas acima citadas é realizada por meio do
+\textbf{Colab}, um software desenvolvido em Python e Django que suporta
+ambientes colaborativos e agregados. Em resumo, é uma plataforma para
+autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
+
+\section{Exemplo de Uso - Apoena, Navi ou Xemele}
+
+\section{Resultados Encontrados}
+
+\subsection{Contribuições ao SPB}
+
+Foi realizado uma categorização dos softwares disponibilizados no Portal do
+Software Público Brasileiro, como insumo que corroborará com as hipóteses
+levantadas neste trabalho. A adição dos softwares do SPB à ferramentas de
+monitoramento (Mezuro e CodeClimate\footnote{\url{https://codeclimate.com/}})
+foi planejada para que o código seja avaliado e para que haja um incentivo aos
+desenvolvedores e administradores das comunidades do Portal ao monitoramento de
+seus projetos. Esta adição ou contribuição foi registrada e está disponível
+para acesso por meio deste trabalho ou na lista de discussão para
+desenvolvedores do SPB.
+
+Como explicado na seção anterior, uma das ferramentas do SPB é o Gitlab
+(serviço para armazenamento de repositórios Git) e foi constatado que
+aproximadamente 75\% dos softwares \textbf{não} possuem seus códigos-fonte
+versionados nesta ferramenta. Realizado algumas pesquisas, foi encontrado o
+código-fonte em outros serviços (Github, Bitbucket). Fato esse que já auxiliou
+neste primeiro desafio de adicionar determinados softwares para avaliação no
+Mezuro. Porém, se considerarmos o SPB como a plataforma de colaboração
+integrada, colaboração que é um dos objetivos fundamentais ao Governo Federal
+com o Portal, o infortúnio de ter aproximadamente três-quartos dos softwares
+não versionados é algo que atinge toda a comunidade que utiliza o SPB: sejam
+desenvolvedores interessados em contribuir/evoluir os softwares; sejam usuários
+finais que também contribuem com registro de problemas, ou issues, ou bugs.
+
+Por padrão, no momento da disponibilização de um novo software no SPB, já são
+criadas "instâncias" de cada uma das ferramentas que compõem o Portal. Bastando
+ao administrador adequar o código-fonte ao versionamento com o Git. Por exemplo
+o software "xpto", teria o seguinte domínio para acesso ao código fonte:
+softwarepublico.gov.br/gitlab/xpto/xpto.
+
+Como solução, durante a categorização, foi realizado o "commit inicial" para
+aqueles softwares que disponibilizaram o código-fonte por meio de arquivo
+compactado. Como forma de centralização e organização, foi criado a organização
+"spb-metrics" no Github\footnote{\url{https://github.com/spb-metrics}}, pois
+para avaliação no CodeClimate, os repositórios precisam estar neste serviço e
+serem públicos. De outra maneira, ou em outro serviço, a avaliação teria um
+custo estipulado pelas regras de negócio do próprio CodeClimate. Já no Mezuro é
+possível adicionar um repositório para avaliação independentemente do serviço
+(Github, Gitlab, Bitbucket, etc), basta ser utilizado o sistema de controle de
+versão Git ou SVN. Comparação esta que reforça o estudo da visualização de
+software como possível auxílio e contribuição ao Mezuro.
+
+As imagens \ref{fig:is_software_gitlab_spb} e \ref{fig:linguagens_softwares_spb}
+mostram respectivamente o percentual de softwares com repositório Git no SPB e
+em qual linguagem foram escritos predominantemente. Com 45\%, PHP é a linguagem
+em que é desenvolvido a maioria dos softwares do Portal SPB. Seguido por Java,
+com 18\% e outras (Python, C++, Perl), sendo menos de 5\% cada. Foi decidido
+portanto iniciar a avaliação de softwares escritos em PHP e com código-fonte
+disponibilizado (compactado ou versionado).
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/is_software_gitlab_spb.eps}
+  \caption{Porcentagem de Softwares Versionados no Gitlab do SPB}
+  \label{fig:is_software_gitlab_spb}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/linguagens_softwares_spb.eps}
+  \caption{Linguagens em que os Softwares do SPB são desenvolvidos}
+  \label{fig:linguagens_softwares_spb}
+\end{figure}
+
+\newpage
+
+% TODO: criar uma seção para falar do CodeClimate?
+
+A análise de projetos em PHP no CodeClimate é a junção da análise dos seguintes
+motores de análises \cite{enginesCodeClimate}:
+
+\begin{itemize}
+  \item \textbf{CSSLint:} como esperado de uma ferramenta \textit{lint}, esse
+	motor faz uma análise estática do código CSS e aponta padrões que podem ser
+	erros ou que possivelmente podem causar problemas aos desenvolvedores;
+	\item \textbf{Duplication:} este motor analisa e indica estruturas ou blocos
+	de códigos semelhantes;
+	\item \textbf{ESLint:} outra ferramenta \textit{lint}, porém para análise e
+	verificação de estilo de códigos escritos em EcmaScript ou Javascript;
+	\item \textbf{FIXME:} realiza uma busca sensível à caixa alta por palavras
+	como \textbf{TODO, FIXME, HACK, BUG} e destaca essas informações reforçando a
+	importância ao desenvolvedor, que provavelmente deve consertar alguma parte no
+	código agora, não depois;
+	\item \textbf{PHP Code Sniffer:} análise estática no código PHP que detecta
+	violações de um padrão já definido e estabelecido pela comunidade;
+	\item \textbf{PHP Mess Detector:} procura por diferentes potenciais problemas
+	com o código escrito em PHP, como possíveis bugs, código desnecessário,
+	expressões demasiadamente complicadas, e parâmetros ou métodos não utilizados.
+\end{itemize}
+
+A figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
+análise dos projetos em PHP do SPB.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+    {figuras/is_codeclimate_php_success.eps}
+  \caption{Porcentagens de Softwares com Análise bem sucedida no CodeClimate}
+  \label{fig:is_codeclimate_php_success}
+\end{figure}
+
+\newpage
+
+Considerando estes motores e ferramentas utilizadas pelo CodeClimate, pode-se
+observar que nem todo projeto pode ser analisado por um conjunto de métricas ou
+definições de estilo pré estabelicida. Fato este que intensifica a utilização do
+Mezuro em que o usuário é capaz de criar as Configurações com o conjunto de
+métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
+conjunto fechado ideal para todo projeto, é possível afirmar que também não há
+uma visualização única para todas as Configurações ou conjunto de métricas.
+
+% TODO: add tabelas da categorização como Anexo B
+
+
+% TODO: tabelas com os resultados dos projetos
+%   - Mezuro
+%   - CodeClimate
+%   - Comparação
+
+\section{Avalição Geral}
+
+% TODO: Resumo/discussão dos projetos de SPB
