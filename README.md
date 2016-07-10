@@ -2,8 +2,8 @@
 
 Aluno: Álvaro Fernando
 
-Titulo: Análise exploratória do projeto Mezuro: uma proposta de aplicação de
-técnicas de Visualização de Software
+Titulo: Análise exploratória do projeto Mezuro: uma proposta de evolução e
+aplicação de técnicas de Visualização de Software
 
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
 

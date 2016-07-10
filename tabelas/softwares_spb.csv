@@ -1,0 +1,72 @@
+Software,Repositório no SPB?,Linguagem,Link - Código,Link Mezuro,Link CodeClimate
+Amadeus,NÃO,Java - War,,,
+Apoena,NÃO,PHP,https://github.com/spb-metrics/apoena,http://mezuro.org/pt/repositories/85/,https://codeclimate.com/github/spb-metrics/apoena
+Ases,SIM,Java,,,
+Ação,NÃO,Perl,,,
+ Banco de Talentos ,SIM,Java,,,
+Cacic,SIM - Desatualizado,PHP,https://github.com/lightbase/cacic,http://mezuro.org/pt/repositories/89/,https://codeclimate.com/github/lightbase/cacic
+CAU,NÃO,PHP,https://github.com/spb-metrics/cau,http://mezuro.org/pt/repositories/90/,https://codeclimate.com/github/spb-metrics/cau
+Citsmart-GRP ,SIM,Java,,,
+CMS - Controle de Marcas e Sinais ,NÃO,PHP,https://github.com/spb-metrics/marca-sinais,http://mezuro.org/pt/repositories/91,https://codeclimate.com/github/spb-metrics/marca-sinais
+Cocar,NÃO,PHP,https://github.com/spb-metrics/cocar,http://mezuro.org/pt/repositories/92,https://codeclimate.com/github/spb-metrics/cocar
+Cortex,NÃO,C++,,,
+Curupira,NÃO,PHP,https://github.com/spb-metrics/curupira,http://mezuro.org/pt/repositories/93/,https://codeclimate.com/github/spb-metrics/curupira
+Demoiselle,NÃO - Link para Github,Java,,,
+DIM,NÃO,PHP,https://github.com/spb-metrics/dim,http://mezuro.org/pt/repositories/94,https://codeclimate.com/github/spb-metrics/dim
+e-Cidade,SIM,PHP,https://github.com/michelwilhelm/e-cidade,http://mezuro.org/pt/repositories/80,https://codeclimate.com/github/michelwilhelm/e-cidade
+ e-ISS ,NÃO,PHP,https://github.com/spb-metrics/eiss,http://mezuro.org/pt/repositories/95,https://codeclimate.com/github/spb-metrics/eiss
+e-Nota,NÃO,PHP,https://github.com/spb-metrics/enota,http://mezuro.org/pt/repositories/96,https://codeclimate.com/github/spb-metrics/enota
+ e-Proinfo ,NÃO,?,,,
+ e-Sic Livre ,SIM,PHP,https://bitbucket.com/alvarofernandoms/e-sic-livre,http://mezuro.org/pt/repositories/97,
+EdiTom,NÃO,Java - Jar,https://github.com/spb-metrics/gepnet2,,
+EducatuX,NÃO,.iso,,,
+ERP5 BR ,NÃO,Python?,,,
+Fila,NÃO,Perl,,,
+FormDin,NÃO,?,ZIP corrmpido,,
+Geplanes,SIM,Java,,,
+Gepnet,NÃO,PHP,https://github.com/spb-metrics/gepnet2,http://mezuro.org/pt/repositories/98,https://codeclimate.com/github/spb-metrics/gepnet2
+GGAS,NÃO,Java,,,
+Ginga,NÃO,C,,,
+Gnuteca,NÃO,.deb,,,
+GPWeb,NÃO,PHP,https://github.com/spb-metrics/gpweb,http://mezuro.org/pt/repositories/83,https://codeclimate.com/github/spb-metrics/gpweb
+Gsan,SIM,Java,,,
+Guarux,NÃO,.iso,,,
+ i-Educar ,SIM,PHP,https://github.com/spb-metrics/i-educar,http://mezuro.org/pt/repositories/99,https://codeclimate.com/github/spb-metrics/i-educar
+i3Geo,SIM,PHP,https://github.com/edmarmoretti/i3geo,http://mezuro.org/pt/repositories/86,https://codeclimate.com/github/edmarmoretti/i3geo
+InVesalius,SIM,Python,https://github.com/invesalius/invesalius3,,
+Jaguar,NÃO,Java - 2GB,,,
+Koruja,NÃO,?,,,
+KyaPanel,NÃO,PHP,,,
+LightBase,SIM,?,,,
+Linux Educacional ,NÃO,.iso,,,
+MDArte,NÃO,Java,,,
+Minuano,NÃO,.iso,,,
+NAVi,NÃO,PHP,https://github.com/spb-metrics/navi,http://mezuro.org/pt/repositories/101,https://codeclimate.com/github/spb-metrics/navi
+OASIS,NÃO,PHP,https://github.com/softwarepublico/oasis,http://mezuro.org/pt/repositories/102,https://codeclimate.com/github/softwarepublico/oasis
+OpenACS,NÃO,Perl,,,
+Pandorga GNU/Linux ,NÃO,.iso,,,
+SPB,SIM,Ruby,,,
+Prefeitura Livre ,NÃO,PHP,,,
+Provinha Brasil,NÃO,PHP,https://github.com/spb-metrics/provinha-brasil,http://mezuro.org/pt/repositories/84,https://codeclimate.com/github/spb-metrics/provinha-brasil
+PW3270,SIM,C++,,,
+Redeca,NÃO,PHP,https://github.com/spb-metrics/redeca,http://mezuro.org/pt/repositories/103,https://codeclimate.com/github/spb-metrics/redeca
+SAELE,NÃO,PHP,https://github.com/softwarepublico/saele,http://mezuro.org/pt/repositories/87,https://codeclimate.com/github/softwarepublico/saele
+Sagu,NÃO,Java,,,
+Sagui,NÃO,PHP,https://github.com/spb-metrics/sagui-servidor,http://mezuro.org/pt/repositories/104,https://codeclimate.com/github/spb-metrics/sagui-servidor
+SGA LIVRE,NÃO,PHP,https://github.com/feliipebarbosa/sgalivre,http://mezuro.org/pt/repositories/105,https://codeclimate.com/github/feliipebarbosa/sgalivre
+SGD - Sistema de Gestão de Demandas ,SIM,PHP,https://github.com/spb-metrics/sgd,http://mezuro.org/pt/repositories/106,https://codeclimate.com/github/spb-metrics/sgd
+SGDoc,NÃO,PHP,https://github.com/sgdoc/sgdoc-codigo,http://mezuro.org/pt/repositories/81,https://codeclimate.com/github/sgdoc/sgdoc-codigo
+SGF - Sistema de Gestão de Frotas,NÃO,Java - War,,,
+Sigati,NÃO,?,,,
+SIMEC,NÃO,PHP,https://github.com/spb-metrics/simec,http://mezuro.org/pt/repositories/107/,https://codeclimate.com/github/spb-metrics/simec
+Sisau-Saci-Contra ,NÃO,PHP,https://github.com/spb-metrics/sisau-saci-contra,http://mezuro.org/pt/repositories/111,https://codeclimate.com/github/spb-metrics/sisau-saci-contra
+SAE - Sistema de Apoio Educacional ,NÃO,Java,,,
+Sistema de Ouvidoria ,NÃO,Java,,,
+SIVAC,NÃO,PHP,https://github.com/marcpiresrj/Sivac,http://mezuro.org/pt/repositories/112,https://codeclimate.com/github/marcpiresrj/Sivac
+SNEP,NÃO,PHP,https://bitbucket.org/snepdev/snep-3,http://mezuro.org/pt/repositories/113,https://codeclimate.com/github/spb-metrics/snep-3
+SPED,NÃO,Java,,,
+VLibras,SIM,"Python, C++, C#",,,
+Tucunaré,NÃO,?,,,
+Urbem CNM ,SIM,PHP,https://github.com/spb-metrics/urbem_unstable,http://mezuro.org/pt/repositories/87,https://codeclimate.com/github/spb-metrics/urbem_unstable/
+WebIntegrator,NÃO,Java,,,
+Xemelê,NÃO,PHP,https://github.com/spb-metrics/xemele,http://mezuro.org/pt/repositories/114,https://codeclimate.com/github/spb-metrics/xemele
