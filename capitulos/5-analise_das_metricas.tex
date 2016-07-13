@@ -46,8 +46,6 @@ A integração das ferramentas acima citadas é realizada por meio do
 ambientes colaborativos e agregados. Em resumo, é uma plataforma para
 autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
 
-\section{Exemplo de Uso - Apoena, Navi ou Xemele}
-
 \section{Resultados Encontrados}
 
 \subsection{Contribuições ao SPB}
@@ -166,14 +164,80 @@ métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
 conjunto fechado ideal para todo projeto, é possível afirmar que também não há
 uma visualização única para todas as Configurações ou conjunto de métricas.
 
-% TODO: add tabelas da categorização como Anexo B
-
-
 % TODO: tabelas com os resultados dos projetos
 %   - Mezuro
 %   - CodeClimate
 %   - Comparação
 
+\section{Estudo de Caso: Xêmele}
+
+O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
+software para o gerenciamento de ambientes integrados com sites, blogs, chats,
+wikis e e-mails. Desenvolvido na linguagem de programação PHP e utilizando outros
+recursos, como HTML, Javascript, JQuery e banco de dados MySQL.
+
+A análise realizada pelo Mezuro desta ferramenta, retornou a nota zero para o
+projeto como um todo. E a métrica de destaque, relacionada com o arquivo
+\textbf{functions.php} da raíz do projeto, está relacionada com o método
+\textbf{recent\_comments} em que é recomendado a remoção da expressão
+\textit{else} da linha 52 e a simplificação do código para trabalhar sem esta
+expressão de condição.
+
+Link para a avaliação no Mezuro\footnote{\url{http://mezuro.org/pt/repositories/114}}.
+
+Já a nota dada ao projeto pelo CodeClimate foi a de 2.18/4. E os arquivos com
+notas \textbf{F} e \textbf{D} são os arquivos Javascript \textit{js/jquery.cycle.js}
+e \textit{js/jquery.js}, respectivamente. Além disso, a ferramenta mostra para o
+usuário 4 páginas de possíveis problemas encontrados, nas diversas categorias,
+tais como, problemas com complexidade, duplicação de código, estilo nos arquivos
+CSS, clareza, possíveis ou risco de bugs e problemas com compatibilidade. E o
+mesmo destaque dado ao arquivo \textbf{functions.php} pelo Mezuro, também foi
+destacado no CodeClimate, mesmo assim, foi atribuído a maior nota possível, nota
+\textbf{A}. Por fim, é destacado que as \textit{engines} que apontaram estes possíveis
+erros são: \textit{csslint}, \textit{duplication}, \textit{eslint} e
+\textit{phpmd}
+
+Link para a avaliação no CodeClimate\footnote{\url{https://codeclimate.com/github/spb-metrics/xemele}}.
+
 \section{Avalição Geral}
+
+Foram adicionados 31 softwares do SPB em ambas as ferramentas (Mezuro e
+CodeClimate), desenvolvidos em PHP e Python. Estas adições resultaram na
+análise descrita nos próximos parágrafos.
+
+No Mezuro, dos 31 softwares adicionados, somente 4 obtiveram sucesso na
+avaliação. Alguns dos problemas encontrados são: falta de espaço em disco para
+o download dos projetos, falha no redirecionamento após a adição do projeto,
+queda dos serviços no servidor de produção, lentidão no processo e falhas de
+processamento. A equipe do Mezuro esteve sempre a disposição para auxiliar na
+explanação e resolução destas falhas, seja via canal no IRC, via e-mail ou via
+\textit{issues} no Github do projeto. Estes problemas foram de fato detectados
+pela equipe na análise dos logs e nos relatos feitos, e foram registrados nos
+seguintes links:
+
+\begin{itemize}
+  \item \textbf{Capacidade de Disco}:
+    \subitem Handle full disk: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}
+    \subitem Schedule removal job for repositories with no periodicity: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}
+    \subitem Store SCM reference on a given processing: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}
+    \subitem Is the aggregation working correctly?: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/206}}
+  \item \textbf{Lentidão de Processamento}:
+    \subitem Slow processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/207}}
+    \subitem Multiple calls to process trigger multiple redundant periodic processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}
+    \subitem Separate processings in multiple queues: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}
+  \item \textbf{Falhas de Processamento}:
+    \subitem Handle `Metric configuration has already been taken` error: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}
+    \subitem Failed processing: \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}
+    \subitem Docker runner timeout: \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}
+\end{itemize}
+
+No CodeClimate, 16 softwares realizaram a \textit{build} da avaliação com
+sucesso. Nos que falharam, alguns dos erros foram encontrados em três das
+\textit{engines}: ora em \textit{duplication}, ora na \textit{phpmd}, ora na
+\textit{eslint}. E um dos processos gerou o erro 500. Em todas as falhas, é
+sugerido ao usuário entrar em contato com o suporte da ferramenta. As falhas
+são relacionadas com erros de \textit{time out}. A sugestão é a exclusão de
+arquivos com bibliotecas de terceiros, \textit{assets} de produção (como
+arquivos minimizados) e talvez arquivos de testes automatizados.
 
 % TODO: Resumo/discussão dos projetos de SPB

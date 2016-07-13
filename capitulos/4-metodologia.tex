@@ -15,7 +15,8 @@ qualidade a interpretação dos dados analisados \cite{deissenboeck2011quamoco}.
 
 Neste trabalho serão unidas determinadas métricas, para gerar uma ou várias
 visualizações que auxiliem o usuário do Mezuro a ter uma melhor interpretação do
-resultado gerado por esta ferramenta.
+resultado gerado por esta ferramenta. E será realizado duas análises
+exploratórias: do funcinonamento prático do Mezuro e dos softwares do SPB.
 
 Como exemplo dessa união e para a construção do exemplo de uso, é proposto
 utilizar-se da decisão dos colegas \citeonline{filgueiras2014mezuro}:
@@ -183,6 +184,22 @@ As hipóteses são:
 
 % TODO: elaborar e documentar as hipóteses
 
+\section{Análises Exploratórias}
+
+A análise exploratória do funcionamento prático do Mezuro, com os softwares do
+SPB, foi realizada da seguinte forma:
+
+\begin{itemize}
+  \item Categorização dos softwares que possuiam código-fonte versionado;
+  \item Download e versionamento dos que apenas possuem o código compactado no SPB;
+  \item Criação de um espelho no Github, em uma organização chamada \textbf{spb-metrics}
+  \item Adição dos softwares no Mezuro, utilizando as configurações para novas
+  linguagens avaliadas por esta ferramenta:
+    \subitem Configuração do Mezuro para PHP: CodeClimate PHPMD\footnote{\url{http://mezuro.org/pt/kalibro\_configurations/18}}
+    \subitem Configuração do Mezuro para Python: Python\footnote{\url{http://mezuro.org/pt/kalibro\_configurations/8}}
+  \item Comparação direta com o CodeClimate
+\end{itemize}
+
 \section{Proposta de Evolução da Visualização}
 
 A atividade de contribuição tecnológica tem como objetivo selecionar métricas
@@ -207,7 +224,7 @@ encadeamento destas etapas:
 % TODO: mudar estas atividades
 
 \begin{enumerate}
-  \item \textbf{Selecionar métricas}: Selecionar as métricas com maior nível de
+  \item \textbf{Selecionar Configurações}: Selecionar as métricas com maior nível de
   similaridade e afinidade com os objetivos de qualidade conhecidos.
 
   \item \textbf{Criar configuração}: Criar o contêiner no qual as métricas
