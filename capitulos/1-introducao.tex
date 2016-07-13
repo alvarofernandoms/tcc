@@ -13,6 +13,8 @@ de mensagens entre membros do projeto em listas de e-mail, artigos escritos por
 acadêmicos que buscam fama, entre outros \cite{messias2012}
 \cite{benkler2006wealth}.
 
+% TODO: evitar citações diretas - procurar mais lugares no texto
+
 É preciso processar esses dados de forma correta. E considerando também que
 desenvolvedores são cruciais para o sucesso de um projeto e os valores
 numéricos dos vários locais com dados disponibilizados publicamente em que é
@@ -46,63 +48,38 @@ mantê-los; reconhecimento do valor das pessoas envolvidas e interessadas, seja
 usuários finais, seja testadores de versões instáveis de software; entre outras
 características \cite{raymond1999cathedral}.
 
-Metodologias ágeis estão fortemente ligadas ao desenvolvimento de FOSS e
-possuem formas de trabalho semelhantes \cite{meirelles2013monitoramento}. Esse
-vínculo é expresso majoritariamente pelos os valores \cite{beck2001manifesto}:
+Neste trabalho, é apresentada uma análise exploratória da plataforma livre
+Mezuro\footnote{\url{http://mezuro.org/}}, que é uma ferramenta de monitoramento
+de código-fonte. O primeiro objetivo pensado para esta análise foi verificar a
+necessidade de aplicação de técnicas de Visualização de Software na plataforma
+Mezuro. Isso porque, tendo como motivação identificar os motivos do
+baixo número de usuários e número de projetos no Mezuro, em comparação, por
+exemplo, com o CodeClimate\footnote{\url{https://codeclimate.com/}}, que foi
+desenvolvido posteriormente ao Mezuro.
 
-\begin{itemize}
-  \item Indivíduos e interações são mais importantes que processos e
-  ferramentas;
-  \item Software em funcionamento é mais importante que documentação abrangente;
-  \item Colaboração com o cliente (usuários) é mais importante que negociação
-  de contratos;
-  \item Responder às mudanças é mais importante que seguir um plano.
-\end{itemize}
-
-% Introdução com forte embasamento em Métodos Ágeis e FOSS, e Visualização pra apoiar
-% citar PRMM, Fábio Kon... (verificar referências do Messias)
-
-\section{Contexto}
-
-Neste trabalho de conclusão de curso são apresentadas as relações entre
-visualização de software, FOSS e metodologias ágeis com as devidas adaptações e
-métricas de código-fonte para observação de que o entendimento do software e a
-averiguação da qualidade do mesmo são passiveis através da visualização de
-software. Para tanto, é proposto a análise exploratória do projeto
-Mezuro\footnote{\url{http://mezuro.org/}} que é uma ferramenta de monitoramento
-de código-fonte. E também a adequação de técnicas usualmente utilizadas
-para a geração de visualizações das informações geradas a partir da análise.
-
-Esta análise exploratória tem como motivação e visa identificar motivos para o
-baixo número de usuários ativos no Mezuro, considerando que a aplicação não
-possui visualização de software, sendo este um dos possíveis motivos para a
-baixa popularidade. Uma aplicação que serviu como comparação foi o
-CodeClimate\footnote{\url{https://codeclimate.com/}}.
-
-As contribuições idealizadas são portanto: análise exploratória do uso do Mezuro,
-uma vez que possui poucos usuários; validar as configurações do Mezuro na
-análise e interpretação de métricas; análise dos projetos do Portal do Software
-Público Brasileiro (SPB); e especificações da VS no Mezuro.
+Para realizar a análise exploratória proposta, inicialmente foi necessário
+validar uma das principais funcionalidades do Mezuro que são as configurações
+para a intepretação dos valores de métricas. Isso porque, os exemplos de uso
+selecionados para esta análise foram os projetos do Portal do Software
+Público Brasileiro (SPB), em que estava previsto para a incorporação do Mezuro.
 
 \section{Objetivos}
 
-Inicialmente a proposta deste trabalho é explorar todo funcionamento do Mezuro,
+O objetivo deste trabalho é avaliação da exibição dos dados das métricas de
+código-fonte, com intuito de apontar evoluções para o Mezuro deixar de ser uma
+plataforma em estado ``Beta''.
+%
+Isto também com o objetivo de explorar todo funcionamento do Mezuro, em especial,
 com foco nos coletores adicionados recentemente para projetos desenvolvidos nas
-linguagens de programação PHP e Python. Esta análise servirá para guiar suas próprias evoluções. Os softwares que foram utilizados como
-exemplos de uso são os do Portal do Software Público Brasileiro (SPB)
-categorizados como Software Público de fato, de acordo com os requisitos
-técnicos e jurídicos estabelecidos na IN 01/2011 \cite{santos2011in01}.
-
-Posteriormente, a geração de visualizações que podem
-ser \textit{instanciadas} em determinadas ferramentas de monitoramento de
-código-fonte, dada as adaptações para a coleta dos resultados da mesma. Com o
-foco no Mezuro, o objetivo deste trabalho é investigar e utilizar-se da
-visualização de software para auxiliar o controle da qualidade de um software.
-É feito a união de determinadas métricas para gerar uma ou várias visualizações
-que auxiliem o usuário a ter uma melhor interpretação do resultado gerado por
-esta ferramenta.
+linguagens de programação PHP e Python, no contexto da avaliação dos projetos do
+Portal do Software Público Brasileiro.
+%
+Assim gerando insumos para comparação do Mezuro com outras plataformas de
+avaliação de métricas de código-fonte.
 
 \section{Organização do Trabalho}
+
+% TODO: refazer esta organização
 
 O trabalho está organizado da seguinte maneira: capítulo 2, onde será tratado o
 Mezuro como principal ferramenta, foco da análise exploratória; capítulo 3, onde
