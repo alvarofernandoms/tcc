@@ -16,11 +16,11 @@ pelos diferentes poderes e esferas governamentais \cite{santos2011in01}.
 Este capítulo trata da análise das métricas do código-fonte dos projetos do SPB
 via Mezuro.
 
-O SPB portanto é uma plataforma Web de colaboração integrada. É composto por um
+O SPB portanto é uma plataforma \textit{Web} de colaboração integrada. É composto por um
 conjunto de ferramentas. São elas \cite{aboutSPB}:
 
 \begin{itemize}
-  \item \textbf{Noosfero:} Plataforma Web Livre de Redes Sociais, desenvolvida
+  \item \textbf{Noosfero:} Plataforma \textit{Web} Livre de Redes Sociais, desenvolvida
 	em Ruby on Rails. Responsável pelas funcionalidades de gerenciamento de
 	conteúdo (CMS) do SPB, permitindo a criação de páginas de usuários, softwares
 	e comunidades de forma flexível e customizável. É a ferramenta com maior
@@ -36,7 +36,7 @@ conjunto de ferramentas. São elas \cite{aboutSPB}:
 	através do próprio e-mail, sem a necessidade de acessar diretamente o SPB;
 	\item \textbf{Gitlab:} Gerenciador de repositórios Git com funcionalidades de
 	wiki e mapeamento de issues, escrito em Ruby;
-	\item \textbf{Mezuro:} Plataforma Web Livre para avaliação colaborativa de
+	\item \textbf{Mezuro:} Plataforma \textit{Web} Livre para avaliação colaborativa de
 	código fonte, desenvolvido em Ruby on Rails, também adicionada ao SPB para
 	fornecer acompanhamento da qualidade do código dos projetos \cite{aboutSPB}.
 \end{itemize}
@@ -217,18 +217,30 @@ seguintes links:
 
 \begin{itemize}
   \item \textbf{Capacidade de Disco}:
-    \subitem Handle full disk: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}
-    \subitem Schedule removal job for repositories with no periodicity: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}
-    \subitem Store SCM reference on a given processing: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}
-    \subitem Is the aggregation working correctly?: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/206}}
+    \begin{itemize}
+      \item Handle full disk: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}
+      \item Schedule removal job for repositories with no periodicity:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}
+      \item Store SCM reference on a given processing:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}
+      \item Is the aggregation working correctly?:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/206}}
+    \end{itemize}
   \item \textbf{Lentidão de Processamento}:
-    \subitem Slow processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/207}}
-    \subitem Multiple calls to process trigger multiple redundant periodic processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}
-    \subitem Separate processings in multiple queues: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}
+    \begin{itemize}
+      \item Slow processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/207}}
+      \item Multiple calls to process trigger multiple redundant periodic processings:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}
+      \item Separate processings in multiple queues:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}
+    \end{itemize}
   \item \textbf{Falhas de Processamento}:
-    \subitem Handle `Metric configuration has already been taken` error: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}
-    \subitem Failed processing: \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}
-    \subitem Docker runner timeout: \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}
+    \begin{itemize}
+      \item Handle `Metric configuration has already been taken` error:
+            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}
+      \item Failed processing: \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}
+      \item Docker runner timeout: \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}
+    \end{itemize}
 \end{itemize}
 
 No CodeClimate, 16 softwares realizaram a \textit{build} da avaliação com
