@@ -2,23 +2,24 @@
 
 Aluno: Álvaro Fernando
 
-Titulo: Análise exploratória do projeto Mezuro: uma proposta de evolução e
-aplicação de técnicas de Visualização de Software
+Titulo: Análise Exploratória do Projeto Mezuro: uma Proposta de Evolução da
+Apresentação das Métricas de Código-fonte
 
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
 
 ## Resumo
 
- O Mezuro é uma plataforma web livre de avaliação de código-fonte.
- As métricas são expostas por meio de números e grupos de leituras.
- O objetivo deste trabalho é evoluir a visualização das métricas de
- código dos softwares analisados pelo Mezuro. Como contribuição científica,
- ou atividade de pesquisa, será realizado o estudo das possíveis técnicas
- de visualização de software e suas combinações com as métricas de
- código-fonte. E como atividade tecnológica será proposto a visualização
- de um conjunto de métricas determinado, evolução das configurações de
- métrica do Mezuro e será proposto a contribuição aos mantenedores desta
- plataforma.
+  O Mezuro é uma plataforma Web livre de avaliação de código-fonte.
+  As métricas são expostas por meio de números e grupos de leituras.
+  O objetivo deste trabalho é realizar uma análise exploratória desta ferramenta,
+  abordando aspectos da visualização das métricas de código dos softwares
+  analisados por ela.
+  São planejadas as seguintes contribuições: validação das configurações de
+  métricas do Mezuro e uma especificação de visualização de software.
+  Como contribuição científica, ou atividade de pesquisa, será feita a análise
+  dos projetos disponibilizados no Portal do Software Público Brasileiro (SPB).
+  E será realizado o estudo das possíveis técnicas de visualização de software
+  aplicadas ao Mezuro.
 
 #Template TCC FGA-UnB
 
