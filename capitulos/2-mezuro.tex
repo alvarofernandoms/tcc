@@ -22,8 +22,6 @@ original do Kalibro ficasse debilitado em seu fluxo de execuções. Outra vantag
 dessa reescrita é a facilidade com que novos contribuidores puderam/poderão
 entender todo o funcionamento dessa parte do Mezuro. \cite{meirellesCibse2015}.
 
-% Sobre o Prezento
-
 A camada de apresentação do Mezuro é o Prezento, desenvolvido durante esse
 processo de reescrita utilizando o \textit{framework} para desenvolvimento de
 aplicações \textit{Web} Ruby on
@@ -33,12 +31,9 @@ Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}}.
 
 \section{Métricas de Código-Fonte}
 
-% TODO: Falar um pouco mais sobre métricas
-
-Para entender a plataforma Mezuro e usá-la adequandamente, deve-se compreender o que são métricas de código-fonte, que o seu monitoramento está ligado a avaliação da qualidade interna de um produto de software.
-
-% TODO: falar sobre os coletores, de forma direta e já exemplificando com métricas de código-fonte.
-% TODO: footnote com as configurações do Mezuro
+Para entender a plataforma Mezuro e usá-la adequandamente, deve-se compreender
+o que são métricas de código-fonte e que o seu monitoramento está ligado a
+avaliação da qualidade interna de um produto de software.
 
 Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
 produtividade e qualidade do software. Existem dois grandes conjuntos delas:
@@ -52,9 +47,155 @@ dos Métodos), métricas de acoplamento (ex. Acoplamento Aferente), métricas de
 herança (ex. Medida de Polimorfismo) e métricas de sistema (ex. Reúso de
 Classe) \cite{meirelles2013monitoramento}.
 
-% TODO: falar as métricas que são analisadas pelo Mezuro de fato
-% TODO: escrever sobre os ranges de métricas somente no momento em que eu falo
-%       das Configurações de Métricas
+% TODO: verificar se o Analizo foi realmente o primeiro coletor adicionado.
+
+Um dos principais coletores de métricas do Mezuro é o Analizo\footnote{\url{http://www.analizo.org/}},
+que funciona como um conjunto de ferramentas extensível para análise de
+código-fonte de múltiplas linguagens. Particulamente importante para o Mezuro,
+pois é ele que analisa métricas de C, C++ e Java, e foi o primeiro coletor
+adicionado. São disponibilizadas 47 métricas para o usuário utilizar-se e montar
+determinada configuração de métricas de acordo com as necessidades. Dentre estas
+47, é destacado os dois grupos relacionados à métricas no nível de projeto e as
+métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
+
+\begin{itemize}
+  \item \textbf{Métricas Nível de Projeto}
+		\begin{itemize}
+			\item Fator de Acomplamento Total - Total Coupling Factor (TCOF);
+			\item Total de Linhas de Código - Total Lines of Code (LOC);
+			\item Número Total de Métodos por Classe Abstrata - Total number of methods per abstract class;
+			\item Número Total de Módulos/Classes - Total Number of Modules/Classes;
+			\item Número Total de Módulos/Classes com pelo menos um atributo definido - Total number of modules/classes with at least one defined attributes;
+			\item Número Total de Módulos/Classes com pelo menos um método definido - Total number of modules/classes with at least one defined method;
+			\item Número Total de Métodos - Total Number of Methods
+		\end{itemize}
+  \item \textbf{Métricas Nível de Módulo}
+		\begin{itemize}
+			\item Média de Complexidade Ciclomática por Método - Average Cyclomatic Complexity per Method;
+			\item Média de Linhas de Código por Método - Average Method LOC;
+			\item Média de Parâmetros por Métodos - Average Number of Parameters per Method;
+			\item Acoplamento entre Objetos - Coupling Between Objects;
+			\item Profundidade da Árvore de Herança - Depth of Inheritance Tree;
+			\item Falta de Coesão em Métodos - Lack of Cohesion of Methods;
+			\item Linhas de Código - Lines of Code;
+			\item Máximo de Linhas de Código por Método - Max Method LOC;
+			\item Número de Atributos - Number of Attributes;
+			\item Número de Filhos - Number of Children;
+			\item Número de Métodos - Number of Methods;
+			\item Número de Atributos Públicos - Number of Public Attributes;
+			\item Número de Métodos Públicos - Number of Public Methods;
+			\item Respostas/Instâncias de uma Classe - Response For a Class
+		\end{itemize}
+\end{itemize}
+
+% TODO: pegar o nome completo do Morais, e o referenciar o se trabalho de mestrado
+
+Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
+uma configuração como possível ponto inicial para a análise, baseada no trabalho
+de mestrado de Eduardo Morais. Esta configuração está disponível no site do
+Mezuro com o seguinte nome: ``Java / C / C++"
+\footnote{\url{http://mezuro.org/pt/kalibro_configurations/1}}.
+
+Para projetos escritos em PHP, o Mezuro utiliza o CodeClimate PHPMD
+\footnote{\url{https://github.com/codeclimate/codeclimate-phpmd}}.
+Ele é um motor de análise de código que utiliza-se do \textit{PHP Mess Detector}
+(PHPMD) e procura por diferentes potenciais problemas, como possíveis \textit{bugs},
+código desnecessário, expressões demasiadamente complicadas, e parâmetros ou
+métodos não utilizados. Esta busca segue um conjunto de regras agrupadas em 6
+grandes conjuntos de regras: de código limpo; de tamanho de código; de
+convenção; de design; de nomeação; e de código não utilizado. Dentro de cada
+conjunto as métricas são \cite{PichlerPHPMD}:
+
+\begin{itemize}
+  \item \textbf{Regras de Código Limpo - Clean Code Rules}:
+		\begin{itemize}
+			\item Indicação de Argumentos Booleano que violam o princípio da
+						responsabilidade única - BooleanArgumentFlag;
+			\item Quando uma expressão \textit{else} não é necessária - ElseExpression;
+			\item Acesso Estático faz com que dependências fiquem inacessíveis - StaticAccess.
+		\end{itemize}
+  \item \textbf{Regras de Tamanho de Código - Code Size Rules}:
+		\begin{itemize}
+			\item Complexidade Ciclomática - CyclomaticComplexity;
+			\item Complexidade de N caminhos que o código pode ter - NPathComplexity;
+			\item Tamanho Excessivo de Método - ExcessiveMethodLength;
+			\item Tamanho Excessivo de Classe - ExcessiveClassLength;
+			\item Lista Excessiva de Parâmetros - ExcessiveParameterList;
+			\item Número Excessivo de Métodos e Atrbutos Públicos - ExcessivePublicCount;
+			\item Muitos Campos nos Formulários - TooManyFields;
+			\item Muitos Métodos por Classe - TooManyMethods;
+			\item Complexidade Excessiva da Classe - ExcessiveClassComplexity.
+		\end{itemize}
+  \item \textbf{Regras de Convenção - Controversial Rules}:
+		\begin{itemize}
+			\item Variáveis \textit{Super} Globais são consideradas uma má prática  -
+            Superglobals
+			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
+            de Classes - CamelCaseClassName;
+			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+            de Atributos - CamelCasePropertyName;
+			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+            de Métodos - CamelCaseMethodName;
+			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+            de Parâmetros - CamelCaseParameterName;
+			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+            de Variáveis - CamelCaseVariableName.
+		\end{itemize}
+  \item \textbf{Regras de Projeto - Design Rules}:
+		\begin{itemize}
+			\item Utilizar a expressão \textit{exit} é considerado uma má prática - ExitExpression;
+			\item Utilizar a expressão \textit{eval} é considerado uma má prática - EvalExpression;
+			\item Utilizar a expressão \textit{goto} é considerado uma má prática - GotoStatement;
+			\item Classes com Número Excessivo de filhos - NumberOfChildren;
+			\item Classes com Número Excessivo de Pais - DepthOfInheritance;
+			\item Classes com Muitas Depedências - CouplingBetweenObjects;
+		\end{itemize}
+  \item \textbf{Regras de Nomeação - Naming Rules}:
+		\begin{itemize}
+			\item Campos, atributos ou parâmetros são declarados com nomes muito
+            pequenos - ShortVariable;
+			\item Campos, atributos ou parâmetros são declarados com nomes muito
+            longos - LongVariable;
+      \item Construtores com Nome de Classes Enclausuradas -
+            ConstructorWithNameAsEnclosingClass;
+      \item Classes/interfaces constantes devem ser nomeadas com letras
+            maísculas - ConstantNamingConventions;
+      \item Verifica métodos com retorno do tipo booleano - BooleanGetMethodName.
+		\end{itemize}
+  \item \textbf{Regras de Código não Utilizado - Unsed Code Rules}:
+    \begin{itemize}
+      \item Detecta atributos privados que não são utilizados - UnusedPrivateField;
+      \item Detecta atributos locais que não são utilizados - UnusedLocalVariable;
+      \item Detecta métodos privados que não são utilizados - UnusedPrivateMethod;
+      \item Detecta parâmetros que não são utilizados - UnusedFormalParameter;
+    \end{itemize}
+\end{itemize}
+
+Todas essas 35 regras são utilizadas no Mezuro, e estão na Configuração com nome
+``CodeClimate PHPMD"\footnote{\url{http://mezuro.org/pt/kalibro_configurations/18}}.
+
+Outro coletor de métricas utilizado pelo Mezuro é o MetricFu
+\footnote{\url{https://github.com/metricfu/metric_fu/}}: uma gem que agrega
+ferramentas de análise de código Ruby. As métricas são: \textit{Flog, Flay,
+Saikuro, Churn, Reek, Roodi, Code Statistics,} \textit{Rails Best Practices}, e
+(opcionalmente) \textit{RCov}. Porém, o Mezuro diponibiliza apenas três dessas,
+podendo o usuário utilizar a Configuração já estabelecida, ``Ruby"
+\footnote{\url{http://mezuro.org/pt/kalibro_configurations/2}}.
+%
+As métricas são\cite{rubySadist}:
+
+\begin{itemize}
+  \item Pain - Flog - Verifica basicamente as métricas \textit{ABC - Assignments,
+        Branches, Calls} - (Atribuições, Ramos, Chamadas), com foco nas chamadas;
+  \item Complexidade Ciclomática - Saikuro;
+  \item Código Duplicado - Flay.
+\end{itemize}
+
+Por fim, o Radon\footnote{\url{https://pypi.python.org/pypi/radon}} é utilizado
+para a coleta de métricas Python. No Mezuro são utilizado as métricas de
+Complexidade Ciclomática, Índice de Manutenibilidade e Métricas Brutas/Puras
+(Linhas de Código, Linhas de Código Lógicas, Linhas de Comentários, Linhas de
+Literais Multilinhas e Linhas em Branco) \cite{radonDoc}.
 
 \section{Arquitetura e principais funcionalidades do Mezuro}
 
@@ -70,6 +211,8 @@ demonstrado na Figura \ref{fig:mezuroNoosferoArch}.
   \caption{Arquitetura do Mezuro \cite{camarinhaOSS2015}}
 	\label{fig:mezuroNoosferoArch}
 \end{figure}
+
+\newpage
 
 Onde os serviços são:
 
@@ -119,22 +262,81 @@ divididas em dois grupos:
     \end{itemize}
 \end{itemize}
 
-\newpage
-
-% TODO: com esse conjunto de funcionalidade o Mezuro apresenta-se como uma ferramenta
-%       destaca-se portanto que o Mezuro é uma ferramenta com grande pontecial
-%       em quem funcioliadades inovadoras e úteis, abordagem de interpretação adequada para o monitoramento, arquitetura bem modularizada,
-%       por isso o foco deste trabalho em melhorar a camada de GUI, que é o prezento, para aproveitar este potencial
+Com esse conjunto de fucionalidade, o Mezuro apresenta-se como uma ferramenta de
+distinta. Neste trabalho, destaca-se, portanto, que o Mezuro é uma ferramenta
+com grande potencial, e funcionalidades inovadoras e úteis. A arquitetura
+modularizada gera uma abordagem de interpretação adequada par ao monitoramento
+das métricas. Por isso, o foco deste trabalho é melhorar a camada de interface
+\textit{Web} de interação com o usuário, para exatamente aproveitar/alavancar este
+potencial.
 
 \section{Mezuro: Prezento}
 
-O Prezento é a camada da interface web do
+O Prezento é a camada da interface \textit{Web} do
 Mezuro. Desenvolvido em Ruby on Rails, atualmente utiliza as versões 2.3.0 do
 Ruby e 4.2.4 do Rails. Versões estas que estão em constante mudança, pois os
-autores têm como intuito usufruir o que há de mais recente das funcionalidades
+mantenedores têm como intuito usufruir o que há de mais recente das funcionalidades
 dessa tecnologia. Esta será a principal camada trabalhada neste trabalho de
 conclusão de curso, pois é nela que há a interação com o usuário.
 
-% TODO: completar com mais infromações do Prezento e adicionar figuras de um Software do SPB.
+Ela está disponível em dois idiomas: português e inglês. Quase todas as rotas
+do site são acessíveis publicamente, sem necessidade de inscrição na plataforma.
+Porém, Caso o usuário queira criar Configurações de Métrica, Grupos de Leitura,
+e/ou adicionar projetos para a avaliação é necessário realizar o cadastro.
 
-% TODO: apresentar a navagabilidade e a apresentação dos resultados.
+Ao acessar a página inicial\footnote{\url{http://mezuro.org/}}, é exposto ao
+usuário uma breve explicação sobre a plataforma. No menu superior fixo, estão
+presentes as opções: Início, Projetos, Repositórios, Configurações, Grupos de
+Leitura, Entrar, Inscriver-se e um \textit{dropdown menu} com a escolha do
+Idioma. Próximo ao rodapé da página, são expostos os últimos cinco projetos,
+repositórios e configurações criadas. A Figura XYZ mostra a página inicial.
+
+TODO: add figura da página inicial do Mezuro
+
+Para realizar o cadastro de usuário, basta informar nome, e-mail e senha. E o
+e-mail fica sendo utilizado como identificador de acesso.
+
+TODO: add figura das páginas de cadastro e login
+
+Na página destinada à exibição dos projetos, uma lista semelhante à Figura XYZ é
+mostrada. Se o usuário for o dono projeto, além do botão \textbf{Mostrar}, é
+acrescido o botão \textbf{Editar}. Caso contrário, o único acesso é o de
+visualização do projeto. Para criar um projeto, basta informar o nome, descrição
+e (caso queira) a Url de alguma imagem relacionada. Ao visualizar o projeto, o
+usuário pode conferir os repositórios adicionados.
+
+TODO: add figura das páginas relacionadas com os projetos
+
+A lista de repositórios tem um comportamento semelhante à de projetos, vide
+Figura XYZ. Na criação de um repositório, é necessário informar: nome, descrição,
+lincença, tipo de sistema de versionamento, endereço acessível para o repositório
+de código, qual ramo deseja-se que seja realizada a avaliação (se \textit{master},
+\textit{dev}, ou \textit{prod}, por exemplo), a frequência com deseja-se que o
+projeto seja reprocessado e a Configuração de Métrica.
+
+TODO: add figura - lista de repositórios
+
+As Configurações de Métrica seguem o mesmo padrão: visualização em lista, com
+botões de ``Mostrar" e ``Editar" (caso seja dono da Configuração). Para a criação
+de uma nova Configuração, basta informar o Nome e a Descrição. Posteriomente, na
+exibição desta Configuração criada, é possível adicionar quais métricas irão
+compor esta. Na escolha da métrica, é exposto ao usuário os 4 coletores
+disponíveis (Analizo, CodeClimate PHPMD, MetricFu e Radon). Escolhido a métrica,
+o usuário passa então para a configuração desta métrica, informando o peso dela
+para a avaliação, a forma de agregação e o grupo de leitura.
+
+TODO: add figura - configurações
+
+Para a criação dos Grupos de Leitura, basta também, informar o nome e descrição.
+E em seguinda, adicionar um leitura, indicando o rótulo que se é desejado atribuir,
+a nota, e uma cor.
+
+TODO: add imagem dos grupos de leitura
+
+A página de exibição dos resultados da avaliação é composta por informações do
+repositório, do processamento, árvore de módulos, resultados de métricas de
+\textit{hotspot} e resultados de métrica. A Figura XYZ mostar os resultados da
+análise\footnote{\url{http://mezuro.org/pt/repositories/114}} de um dos
+softwares do SPB, o Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
+
+TODO: add figura da análise do Xemelê
