@@ -1,193 +1,28 @@
 \chapter{Metodologia}\label{metodologia}
 
-\section{Objetivos}
-
-O objetivo deste capítulo é apresentar a metodologia utilizada para a
+Neste capítulo é apresentada a metodologia utilizada para a
 realização da pesquisa e contribuição tecnológica. A principal questão
-a ser respondida é: como a visualização de software pode auxiliar na
-interpretação das métricas coletadas e calculadas por ferramentas de análise
-de código?
+a ser respondida é: se a evolução do design da apresentação dos dados do Mezuro
+é suficiente para melhorar a sua visualização? Caso não, quais técnicas e
+tipos de VS são mais adequadas a exibição das métricas do Mezuro?
 
-Considerando esta questão, é importante ressaltar que existem incontáveis
-destas ferramentas. Porém estas analisam apenas aspectos mui específicos
-do software, e falham (algumas delas) em demostrar ao engenheiro de
-qualidade a interpretação dos dados analisados \cite{deissenboeck2011quamoco}.
+% TODO: relembrar o que foi dito na introdução
 
-Neste trabalho serão unidas determinadas métricas, para gerar uma ou várias
-visualizações que auxiliem o usuário do Mezuro a ter uma melhor interpretação do
-resultado gerado por esta ferramenta. E será realizado duas análises
-exploratórias: do funcinonamento prático do Mezuro e dos softwares do SPB.
+% TODO: explicar a pergunta, "isso pq o mezuro..."
 
-Como exemplo dessa união e para a construção do exemplo de uso, é proposto
-utilizar-se da decisão dos colegas \citeonline{filgueiras2014mezuro}:
-foram escolhidas três métricas para a configuração da visualização em
-radar: \textit{number of methods} (código: npm), \textit{number of public
-methods} (código nom) e \textit{total number of modules} (código:
-total\_modules); e a decisão de utilizar a biblioteca Javascript \textit{D3.js -
-Data-Driven Documents} \cite{filgueiras2014mezuro}.
+\section{Análise Exploratória do Mezuro}
 
-\section{Trabalhos Relacionados}
-
-No artigo \textit{CodeCrawler – An Extensible and Language Independent 2D and
-3D Software Visualization Tool}, \citeonline{lanza2005codecrawler}
-desenvolveram uma ferramenta para visualização de software capaz de exibir
-detalhes de uma forma polimétrica, que é capaz de mostrar informações como as
-métricas do software, sua semântica e a relação entre as classes, por exemplo.
-Segundo o autor, essa visualização pode ser aplicada em vários contextos e não
-somente em aspectos de software. Idealmente, a ferramenta é capaz de gerar
-visualizações para software com grande número de linhas código. Porém é levado
-em consideração a integração das visualizações em IDEs e essa solução não é
-explorada. A utilização da técnica em diferentes ferramentas também não é
-discutida.
-
-Os autores, \citeonline{dosvisualizacc}, do \textit{Visualização de Software
-Como Suporte ao Desenvolvimento Centrado em Métricas Orientadas a Objetivos}
-criaram um plugin escrito em C++ para visualização de métricas OO, que são
-coletadas pela ferramenta Qt Creator\footnote{\url{http://www.qt.io/ide/}}. As
-métricas definidas foram: média de atributos por métodos em uma classe (MAC);
-quantidade de métodos por classe (QMC); tamanho dos métodos por classe (TMC);
-quantidade de atributos por classe (QAC); e quantidade de métodos públicos
-(QMC). Métricas essas relacionadas com a categoria \textbf{estrutura} da VS.
-E nesse plugin os casos de uso ou funcionalidades
-são: calcular métricas: QAC; QMC; MAM; TMC; QMP. Além da
-possibilidade de calcular a média das métricas, obter detalhes das métricas e
-obter ajuda sobre as métricas. Um dos pontos importantes destacados no
-resultado é a observação de que é possível garantir certo nível de qualidade
-utilizando essas métricas até mesmo para projetos pequenos, com duas ou três
-classes.
-
-Porém a ferramenta só gera visualizações para aplicações escritas em C++, que é
-um fator limitante devido à incorporação do plugin à ferramenta Qt Creator. O
-plugin calcula também apenas cinco métricas consideradas fundamentais para
-avaliar a qualidade de um software. E o detalhamento de determinada classe e
-uma visualização da evolução do projeto em uma linha do tempo também não foram
-abordados neste trabalho.
-
-O artigo dos autores \citeonline{ramosanalise}, cujo o título é \textit{Análise de
-Métricas Estáticas para Sistemas JavaScript}, não trata necessariamente de
-visualização de software, embora em várias figuras mostrem distribuições dos
-projetos e seus respectivos valores das métricas escolhidas. Portanto,
-destacamos a escolha da ferramenta
-\textit{https://github.com/jared-stilwell/escomplex}\footnote{\url{https://github.com/jared-stilwell/escomplex}},
-que analisa métricas de projetos escritos em JavaScript (linguagem que ainda
-não é suportada para análise no Mezuro), e escolha das métricas que são: número
-de módulos; linhas de código; número de parâmetros; complexidade ciclomática;
-densidade de complexidade ciclomática; métricas de complexidade de Halstead; e
-índice de manutenção.
-
-É importante ressaltar também o artigo \textit{Understanding software evolution
-using a combination of software visualization and software metrics}. Os
-autores, \citeonline{Lanza02understandingsoftware}, ressaltam que há uma grande
-quantidade de dados hoje em circulação nos sistemas informatizados. Consideram ser este um
-dos maiores problemas nas pesquisas de evolução de um software, e em alguns
-casos as várias versões destes sistemas precisam ser analisadas em paralelo.
-Então, considerando esta complexidade, uma técnica que pode auxiliar na
-abordagem destas pesquisas é a visualização de software. É comentado sobre a
-capacidade humana de observação de múltiplos aspectos de um problema em
-paralelo e sua ligação direta com a visualização e o auxílio que possivelmente
-esta trará o entendimento do sistema.
-
-A técnica visual utilizada foi a matriz de evolução: combina visualização de
-software com suas métricas \cite{lanza2001evolution}. Esta técnica permite
-observar classes que merecem atenção, por exemplo, por terem crescido ou
-encolhido durante a vida útil do sistema. E a abordagem apresentada é
-independente da linguagem, mesmo que em um dos estudos de caso tenha sido
-analisado um software escrito em Smalltalk.
-
-Dissertando um pouco mais sobre a técnica, \citeonline{Lanza02understandingsoftware}
-mostram suas minúcias. Cada coluna representa as diferentes versões do
-software. Cada linha representa uma classe. E nessa técnica há algo importante
-para este trabalho de conclusão de curso, onde é desejável trabalhar com o
-software e a evolução do mesmo durante certo tempo ou período.
-
-Características que podem ser observadas na técnica:
-
-\begin{itemize}
-  \item Tamanho dos sistemas em termos de classes. Quanto mais linhas, maior o
-  sistema;
-  \item Classes adicionadas e removidas;
-  \item Períodos de decréscimo, estabilização ou crescimento do sistema durante a
-  sua ``evolução''
-  \item Classes \textit{Dayfly}. Classes com um tempo de vida pequeno, por
-  exemplo que apenas apareceram em uma única versão do sistema;
-  \item Classes que se mantêm (o contrário da característica observada no ponto
-  anterior).
-\end{itemize}
-
-Porém, no artigo foi constatado que essa representação não é precisa o suficiente.
-A evolução então seria o uso das métricas de código-fonte.
-
-A Figura \ref{fig:evolutionMatrixAspects} foi extraída do artigo e mostra essas
-características ou aspectos na evolução de um sistema, utilizando a técnica da
-matriz de evolução.
-
-\begin{figure}[!htb]
-  \centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
-    {figuras/evolutionMatrixAspects.eps}
-  \caption{Aspectos da evolução de um sistema utilizando Matriz de Evolução
-  \cite{Lanza02understandingsoftware}}
-  \label{fig:evolutionMatrixAspects}
-\end{figure}
-
-
-Ainda comentando sobre o artigo \textit{Understanding software evolution using
-a combination of software visualization and software metrics}, destacamos
-o modo como foi inserida esta evolução da utilização das métricas de código-fonte:
-altura e largura das caixas na visualização representam métricas das
-classes. Métricas utilizadas: número de métodos (\textit{NOM}) e número de
-atributos (\textit{NOA}).
-
-E com as métricas definidas, foi feita uma categorização das classes em:
-
-\begin{itemize}
-  \item \textit{Pulsar}: uma classe que cresce e diminui durante o ciclo de
-  vida do sistema;
-  \item \textit{Supernova}: classe que de repente cresce bastante;
-  \item \textit{White Dwarf}: classe que era grande, mas por algum motivo as
-  suas responsabilidades foram divididas em outras classes e esta diminui;
-  \item \textit{Red Giant}: é uma classe considerada \textit{god class}
-  \cite{riel1996object}, por muito tempo, ou seja: uma classe grande que
-  implementa muitas funcionalidades;
-  \item \textit{Idle}: classe constante, inativa, sem grandes modificações.
-\end{itemize}
-
-Concluindo, o artigo apresenta uma abordagem útil que talvez auxilie no
-entendimento de um sistema. Porém é abordado no mesmo uma quantidade de
-métricas pequena (embora significativa para o contexto). Outro ponto negativo é
-que em sistemas mui grandes, a visualização pode esbarrar em limitações de
-exibição em uma única tela. E a abordagem pode apresentar problemas com nomes
-repetidos de classes (considerando que este pode ser ou não um erro no
-desenvolvimento de um sistema).
-
-\section{Questão Problema e Hipóteses}
-
-Reforçando a questão problema (QP), foram levantadas estas outras abaixo:
-
-\begin{itemize}
-  \item QP1 - Como a visualização de software pode auxiliar na
-  interpretação das métricas coletadas e calculadas pelo Mezuro?
-  \item QP2 - Quais técnicas de visualização que melhor se adequam ao
-  contexto do Mezuro, possibilitando a aplicação em qualquer contexto de
-  configuração?
-  \item QP3 - Como representar as diferentes perspectivas sobre o processo
-  de desenvolvimento e o produto de software?
-\end{itemize}
-
-As hipóteses são:
-
-\begin{itemize}
-  \item H1 - Não haverá uma visualização única para todas as métricas.
-  \item H2 - Algumas métricas poderão ser apresentadas de uma forma combinada
-  em uma única representação/visualização.
-\end{itemize}
-
-% TODO: elaborar e documentar as hipóteses
-
-\section{Análises Exploratórias}
+% TODO: contextualizar..
+% "para responder a questão, a primeira análise exploratória com os objetivos
+% de fazer isso e aquilo, relaiz"
 
 A análise exploratória do funcionamento prático do Mezuro, com os softwares do
 SPB, foi realizada da seguinte forma:
+
+% TODO: explicar estas atividades
+% explicar o que eu fiz na tabela, categorizar por software
+% explicar o pq dos arquivos compactados
+% explicar pq a escolha do github
 
 \begin{itemize}
   \item Categorização dos softwares que possuiam código-fonte versionado;
@@ -202,9 +37,16 @@ SPB, foi realizada da seguinte forma:
               Python\footnote{\url{http://mezuro.org/pt/kalibro\_configurations/8}}
     \end{itemize}
   \item Comparação direta com o CodeClimate
+  \item Pesquisa via questionário com usuários do Mezuro:
+  \item Especificação de Melhorias de Design da apresentação dos dados do Mezuro;
+  \item Pré-seleção e especificação de VS para o Mezuro:
 \end{itemize}
 
-\section{Proposta de Evolução da Visualização}
+\begin{comment}
+
+\section{Pré-seleção de Visualizações}
+
+% TODO: "o segundo passo foi então..."
 
 A atividade de contribuição tecnológica tem como objetivo selecionar métricas
 com um certo nível  de similaridade e importância quando unidas, e a exibição de
@@ -292,3 +134,7 @@ encadeamento destas etapas:
 %   - Categorização nas planilhas
 %   - Disponibilizar o códio em algum  sistema de versionamento
 %   - Adicionar à ferramentas: CodeClimate e Mezuro.
+
+\end{comment}
+
+% TODO: fechar metodologia, para não terminar com itemize
