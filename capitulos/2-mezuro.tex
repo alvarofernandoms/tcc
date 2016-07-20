@@ -288,33 +288,95 @@ Ao acessar a página inicial\footnote{\url{http://mezuro.org/}}, é exposto ao
 usuário uma breve explicação sobre a plataforma. No menu superior fixo, estão
 presentes as opções: Início, Projetos, Repositórios, Configurações, Grupos de
 Leitura, Entrar, Inscriver-se e um \textit{dropdown menu} com a escolha do
-Idioma. Próximo ao rodapé da página, são expostos os últimos cinco projetos,
-repositórios e configurações criadas. A Figura XYZ mostra a página inicial.
+Idioma. Próximo ao rodapé da página, são exebidos os últimos cinco projetos,
+repositórios e configurações criadas. A Figura \ref{fig:mezuro-homepage}
+mostra a página inicial.
 
-TODO: add figura da página inicial do Mezuro
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-homepage.eps}
+  \caption{Mezuro - Página Inicial}
+	\label{fig:mezuro-homepage}
+\end{figure}
+
+\newpage
 
 Para realizar o cadastro de usuário, basta informar nome, e-mail e senha. E o
 e-mail fica sendo utilizado como identificador de acesso.
 
-TODO: add figura das páginas de cadastro e login
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-cadastro.eps}
+  \caption{Mezuro - Página Cadastro de Usuário}
+	\label{fig:mezuro-cadastro}
+\end{figure}
 
-Na página destinada à exibição dos projetos, uma lista semelhante à Figura XYZ é
-mostrada. Se o usuário for o dono projeto, além do botão \textbf{Mostrar}, é
-acrescido o botão \textbf{Editar}. Caso contrário, o único acesso é o de
-visualização do projeto. Para criar um projeto, basta informar o nome, descrição
-e (caso queira) a Url de alguma imagem relacionada. Ao visualizar o projeto, o
-usuário pode conferir os repositórios adicionados.
+\newpage
 
-TODO: add figura das páginas relacionadas com os projetos
+Na página destinada à exibição dos projetos, uma lista semelhante à Figura
+\ref{fig:mezuro-projetos-v2} é mostrada. Se o usuário for o dono projeto, além do
+botão \textbf{Mostrar}, é acrescido o botão \textbf{Editar}. Caso contrário, o
+único acesso é o de visualização do projeto. Para criar um projeto, basta
+informar o nome, descrição e (caso queira) a Url de alguma imagem relacionada.
+Ao visualizar o projeto, o usuário pode conferir os repositórios adicionados.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-projetos-v2.eps}
+  \caption{Mezuro - Lista de Projetos}
+	\label{fig:mezuro-projetos-v2}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-projeto-cadastro.eps}
+  \caption{Mezuro - Cadastro de Projetos}
+	\label{fig:mezuro-projeto-cadastro}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-projeto-view.eps}
+  \caption{Mezuro - Página de Projeto}
+	\label{fig:mezuro-projeto-view}
+\end{figure}
+
+\newpage
 
 A lista de repositórios tem um comportamento semelhante à de projetos, vide
-Figura XYZ. Na criação de um repositório, é necessário informar: nome, descrição,
-lincença, tipo de sistema de versionamento, endereço acessível para o repositório
-de código, qual ramo deseja-se que seja realizada a avaliação (se \textit{master},
+Figura \ref{fig:mezuro-repositorios-v2}. Na criação de um repositório, é
+necessário informar: nome, descrição, lincença, tipo de sistema de
+versionamento, endereço acessível para o repositório de código, qual ramo
+deseja-se que seja realizada a avaliação (se \textit{master},
 \textit{dev}, ou \textit{prod}, por exemplo), a frequência com deseja-se que o
 projeto seja reprocessado e a Configuração de Métrica.
 
-TODO: add figura - lista de repositórios
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-repositorios-v2.eps}
+  \caption{Mezuro - Lista de Repositórios}
+	\label{fig:mezuro-repositorios-v2}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-repositorio-cadastro.eps}
+  \caption{Mezuro - Cadastro de Repositório}
+	\label{fig:mezuro-repositorio-cadastro}
+\end{figure}
+
+\newpage
 
 As Configurações de Métrica seguem o mesmo padrão: visualização em lista, com
 botões de ``Mostrar" e ``Editar" (caso seja dono da Configuração). Para a criação
@@ -325,13 +387,81 @@ disponíveis (Analizo, CodeClimate PHPMD, MetricFu e Radon). Escolhido a métric
 o usuário passa então para a configuração desta métrica, informando o peso dela
 para a avaliação, a forma de agregação e o grupo de leitura.
 
-TODO: add figura - configurações
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-configuracoes.eps}
+  \caption{Mezuro - Lista de Configurações}
+	\label{fig:mezuro-configuracoes}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-configuracao-cadastro.eps}
+  \caption{Mezuro - Cadastro de Configuração}
+	\label{fig:mezuro-configuracao-cadastro}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-configuracao-view.eps}
+  \caption{Mezuro - Página de Configuração}
+	\label{fig:mezuro-configuracao-view}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-configuracao-add-metric.eps}
+  \caption{Mezuro - Adicionar Métrica}
+	\label{fig:mezuro-configuracao-add-metric}
+\end{figure}
+
+\newpage
 
 Para a criação dos Grupos de Leitura, basta também, informar o nome e descrição.
 E em seguinda, adicionar um leitura, indicando o rótulo que se é desejado atribuir,
 a nota, e uma cor.
 
-TODO: add imagem dos grupos de leitura
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-leituras.eps}
+  \caption{Mezuro - Lista de Grupos de Leitura}
+	\label{fig:mezuro-leituras}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-leitura-cadastro.eps}
+  \caption{Mezuro - Cadastro de Grupos de Leitura}
+	\label{fig:mezuro-leitura-cadastro}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-leitura-view.eps}
+  \caption{Mezuro - Página de um Grupo de Leitura}
+	\label{fig:mezuro-leitura-view}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-leitura-add.eps}
+  \caption{Mezuro - Adicionar Leitura}
+	\label{fig:mezuro-leitura-add}
+\end{figure}
+
+\newpage
 
 A página de exibição dos resultados da avaliação é composta por informações do
 repositório, do processamento, árvore de módulos, resultados de métricas de
@@ -339,4 +469,10 @@ repositório, do processamento, árvore de módulos, resultados de métricas de
 análise\footnote{\url{http://mezuro.org/pt/repositories/114}} de um dos
 softwares do SPB, o Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
 
-TODO: add figura da análise do Xemelê
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-repositorio-view.eps}
+  \caption{Mezuro - Página de Repositório}
+	\label{fig:mezuro-repositorio-view}
+\end{figure}
