@@ -29,9 +29,9 @@ Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}}.
 %
 É nesta camada que está o foco das análises feitas neste trabalho.
 
-\section{Métricas de Código-Fonte}
+\section{Métricas de Código-fonte}
 
-Para entender a plataforma Mezuro e usá-la adequandamente, deve-se compreender
+Para entender a plataforma Mezuro e usá-la adequadamente, deve-se compreender
 o que são métricas de código-fonte e que o seu monitoramento está ligado a
 avaliação da qualidade interna de um produto de software.
 
@@ -47,11 +47,9 @@ dos Métodos), métricas de acoplamento (ex. Acoplamento Aferente), métricas de
 herança (ex. Medida de Polimorfismo) e métricas de sistema (ex. Reúso de
 Classe) \cite{meirelles2013monitoramento}.
 
-% TODO: verificar se o Analizo foi realmente o primeiro coletor adicionado.
-
 Um dos principais coletores de métricas do Mezuro é o Analizo\footnote{\url{http://www.analizo.org/}},
 que funciona como um conjunto de ferramentas extensível para análise de
-código-fonte de múltiplas linguagens. Particulamente importante para o Mezuro,
+código-fonte de múltiplas linguagens. Particularmente importante para o Mezuro,
 pois é ele que analisa métricas de C, C++ e Java, e foi o primeiro coletor
 adicionado. São disponibilizadas 47 métricas para o usuário utilizar-se e montar
 determinada configuração de métricas de acordo com as necessidades. Dentre estas
@@ -61,7 +59,7 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 \begin{itemize}
   \item \textbf{Métricas Nível de Projeto}
 		\begin{itemize}
-			\item Fator de Acomplamento Total - Total Coupling Factor (TCOF);
+			\item Fator de Acoplamento Total - Total Coupling Factor (TCOF);
 			\item Total de Linhas de Código - Total Lines of Code (LOC);
 			\item Número Total de Métodos por Classe Abstrata - Total number of methods per abstract class;
 			\item Número Total de Módulos/Classes - Total Number of Modules/Classes;
@@ -88,7 +86,7 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 		\end{itemize}
 \end{itemize}
 
-% TODO: pegar o nome completo do Morais, e o referenciar o se trabalho de mestrado
+% TODO: pegar o nome completo do Morais, e referenciar o se trabalho de mestrado
 
 Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
 uma configuração como possível ponto inicial para a análise, baseada no trabalho
@@ -121,7 +119,7 @@ conjunto as métricas são \cite{PichlerPHPMD}:
 			\item Tamanho Excessivo de Método - ExcessiveMethodLength;
 			\item Tamanho Excessivo de Classe - ExcessiveClassLength;
 			\item Lista Excessiva de Parâmetros - ExcessiveParameterList;
-			\item Número Excessivo de Métodos e Atrbutos Públicos - ExcessivePublicCount;
+			\item Número Excessivo de Métodos e Atributos Públicos - ExcessivePublicCount;
 			\item Muitos Campos nos Formulários - TooManyFields;
 			\item Muitos Métodos por Classe - TooManyMethods;
 			\item Complexidade Excessiva da Classe - ExcessiveClassComplexity.
@@ -148,7 +146,7 @@ conjunto as métricas são \cite{PichlerPHPMD}:
 			\item Utilizar a expressão \textit{goto} é considerado uma má prática - GotoStatement;
 			\item Classes com Número Excessivo de filhos - NumberOfChildren;
 			\item Classes com Número Excessivo de Pais - DepthOfInheritance;
-			\item Classes com Muitas Depedências - CouplingBetweenObjects;
+			\item Classes com Muitas Dependências - CouplingBetweenObjects;
 		\end{itemize}
   \item \textbf{Regras de Nomeação - Naming Rules}:
 		\begin{itemize}
@@ -159,7 +157,7 @@ conjunto as métricas são \cite{PichlerPHPMD}:
       \item Construtores com Nome de Classes Enclausuradas -
             ConstructorWithNameAsEnclosingClass;
       \item Classes/interfaces constantes devem ser nomeadas com letras
-            maísculas - ConstantNamingConventions;
+            maiúsculas - ConstantNamingConventions;
       \item Verifica métodos com retorno do tipo booleano - BooleanGetMethodName.
 		\end{itemize}
   \item \textbf{Regras de Código não Utilizado - Unsed Code Rules}:
@@ -178,7 +176,7 @@ Outro coletor de métricas utilizado pelo Mezuro é o MetricFu
 \footnote{\url{https://github.com/metricfu/metric_fu/}}: uma gem que agrega
 ferramentas de análise de código Ruby. As métricas são: \textit{Flog, Flay,
 Saikuro, Churn, Reek, Roodi, Code Statistics,} \textit{Rails Best Practices}, e
-(opcionalmente) \textit{RCov}. Porém, o Mezuro diponibiliza apenas três dessas,
+(opcionalmente) \textit{RCov}. Porém, o Mezuro disponibiliza apenas três dessas,
 podendo o usuário utilizar a Configuração já estabelecida, ``Ruby"
 \footnote{\url{http://mezuro.org/pt/kalibro_configurations/2}}.
 %
@@ -199,17 +197,15 @@ Literais Multilinhas e Linhas em Branco) \cite{radonDoc}.
 
 \section{Arquitetura e principais funcionalidades do Mezuro}
 
-% TODO: atualizar esta arquitetura
-
 Em resumo, a arquitetura do Mezuro é composta por três serviços, como
-demonstrado na Figura \ref{fig:mezuroNoosferoArch}.
+demonstrado na Figura \ref{fig:mezuro_arch_v2}.
 
 \begin{figure}[!htb]
 	\centering
     \includegraphics[keepaspectratio=true,scale=0.5]
-    {figuras/mezuroCloudArch.eps}
-  \caption{Arquitetura do Mezuro \cite{camarinhaOSS2015}}
-	\label{fig:mezuroNoosferoArch}
+    {figuras/mezuro_arch_v2.eps}
+  \caption{Arquitetura do Mezuro}
+	\label{fig:mezuro_arch_v2}
 \end{figure}
 
 \newpage
@@ -217,21 +213,43 @@ demonstrado na Figura \ref{fig:mezuroNoosferoArch}.
 Onde os serviços são:
 
 \begin{itemize}
-  \item \textit{Prezento}: para a interface gráfica do usuário
-  \item \textit{Kalibro Processor}: para a análise do código
-  \item \textit{Kalibro Configurations}: para o gerenciamento das configurações
+  \item \textit{Prezento}\footnote{\url{https://github.com/mezuro/prezento}}:
+        para a interface gráfica do usuário;
+  \item \textit{Kalibro Processor}\footnote{\url{https://github.com/mezuro/kalibro\_processor}}:
+        para a análise do código;
+  \item \textit{Kalibro Configurations}\footnote{\url{https://github.com/mezuro/kalibro\_configurations}}:
+        para o gerenciamento das configurações.
 \end{itemize}
 
 A decisão de dividir o Kalibro em serviços separados foi tomada para deixar
 cada um deles com menos responsabilidades, facilitando a manutenção e evolução
 \cite{camarinhaOSS2015}. E a comunicação entre estes serviços é feita através
-do Kalibro Client: um quarto software também escrito em Ruby, mantendo a
-escolha de centralização em uma única tecnologia. E, como demonstra Figura \ref{fig:mezuroNoosferoArch}, para simplificar a
-implementação, também foi decidido que a comunicação entre os serviços seria
-RESTful.
+do Kalibro Client\footnote{\url{https://github.com/mezuro/kalibro\_client}}:
+um quarto software também escrito em Ruby, mantendo a escolha de centralização
+em uma única tecnologia. E, como demonstra Figura \ref{fig:mezuro_arch_v2},
+para simplificar a implementação, também foi decidido que a comunicação entre
+os serviços seria RESTful.
 
-Dada essa arquitetura baseada em serviços, as principais funcionalidades podem ser
-divididas em dois grupos:
+O outro elemento presente na imagem, chamado \textbf{Kolekti}\footnote{\url{https://github.com/mezuro/kolekti}},
+é uma \textit{Rubygem} responsável pela extração e abstração dos coletores
+(Analizo, MetricFu, Radon, PHPMD), o que resulta em um \textit{parse} para o
+\textit{Kalibro Processor} tornando fácil a adição de novos coletores no Mezuro.
+Cada \textit{kolekti} possui o seu respectivo repositório na organização no
+Github: kolekti\_analizo\footnote{\url{https://github.com/mezuro/kolekti\_analizo}},
+kolekti\_metricfu\footnote{\url{https://github.com/mezuro/kolekti\_metricfu}},
+kolekti\_radon\footnote{\url{https://github.com/mezuro/kolekti\_radon}} e
+kolekti\_cc\_phpmd\footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd}}.
+
+Outro componente desenvolvido pela equipe do Mezuro, é o \textbf{Likeno}. A
+função principal dele é conectar serviços através de uma API RESTful. Parte do
+é extraído do \textit{Kalibro Client}, porém simplificando e estabelecendo uma
+prática de reuso para projetos que não tenham relação com Mezuro. O
+\textit{Likeno} também foi empacotado como uma \textit{Gem} e é similar à outras
+APIs, como a \textit{ActiveResource}\footnote{\url{https://github.com/rails/activeresource}}
+e a \textit{her}\footnote{\url{https://github.com/remiprev/her}}.
+
+Dada essa arquitetura baseada em serviços, as principais funcionalidades podem
+ser divididas em dois grupos:
 
 \begin{itemize}
   \item Projeto
@@ -262,7 +280,7 @@ divididas em dois grupos:
     \end{itemize}
 \end{itemize}
 
-Com esse conjunto de fucionalidade, o Mezuro apresenta-se como uma ferramenta
+Com esse conjunto de funcionalidades, o Mezuro apresenta-se como uma ferramenta
 inovadora. Neste trabalho, destaca-se, portanto, que o Mezuro é uma ferramenta
 com grande potencial, e funcionalidades inovadoras e úteis. A arquitetura
 modularizada gera uma abordagem de interpretação adequada par ao monitoramento
@@ -287,8 +305,8 @@ e/ou adicionar projetos para a avaliação é necessário realizar o cadastro.
 Ao acessar a página inicial\footnote{\url{http://mezuro.org/}}, é exposto ao
 usuário uma breve explicação sobre a plataforma. No menu superior fixo, estão
 presentes as opções: Início, Projetos, Repositórios, Configurações, Grupos de
-Leitura, Entrar, Inscriver-se e um \textit{dropdown menu} com a escolha do
-Idioma. Próximo ao rodapé da página, são exebidos os últimos cinco projetos,
+Leitura, Entrar, Inscrever-se e um \textit{dropdown menu} com a escolha do
+Idioma. Próximo ao rodapé da página, são exibidos os últimos cinco projetos,
 repositórios e configurações criadas. A Figura \ref{fig:mezuro-homepage}
 mostra a página inicial.
 
@@ -352,7 +370,7 @@ Ao visualizar o projeto, o usuário pode conferir os repositórios adicionados.
 
 A lista de repositórios tem um comportamento semelhante à de projetos, vide
 Figura \ref{fig:mezuro-repositorios-v2}. Na criação de um repositório, é
-necessário informar: nome, descrição, lincença, tipo de sistema de
+necessário informar: nome, descrição, licença, tipo de sistema de
 versionamento, endereço acessível para o repositório de código, qual ramo
 deseja-se que seja realizada a avaliação (se \textit{master},
 \textit{dev}, ou \textit{prod}, por exemplo), a frequência com deseja-se que o
@@ -380,7 +398,7 @@ projeto seja reprocessado e a Configuração de Métrica.
 
 As Configurações de Métrica seguem o mesmo padrão: visualização em lista, com
 botões de ``Mostrar" e ``Editar" (caso seja dono da Configuração). Para a criação
-de uma nova Configuração, basta informar o Nome e a Descrição. Posteriomente, na
+de uma nova Configuração, basta informar o Nome e a Descrição. Posteriormente, na
 exibição desta Configuração criada, é possível adicionar quais métricas irão
 compor esta. Na escolha da métrica, é exposto ao usuário os 4 coletores
 disponíveis (Analizo, CodeClimate PHPMD, MetricFu e Radon). Escolhido a métrica,
@@ -424,7 +442,7 @@ para a avaliação, a forma de agregação e o grupo de leitura.
 \newpage
 
 Para a criação dos Grupos de Leitura, basta também, informar o nome e descrição.
-E em seguinda, adicionar um leitura, indicando o rótulo que se é desejado atribuir,
+E em seguida, adicionar um leitura, indicando o rótulo que se é desejado atribuir,
 a nota, e uma cor.
 
 \begin{figure}[!htb]
@@ -465,9 +483,10 @@ a nota, e uma cor.
 
 A página de exibição dos resultados da avaliação é composta por informações do
 repositório, do processamento, árvore de módulos, resultados de métricas de
-\textit{hotspot} e resultados de métrica. A Figura XYZ mostar os resultados da
-análise\footnote{\url{http://mezuro.org/pt/repositories/114}} de um dos
-softwares do SPB, o Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
+\textit{hotspot} e resultados de métrica. A Figura \ref{fig:mezuro-repositorio-view}
+mostra os resultados da análise\footnote{\url{http://mezuro.org/pt/repositories/114}}
+de um dos softwares do SPB, o Xemelê
+\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
 
 \begin{figure}[!htb]
 	\centering
