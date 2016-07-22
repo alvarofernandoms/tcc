@@ -25,12 +25,46 @@ SPB, foi realizada da seguinte forma:
 % explicar pq a escolha do github
 
 \begin{description}
-  \item [Categorização dos softwares que possuiam código-fonte versionado:]
-  ...
+
+  \item [Categorização dos softwares do SPB:]
+    A categorização foi realizada em uma planinha e está disponível para
+    visualização pública\footnote{\url{https://goo.gl/fYzY84}}. Foram
+    catalogados apenas os softwares categorizados como \textbf{software público}.
+    A ordem das linhas da planilha está por nome dos softwares, alfabeticamente.
+    Além dessa coluna com os nomes, foi adicionado uma para registrar se os
+    administradores do software disponibilizaram o código de forma versionada no
+    Gitlab do SPB. A terceira coluna refere-se a linguagem de programação
+    predominante no desenvolvimento do projeto. A coluna com o título
+    \textit{Link - Código} representa o link para o espelho do código criado no
+    Github. As duas últimas colunas são para o registro dos links para a
+    avaliação do software no Mezuro e no CodeClimate.
+
   \item [Download e versionamento dos que apenas possuem o código compactado no SPB:]
-  ...
+    Grande parte dos softwares do SPB não possui o código-fonte versionado. Para
+    a solução desse desafio, foi realizado o download dos arquivos compactados
+    (zip, tar, tar.gz) dos projetos em PHP, iniciado um repositório Git no
+    diretório do projeto e realizado um \textit{commit} inicial com a adição de
+    todo o projeto.
+
   \item [Criação de um espelho no Github, em uma organização chamada \textit{spb-metrics}:]
-  ...
+    Após o Download e versionamento do código, foi realizada a atualização de um
+    repositório remoto no Github, na organização criada específica para esta
+    análise exploratória. A escolha de utilizar o Github justifica-se pelas
+    limitações de inserções de projetos para avaliação no CodeClimate.
+    Inicialmente, foi-se pensado o \textit{upload} em outros serviços, como o
+    Bitbucket, visto que alguns softwares já possuem espelhos neste serviço.
+    Porém, esta primeira abordagem foi abandonada, pois se o projeto não
+    estiver disponível no Github, o CodeClimate exige uma conta paga para a
+    avaliação.
+
+    Para os softwares que possuem o código versionando no SPB, além desta
+    limitação do CodeClimate, um problema com o certificado de segurança
+    impossibilita o \textit{clone} de projetos utilizando o protocolo HTTPS, que
+    é geralmente a forma como as ferramentas de avaliação de código-fonte faz o
+    download dos softwares. Portanto, foi realizado a atualização de um outro
+    espelho remoto também no Github, na organização
+    \textit{spb-metrics}\footnote{\url{https://github.com/spb-metrics}}.
+
   \item [Adição dos softwares no Mezuro, utilizando as configurações para novas
   linguagens avaliadas por esta ferramenta]:
     \begin{itemize}
@@ -39,8 +73,34 @@ SPB, foi realizada da seguinte forma:
       \item Configuração do Mezuro para Python:
               Python\footnote{\url{http://mezuro.org/pt/kalibro\_configurations/8}}
     \end{itemize}
+
+    Após a criação do espelho no Github, foi realizado a adição destes projetos
+    para a avaliação no Mezuro. Atividade esta em que foi estabelecido os
+    seguintes passos:
+    \begin{enumerate}
+        \item Adicionado o nome utilizando o mesmo do SPB;
+        \item Adicionado a descrição com a breve descrição do projeto no SPB;
+        \item Para a escolha da licença, foi estabelecido utilizar a mesmo do
+              software, quando possuía. Caso contrário, a escolha foi a
+              \textit{Affero GNU Public License (AGPL-3.0)};
+        \item Adicionado o endereço do projeto na organização
+              \textit{spb-metrics} no Github;
+        \item A ramo de desenvolvimento escolhido foi o principal (master);
+        \item Não foi estabelecido uma frequência de reprocessamento
+              \textit{(Not Periodically)};
+        \item E finalmente, para a configuração, foi escolhido uma das duas
+              acima citadas (ou CodeClimate PHPMD, ou Python).
+    \end{enumerate}
+
   \item [Comparação direta com o CodeClimate]
-  ...
+    Para a comparação direta com a CodeClimate, foi realizado a adição dos
+    projetos para a avaliação, bastando informar o nome do repositório no Github,
+    por exemplo: spb-metrics/xemele, ou spb-metrics/cocar, etc. A Figura XYZ
+    mostra este formulário para a importação de um repositório e análise no
+    CodeClimate. Basta informar o nome do repositório; a própria ferramenta
+    identifica qual a linguagem predominante e organiza as \textit{engines}
+    necessárias para a coleta e análise das métricas.
+
   \item [Pesquisa via questionário com usuários do Mezuro:]
   ...
   \item [Especificação de Melhorias de Design da apresentação dos dados do Mezuro:]
@@ -88,13 +148,13 @@ encadeamento destas etapas:
   produção.
 
   \item \textbf{Selecionar projetos}: Selecionar quais projetos que melhor se
-  adequem às métricas selecionadas e/ou possivelmente forneçam dados
+  adéquem às métricas selecionadas e/ou possivelmente forneçam dados
   interessantes e significativos para a geração da visualização. Por exemplo:
   se as métricas selecionadas forem específicas de terminada linguagem, os
   projetos devem necessariamente ter seus códigos com maioria da escrita
   nessa linguagem. O número ideal é de três projetos, podendo conter a
   combinação entre projetos que são reconhecidos por possuírem uma boa
-  organização com outros que são reconhecidos por não possuirem determinado
+  organização com outros que são reconhecidos por não possuírem determinado
   nível de qualidade.
 
   \item \textbf{Adicionar projetos para análise}: Adicionar projetos como um
