@@ -2,22 +2,29 @@
 
 Neste capítulo é apresentada a metodologia utilizada para a
 realização da pesquisa e contribuição tecnológica. A principal questão
-a ser respondida é: se a evolução do design da apresentação dos dados do Mezuro
+a ser respondida é: a evolução do design da apresentação dos dados do Mezuro
 é suficiente para melhorar a sua visualização? Caso não, quais técnicas e
-tipos de VS são mais adequadas a exibição das métricas do Mezuro?
+tipos de VS são mais adequadas à exibição das métricas do Mezuro?
 
-% TODO: relembrar o que foi dito na introdução
+Esta questão foi levantada levando em consideração o grande potencial do Mezuro,
+porém, é possível considerar que a ferramenta ainda se mantém em um estado
+``beta''. Como demonstrado no Capítulo \ref{mezuro}, a exibição dos dados é
+feita de forma separada por módulos/diretórios do projeto. Logo, a proposta de
+evolução ou aplicação de técnicas de VS pode vir a ser um diferencial faltante,
+ou adequado para atingir uma popularidade relativa à outras ferramentas.
 
-% TODO: explicar a pergunta, "isso pq o mezuro..."
+Desta maneira, as atividades desta metodologia visam apontar certas
+evoluções no Mezuro, tendo como insumo os resultados da análise exploratória
+descrita na seção posterior.
 
 \section{Análise Exploratória do Mezuro}
 
-% TODO: contextualizar..
-% "para responder a questão, a primeira análise exploratória com os objetivos
-% de fazer isso e aquilo, relaiz"
-
-A análise exploratória do funcionamento prático do Mezuro, com os softwares do
-SPB, foi realizada da seguinte forma:
+Com intuito de responder a primeira questão, a primeira análise exploratória
+visa percorrer todo o processo de avaliação do Mezuro com determinado número
+de projetos selecionados do SPB, após um processo de categorização.
+%
+Dessa forma, a análise exploratória do funcionamento prático do Mezuro, com os
+softwares do SPB, foi realizada da seguinte maneira:
 
 % TODO: explicar estas atividades
 % explicar o que eu fiz na tabela, categorizar por software
@@ -39,16 +46,16 @@ SPB, foi realizada da seguinte forma:
     Github. As duas últimas colunas são para o registro dos links para a
     avaliação do software no Mezuro e no CodeClimate.
 
-  \item [Download e versionamento dos que apenas possuem o código compactado no SPB:]
+  \item [Download e versionamento:]
     Grande parte dos softwares do SPB não possui o código-fonte versionado. Para
     a solução desse desafio, foi realizado o download dos arquivos compactados
     (zip, tar, tar.gz) dos projetos em PHP, iniciado um repositório Git no
     diretório do projeto e realizado um \textit{commit} inicial com a adição de
     todo o projeto.
 
-  \item [Criação de um espelho no Github, em uma organização chamada \textit{spb-metrics}:]
+  \item [Criação de um espelho no Github:]
     Após o Download e versionamento do código, foi realizada a atualização de um
-    repositório remoto no Github, na organização criada específica para esta
+    repositório remoto no Github, na organização criada especificamente para esta
     análise exploratória. A escolha de utilizar o Github justifica-se pelas
     limitações de inserções de projetos para avaliação no CodeClimate.
     Inicialmente, foi-se pensado o \textit{upload} em outros serviços, como o
@@ -65,8 +72,9 @@ SPB, foi realizada da seguinte forma:
     espelho remoto também no Github, na organização
     \textit{spb-metrics}\footnote{\url{https://github.com/spb-metrics}}.
 
-  \item [Adição dos softwares no Mezuro, utilizando as configurações para novas
-  linguagens avaliadas por esta ferramenta]:
+  \item [Adição dos softwares no Mezuro:]
+    Foi utilizado as seguintes configurações de métrica já estabelecidas pela
+    equipe do Mezuro:
     \begin{itemize}
         \item Configuração do Mezuro para PHP: CodeClimate
               PHPMD\footnote{\url{http://mezuro.org/pt/kalibro\_configurations/18}}
@@ -90,25 +98,120 @@ SPB, foi realizada da seguinte forma:
               \textit{(Not Periodically)};
         \item E finalmente, para a configuração, foi escolhido uma das duas
               acima citadas (ou CodeClimate PHPMD, ou Python).
-    \end{enumerate}
+\end{enumerate}
 
-  \item [Comparação direta com o CodeClimate]
+  \item [Comparação direta com o CodeClimate:]
     Para a comparação direta com a CodeClimate, foi realizado a adição dos
-    projetos para a avaliação, bastando informar o nome do repositório no Github,
-    por exemplo: spb-metrics/xemele, ou spb-metrics/cocar, etc. A Figura XYZ
-    mostra este formulário para a importação de um repositório e análise no
-    CodeClimate. Basta informar o nome do repositório; a própria ferramenta
-    identifica qual a linguagem predominante e organiza as \textit{engines}
-    necessárias para a coleta e análise das métricas.
+    projetos para a avaliação nesta ferramenta, bastando informar o nome do
+    repositório no Github, por exemplo: spb-metrics/xemele, ou
+    spb-metrics/cocar, etc. A Figura \ref{fig:form_codeClimate} mostra este formulário para a
+    importação de um repositório e análise no CodeClimate. Basta informar o
+    nome do repositório; a própria ferramenta identifica qual a linguagem
+    predominante e organiza as \textit{engines} necessárias para a coleta e
+    análise das métricas.
+
+    \begin{figure}[h]
+      \centering
+        \includegraphics[keepaspectratio=true,scale=0.5]
+        {figuras/form_codeClimate.eps}
+      \caption{CodeClimate - Formulário adição de repositório para análise}
+      \label{fig:form_codeClimate}
+    \end{figure}
+
+  \item [Categorização Final:]
+    Na planilha utilizada para a categorização, também foi realizado o registro
+    dos links de cada uma das avaliações. E por fim, após os processamentos
+    destas avaliações, cada link recebeu uma identificação visual estabelecida
+    seguindo determinados critérios (vide Anexo \ref{chap:anexoB}). Portanto, as
+    cores do fundo da célula na planilha foram:
+    \begin{itemize}
+      \item Vermelho: a análise na ferramenta não foi realizada. Seja por
+            exceder o tempo de espera, seja por erros relacionados ao próprio
+            projeto;
+      \item Amarelo: a ferramenta concluiu a análise e sinaliza para o usuário
+            que está pronta, porém os resultados não são expostos ou demandam
+            muito tempo de carregamento no navegador;
+      \item Verde: a análise foi bem bem-sucedida.
+    \end{itemize}
+\end{description}
+
+
+\section{Pré-seleção de Visualizações}
+
+A segunda etapa das atividades desta análise exploratória foi estabelecer quais
+possíveis visualizações de software poderiam compor as telas de exibição dos
+resultados do Mezuro, facilitando e tornando a análise das avaliações um pouco
+mais acessível para usuários que pouco conhecimento de métricas, mas que desejam
+desenvolver software de qualidade. As atividades são:
+
+\begin{description}
+  \item [Seleção do projeto:]
+    Foi selecionado para a construção das visualizações preliminares a
+    \textit{engine} para desenvolvimento de jogos do professor Edson Alves da
+    Costa, que é utilizada na disciplina de Introdução aos Jogos Eletrônicos
+    \footnote{\url{https://matriculaweb.unb.br/graduacao/disciplina_pop.aspx?cod=208493}}
+     e é desenvolvida em colaboração com os alunos e monitores desta disciplina.
+
+     O código está disponível no Github\footnote{\url{https://github.com/fgagamedev/IJE}}
+     e, para fins de restrição nas visualizações, foi decidido que as
+     visualizações conteriam apenas três classes deste projeto: \textit{Animation},
+     \textit{MouseButtonEvent} e \textit{Level};
+
+  \item [Seleção da visualizações:]
+    Nesta atividade, as visualizações que seriam adaptadas foram selecionadas na
+    galeria de exemplos da biblioteca Javascript de manipulação de dados D3.js.
+    O critério para a escolha nesta atividade, foi basicamente escolher as que
+    possivelmente abrangeriam 3 aspectos: visualização numérica dos valores das
+    métricas, disposição para os nomes delas e algum tipo de manipulação de
+    cores, que seriam aproveitadas dos grupos de leitura e serviriam para
+    destacar módulos que demandam alguma atenção/modificação/refatoração;
+
+  \item [Análise e adaptação das visualizações:]
+    Esta análise foi realizada para auxiliar o aluno na construção da adaptação.
+    Para a construção do arquivo \textbf{JSON} em que estaria os dados e valores
+    da visualização, foi utilizado a \textit{Gem Seed Dump}
+    \footnote{\url{https://github.com/rroblak/seed_dump}}. Ela cria um arquivo
+    com todos os dados presentes no banco da aplicação. Após o cruzamento com
+    os identificadores do projeto da \textit{engine} para jogos, foi construído
+    o arquivo que iria alimentar a visualização adaptada;
 
   \item [Pesquisa via questionário com usuários do Mezuro:]
-  ...
-  \item [Especificação de Melhorias de Design da apresentação dos dados do Mezuro:]
-  ...
+    Esta tarefa de pesquisa foi realizada por meio de um questionário na
+    plataforma \textit{Google Forms}\footnote{\url{https://www.google.com/forms/about/}}.
+    Este questionário foi enviado para cerca de 20 pessoas. Grade parte destas
+    era envolvida com o Mezuro, e também houveram pedidos de respostas para
+    outras pessoas que não tiveram nenhum contato sequer com métricas de
+    código-fonte.
+
+    No questionário constava-se apenas três questões. Duas de múltiplas escolhas,
+    com apenas três possíveis respostas, que eram o número de visualizações
+    disponíveis. A decisão de utilizar desse tipo de questão foi para não
+    frustrar o entrevistado com perguntas longas ou com um número demasiado de
+    questões. Ambas eram de resposta obrigatória. A terceira questão, aberta e
+    opcional, tinha como intenção o levantamento de comentários, críticas e
+    sugestões;
+
   \item [Pré-seleção e especificação de VS para o Mezuro:]
-  ...
+    O insumo desta atividade é a pesquisa realizada, e tem o objetivo de
+    destacar quais visualizações ou técnicas podem ser incorporadas ao Mezuro;
+
+  \item [Especificação de Melhorias de Design da apresentação dos dados do Mezuro:]
+    Esta atividade refere-se ao replanejamento das telas de exibição das
+    métricas coletadas pelo Mezuro. O aluno realizou a prototipação de telas que
+    poderiam simplificar o acesso de novos usuários.
 
 \end{description}
+
+% TODO: fechar metodologia, para não terminar com itemize
+
+Esta metodologia visa validar as principais funcionalidades do Mezuro, e ter a
+quantidade suficiente de dados para uma possível evolução na exibição final da
+avaliação de projetos, considerando as métricas estáticas. E validar também a
+possibilidade de incorporação no SPB, utilizando os próprios softwares do SPB.
+O foco principal é para projetos desenvolvidos em PHP e Python.
+
+% ---------------------------------- Backup ----------------------------------
+% ----------------------------------------------------------------------------
 
 \begin{comment}
 
@@ -134,8 +237,6 @@ encadeamento destas etapas:
   \caption{Encadeamento das etapas da atividade de contribuição tecnológica}
   \label{fig:metodotologia_atividades}
 \end{figure}
-
-% TODO: mudar estas atividades
 
 \begin{enumerate}
   \item \textbf{Selecionar Configurações}: Selecionar as métricas com maior nível de
@@ -177,32 +278,28 @@ encadeamento destas etapas:
   página ou nas informações gerais do repositório analisado.
 \end{enumerate}
 
-% TODO: talvez as etapas relacionadas ao mezuro possam estar em um único passo. Por exemplo a atividade de "Criar configuração" que são apenas alguns cliques, ou apenas um comando no console.
-
 \section{Seleção das Métricas}
 
-% TODO: preciso definir as métricas agora?
+% Dúvida: preciso definir as métricas agora?
 
-% TODO: selecionar métricas com certo nível de similaridade.
+% Dúvida: selecionar métricas com certo nível de similaridade.
 
-% TODO: explique que, devido à comodidade em já ter algumas configurações pré-estabelicidas
+% Dúvida: explique que, devido à comodidade em já ter algumas configurações pré-estabelicidas
 % no Mezuro, e dado as limitações de tempo e escopo, não poderei passar por toda uma
 % "Seleção das Métricas"
 % SOLUÇÃO: explicar quais são essas configurações presentes por default no Mezuro
 
 \section{Seleção dos Projetos}
 
-% TODO: escrever um pouco sobre os projetos para geração das VS.
+% Dúvida: escrever um pouco sobre os projetos para geração das VS.
 % Já tenho utilizado a Engine de IJE do professor Edson Alves como parâmetro.
 % O professor Paulo sugeriu o Colab, dado o grande número de contribuições que ele atingiu nos
 % últimos meses por conta do SPB.
 
-% TODO: Mudar metodologia para abranger a análise exploratória e como ela foi realizada:
+% Dúvida: Mudar metodologia para abranger a análise exploratória e como ela foi realizada:
 %   - Prioridades na escolha dos projetos
 %   - Categorização nas planilhas
 %   - Disponibilizar o códio em algum  sistema de versionamento
 %   - Adicionar à ferramentas: CodeClimate e Mezuro.
 
 \end{comment}
-
-% TODO: fechar metodologia, para não terminar com itemize
