@@ -1,6 +1,15 @@
 \chapter{Análise Exploratória do Projeto Mezuro}
 
-% TODO: add introdução com um brief da seleção dos projetos do SPB e quantificação
+O objetivo deste capítulo é registrar os resultados da Análise Exploratória da
+plataforma Mezuro. As seções apresentam o contexto em que esta análise foi
+realizada, ou seja, quais projetos foram adicionados. Também destaque-se os
+resultados obtidos, a comparação com o CodeClimate e uma pequena discussão dos
+resultados.
+
+Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 45% é
+desenvolvido em PHP. Quantidade esta que foi decisiva na seleção de quais
+softwares seriam avaliados, além de conciliar com o intuito da equipe de
+desenvolvimento do SPB de incorporá-lo neste portal.
 
 \section{Exemplo de Uso: Projetos do Software Público Brasileiro}
 
@@ -37,7 +46,7 @@ conjunto de ferramentas. São elas \cite{aboutSPB}:
 	Possibilita ao usuário a participação em tópicos de discussão respondendo
 	através do próprio e-mail, sem a necessidade de acessar diretamente o SPB;
 	\item \textbf{Gitlab:} Gerenciador de repositórios Git com funcionalidades de
-	wiki e mapeamento de issues, escrito em Ruby;
+	\textit{wiki} e mapeamento de \textit{issues}, escrito em Ruby;
 	\item \textbf{Mezuro:} Plataforma \textit{Web} Livre para avaliação colaborativa de
 	código fonte, desenvolvido em Ruby on Rails, também adicionada ao SPB para
 	fornecer acompanhamento da qualidade do código dos projetos \cite{aboutSPB}.
@@ -48,8 +57,61 @@ A integração das ferramentas acima citadas é realizada por meio do
 ambientes colaborativos e agregados. Em resumo, é uma plataforma para
 autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
 
-% TODO: add figura da arquitetura
-% https://softwarepublico.gov.br/doc/arquitetura.html
+\subsection{Arquitetura do SPB}
+
+São necessárias 7 máquinas/servidores para executar atualmente o Portal do
+Software Público Brasileiro. Cada máquina representa uma função distinta. O
+acesso SSH à essas máquinas é limitado à configurações de ordem de
+prioridade e portas específicas. Os detalhes podem ser verificados na
+referência \cite{archSPB}. As sete máquinas são:
+
+\begin{itemize}
+  \item \textbf{Reverseproxy:}
+  \begin{itemize}
+    \item Proxy Reverso
+  \end{itemize}
+
+  \item \textbf{Integration:}
+    \begin{itemize}
+      \item Segundo Proxy Reverso
+      \item Repositórios Git
+      \item Listas de e-mail
+      \item Backend final de e-mail
+    \end{itemize}
+
+  \item \textbf{E-mail}
+  \begin{itemize}
+    \item Relay de e-mail
+  \end{itemize}
+
+  \item textbf{Social}
+  \begin{itemize}
+    \item Servidor da Rede Social Noosfero
+  \end{itemize}
+
+  \item \textbf{Database}
+  \begin{itemize}
+    \item{Servidor de Banco de Dados PostgreSQL}
+  \end{itemize}
+
+  \item \textbf{Mezuro}
+  \begin{itemize}
+    \item Servidor dedicado para análise de código com o Mezuro
+  \end{itemize}
+
+  \item \textbf{Monitor}
+  \begin{itemize}
+    \item Monitoramento de informações dos outros serviços
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/arquitetura_spb.eps}
+  \caption{Representação da Arquitetura do SPB}
+  \label{fig:arquitetura_spb}
+\end{figure}
 
 \section{Resultados}
 
@@ -74,18 +136,18 @@ integrada, colaboração que é um dos objetivos fundamentais ao Governo Federal
 com o Portal, o infortúnio de ter aproximadamente três-quartos dos softwares
 não versionados é algo que atinge toda a comunidade que utiliza o SPB: sejam
 desenvolvedores interessados em contribuir/evoluir os softwares; sejam usuários
-finais que também contribuem com registro de problemas, ou issues, ou bugs.
+finais que também contribuem com registro de problemas, ou issues, ou \textit{bugs}.
 
 Por padrão, no momento da disponibilização de um novo software no SPB, já são
 criadas "instâncias" de cada uma das ferramentas que compõem o Portal. Bastando
 ao administrador adequar o código-fonte ao versionamento com o Git. Por exemplo
-o software "xpto", teria o seguinte domínio para acesso ao código fonte:
+o software ``xpto'', teria o seguinte domínio para acesso ao código fonte:
 softwarepublico.gov.br/gitlab/xpto/xpto.
 
-Como solução, durante a categorização, foi realizado o "commit inicial" para
+Como solução, durante a categorização, foi realizado o ``commit inicial'' para
 aqueles softwares que disponibilizaram o código-fonte por meio de arquivo
 compactado. Como forma de centralização e organização, foi criado a organização
-"spb-metrics" no Github\footnote{\url{https://github.com/spb-metrics}}, pois
+``spb-metrics'' no Github\footnote{\url{https://github.com/spb-metrics}}, pois
 para avaliação no CodeClimate, os repositórios precisam estar neste serviço e
 serem públicos. De outra maneira, ou em outro serviço, a avaliação teria um
 custo estipulado pelas regras de negócio do próprio CodeClimate. Já no Mezuro é
@@ -142,7 +204,7 @@ motores de análises \cite{enginesCodeClimate}:
 	\item \textbf{PHP Code Sniffer:} análise estática no código PHP que detecta
 	violações de um padrão já definido e estabelecido pela comunidade;
 	\item \textbf{PHP Mess Detector:} procura por diferentes potenciais problemas
-	com o código escrito em PHP, como possíveis bugs, código desnecessário,
+	com o código escrito em PHP, como possíveis \textit{bugs}, código desnecessário,
 	expressões demasiadamente complicadas, e parâmetros ou métodos não utilizados.
 \end{itemize}
 
@@ -161,13 +223,13 @@ análise dos projetos em PHP do SPB.
 
 Considerando estes motores e ferramentas utilizadas pelo CodeClimate, pode-se
 observar que nem todo projeto pode ser analisado por um conjunto de métricas ou
-definições de estilo pré estabelicida. Fato este que intensifica a utilização do
+definições de estilo pré estabelecida. Fato este que intensifica a utilização do
 Mezuro em que o usuário é capaz de criar as Configurações com o conjunto de
 métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
 conjunto fechado ideal para todo projeto, é possível afirmar que também não há
 uma visualização única para todas as Configurações ou conjunto de métricas.
 
-% TODO: tabelas com os resultados dos projetos
+% TODO: tabelas com os resultados dos projetos? Mas já adicionei no Anexo B.
 %   - Mezuro
 %   - CodeClimate
 %   - Comparação
@@ -180,12 +242,12 @@ uma visualização única para todas as Configurações ou conjunto de métricas
 
 O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
 software para o gerenciamento de ambientes integrados com sites, blogs, chats,
-wikis e e-mails. Desenvolvido na linguagem de programação PHP e utilizando outros
-recursos, como HTML, Javascript, JQuery e banco de dados MySQL.
+\textit{wikis} e e-mails. Desenvolvido na linguagem de programação PHP e
+utilizando outros recursos, como HTML, Javascript, JQuery e banco de dados MySQL.
 
 A análise realizada pelo Mezuro desta ferramenta, retornou a nota zero para o
 projeto como um todo. E a métrica de destaque, relacionada com o arquivo
-\textbf{functions.php} da raíz do projeto, está relacionada com o método
+\textbf{functions.php} da raiz do projeto, está relacionada com o método
 \textbf{recent\_comments} em que é recomendado a remoção da expressão
 \textit{else} da linha 52 e a simplificação do código para trabalhar sem esta
 expressão de condição.
@@ -197,7 +259,7 @@ notas \textbf{F} e \textbf{D} são os arquivos Javascript \textit{js/jquery.cycl
 e \textit{js/jquery.js}, respectivamente. Além disso, a ferramenta mostra para o
 usuário 4 páginas de possíveis problemas encontrados, nas diversas categorias,
 tais como, problemas com complexidade, duplicação de código, estilo nos arquivos
-CSS, clareza, possíveis ou risco de bugs e problemas com compatibilidade. E o
+CSS, clareza, possíveis ou risco de \textit{bugs} e problemas com compatibilidade. E o
 mesmo destaque dado ao arquivo \textbf{functions.php} pelo Mezuro, também foi
 destacado no CodeClimate, mesmo assim, foi atribuído a maior nota possível, nota
 \textbf{A}. Por fim, é destacado que as \textit{engines} que apontaram estes possíveis
@@ -219,8 +281,11 @@ queda dos serviços no servidor de produção, lentidão no processo e falhas de
 processamento. A equipe do Mezuro esteve sempre a disposição para auxiliar na
 explanação e resolução destas falhas, seja via canal no IRC, via e-mail ou via
 \textit{issues} no Github do projeto. Estes problemas foram de fato detectados
-pela equipe na análise dos logs e nos relatos feitos, e foram registrados nos
-seguintes links:
+pela equipe na análise dos \textit{logs} e nos relatos feitos, e foram
+registrados nos seguintes links:
+
+% TODO: escrever mais sobre esses problemas registrados
+% - talvez trazer a descrição dada no Github
 
 \begin{itemize}
   \item \textbf{Capacidade de Disco}:
