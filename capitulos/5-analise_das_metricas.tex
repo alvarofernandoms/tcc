@@ -61,7 +61,7 @@ autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
 
 São necessárias 7 máquinas/servidores para executar atualmente o Portal do
 Software Público Brasileiro. Cada máquina representa uma função distinta. O
-acesso SSH à essas máquinas é limitado à configurações de ordem de
+acesso \textit{SSH} à essas máquinas é limitado à configurações de ordem de
 prioridade e portas específicas. Os detalhes podem ser verificados na
 referência \cite{archSPB}. As sete máquinas são:
 
@@ -238,7 +238,7 @@ uma visualização única para todas as Configurações ou conjunto de métricas
 
 \subsection{Exemplo da Análise por Projeto: Xêmele}
 
-% TODO: add figuras
+% TODO: add figuras: da inserção ou resultados do Xêmele?
 
 O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
 software para o gerenciamento de ambientes integrados com sites, blogs, chats,
@@ -284,34 +284,84 @@ explanação e resolução destas falhas, seja via canal no IRC, via e-mail ou v
 pela equipe na análise dos \textit{logs} e nos relatos feitos, e foram
 registrados nos seguintes links:
 
-% TODO: escrever mais sobre esses problemas registrados
-% - talvez trazer a descrição dada no Github
-
 \begin{itemize}
   \item \textbf{Capacidade de Disco}:
     \begin{itemize}
-      \item Handle full disk: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}
-      \item Schedule removal job for repositories with no periodicity:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}
-      \item Store SCM reference on a given processing:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}
-      \item Is the aggregation working correctly?:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/206}}
+
+      \item Handle full disk (Lidar com o disco cheio)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}:
+        parece que quando o disco está cheio, o processamento para e vai para o
+        estado de finalizado/pronto e não comunica mais nada ao usuário.
+
+        A sugestão para tratar desse erro é talvez verificar a capacidade do
+        disco antes do download e/ou notificar sobre os erros ocorridos.
+
+      \item Schedule removal job for repositories with no periodicity (Tarefa
+      agendada de remoção de repositórios sem frequência de reprocessamento)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}:
+        é considerado desnecessário manter um repositório em que não foi
+        configurado uma frequência de reprocessamento. Isso pode ajudar com os
+        problemas de capacidade de disco.
+
+      \item Store SCM reference on a given processing (Armazenar a referência ao
+      sistema de controle de versão de um projeto em um determinado
+      processamento)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}:
+        isso pode auxiliar na correlação entre o repositório/código apagado do
+        disco com os resultados no futuro.
+
+      \item Is the aggregation working correctly? (A agregação está funcionando
+      corretamente?)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/206}}:
+        Algumas notas dadas aos projetos avaliados estão retornando um valor
+        diferente do esperado, julgando pelas notas dos submódulos.
+
     \end{itemize}
   \item \textbf{Lentidão de Processamento}:
     \begin{itemize}
-      \item Slow processings: \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/207}}
-      \item Multiple calls to process trigger multiple redundant periodic processings:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}
-      \item Separate processings in multiple queues:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}
+
+      \item Slow processings (Processamentos Lentos)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/207}}:
+        Alguns processamentos estão levando certa de 30 minutos para
+        finalizarem. Foi sugerido, portanto, alguns testes de performance,
+        investigações de possíveis causas e melhoria de determinadas etapas do
+        processamento;
+
+      \item Multiple calls to process trigger multiple redundant periodic
+      processings (Chamadas excessivas para o gatilho de processo com muitos
+      períodos de processamento redundante)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}:
+        muitas chamadas para os métodos de processamento estão sendo feitas, o
+        que gera um muitos processos programados e muito desperdício de tempo.
+
+        Uma solução é a separação de diferentes filas de requisições para
+        diferentes eventos.
+
+      \item Separate processings in multiple queues (Processos separados por
+      várias filas)
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}:
+        A sugestão é a separação de três filas de requisição de processamento,
+        com prioridades distintas. Maior para novos repositórios avaliados,
+        isolar os processamentos periódicos e baixa prioridade para os
+        reprocessamentos.
+
     \end{itemize}
   \item \textbf{Falhas de Processamento}:
     \begin{itemize}
-      \item Handle `Metric configuration has already been taken` error:
-            \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}
-      \item Failed processing: \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}
-      \item Docker runner timeout: \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}
+      \item Handle `Metric configuration has already been taken` error (Lidar
+      com o erro ``Configuração de Métrica já foi selecionada'')
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}.
+
+      \item Failed processing (Falha no Processamento)
+      \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}:
+        determinado erro tem feito o processamento da avaliação falhar. A
+        investigação e prevenção deste erro será feita.
+
+      \item Docker runner timeout (Agente de execução do Docker está retornando
+      erro de tempo esgotado
+      \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}:
+        determinado processo está esgotando o tempo de execução e sendo
+        finalizado
     \end{itemize}
 \end{itemize}
 
