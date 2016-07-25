@@ -1,3 +1,4 @@
+% TODO: organizar as seções
 \chapter{Análise Exploratória do Projeto Mezuro}
 
 O objetivo deste capítulo é registrar os resultados da Análise Exploratória da
@@ -6,7 +7,7 @@ realizada, ou seja, quais projetos foram adicionados. Também destaque-se os
 resultados obtidos, a comparação com o CodeClimate e uma pequena discussão dos
 resultados.
 
-Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 45% é
+Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 45\% é
 desenvolvido em PHP. Quantidade esta que foi decisiva na seleção de quais
 softwares seriam avaliados, além de conciliar com o intuito da equipe de
 desenvolvimento do SPB de incorporá-lo neste portal.
@@ -113,7 +114,7 @@ referência \cite{archSPB}. As sete máquinas são:
   \label{fig:arquitetura_spb}
 \end{figure}
 
-\section{Resultados}
+\subsection{Categorização dos Projetos do SPB}
 
 Foi realizado uma categorização dos softwares disponibilizados no Portal do
 Software Público Brasileiro, como insumo que corroborará com as hipóteses
@@ -158,7 +159,7 @@ software como possível auxílio e contribuição ao Mezuro.
 
 A categorização completa dos softwares do SPB está no Anexo \ref{chap:anexoB}
 
-As imagens \ref{fig:is_software_gitlab_spb} e \ref{fig:linguagens_softwares_spb}
+As Figuras \ref{fig:is_software_gitlab_spb} e \ref{fig:linguagens_softwares_spb}
 mostram respectivamente o percentual de softwares com repositório Git no SPB e
 em qual linguagem foram escritos predominantemente. Com 45\%, PHP é a linguagem
 em que é desenvolvido a maioria dos softwares do Portal SPB. Seguido por Java,
@@ -184,7 +185,7 @@ disponibilizado (compactado ou versionado).
 
 \newpage
 
-\section{CodeClimate}
+\section{O uso do Mezuro e do CodeClimate}
 
 A análise de projetos em PHP no CodeClimate é a junção da análise dos seguintes
 motores de análises \cite{enginesCodeClimate}:
@@ -208,7 +209,20 @@ motores de análises \cite{enginesCodeClimate}:
 	expressões demasiadamente complicadas, e parâmetros ou métodos não utilizados.
 \end{itemize}
 
-A figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
+A Figura \ref{fig:form_codeClimate} mostra o formulário para a importação de um
+repositório e análise no CodeClimate. Basta informar o nome do repositório; a
+própria ferramenta identifica qual a linguagem predominante e organiza as
+\textit{engines} necessárias para a coleta e análise das métricas.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/form_codeClimate.eps}
+  \caption{CodeClimate - Formulário adição de repositório para análise}
+  \label{fig:form_codeClimate}
+\end{figure}
+
+A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
 análise dos projetos em PHP do SPB.
 
 \begin{figure}[!htb]
@@ -229,16 +243,17 @@ métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
 conjunto fechado ideal para todo projeto, é possível afirmar que também não há
 uma visualização única para todas as Configurações ou conjunto de métricas.
 
+% TODO: trazer essa comparação
+
 % TODO: tabelas com os resultados dos projetos? Mas já adicionei no Anexo B.
 %   - Mezuro
 %   - CodeClimate
 %   - Comparação
 
-\section{Discussão dos Resultados}
-
-\subsection{Exemplo da Análise por Projeto: Xêmele}
+\section{Exemplo da Análise por Projeto: Xêmele}
 
 % TODO: add figuras: da inserção ou resultados do Xêmele?
+% TODO: explicar
 
 O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
 software para o gerenciamento de ambientes integrados com sites, blogs, chats,
@@ -268,11 +283,14 @@ erros são: \textit{csslint}, \textit{duplication}, \textit{eslint} e
 
 Link para a avaliação no CodeClimate\footnote{\url{https://codeclimate.com/github/spb-metrics/xemele}}.
 
-\subsection{Discussão dos Resultados}
+\section{Melhorias de Back-End no Mezuro}
 
 Foram adicionados 31 softwares do SPB em ambas as ferramentas (Mezuro e
 CodeClimate), desenvolvidos em PHP e Python. Estas adições resultaram na
 análise descrita nos próximos parágrafos.
+
+% TODO: "Mesmo não sendo o objetivo deste trabalho, a análise levou a indicação de
+% algumas melhorias de back-end..."
 
 No Mezuro, dos 31 softwares adicionados, somente 4 obtiveram sucesso na
 avaliação. Alguns dos problemas encontrados são: falta de espaço em disco para
@@ -283,6 +301,8 @@ explanação e resolução destas falhas, seja via canal no IRC, via e-mail ou v
 \textit{issues} no Github do projeto. Estes problemas foram de fato detectados
 pela equipe na análise dos \textit{logs} e nos relatos feitos, e foram
 registrados nos seguintes links:
+
+% TODO: foi catalogado os seguintes problemas
 
 \begin{itemize}
   \item \textbf{Capacidade de Disco}:
