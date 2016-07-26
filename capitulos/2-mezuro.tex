@@ -36,7 +36,9 @@ o que são métricas de código-fonte e que o seu monitoramento está ligado a
 avaliação da qualidade interna de um produto de software.
 
 Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
-produtividade e qualidade do software. Existem dois grandes conjuntos delas:
+produtividade e qualidade do software. Podem ser dinâmicas ou estáticas, onde a
+diferença reside na excução ou não do programa (medições apenas do código-fonte),
+respectivamente. Existem dois grandes conjuntos delas:
 métricas tradicionais e métricas de orientação a objetos. São métricas
 tradicionais: métricas de tamanho (ex. Linhas de Código - LOC), métricas de
 complexidade (ex. Complexidade Ciclomática), métricas manutenibilidade, dentre
@@ -90,9 +92,11 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 
 Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
 uma configuração como possível ponto inicial para a análise, baseada no trabalho
-de mestrado de Eduardo Morais. Esta configuração está disponível no site do
+de mestrado de \citeonline{de2013kalibro}. Esta configuração está disponível no site do
 Mezuro com o seguinte nome: ``Java / C / C++"
-\footnote{\url{http://mezuro.org/pt/kalibro_configurations/1}}.
+\footnote{\url{http://mezuro.org/pt/kalibro_configurations/1}}. Configuração
+esta que talvez seja refatorada, pois muitas versões do coletor Analizo já foram
+lançadas desde a data de publicação desta dissetação de mestrado.
 
 Para projetos escritos em PHP, o Mezuro utiliza o CodeClimate PHPMD
 \footnote{\url{https://github.com/codeclimate/codeclimate-phpmd}}.
@@ -294,8 +298,8 @@ O Prezento é a camada da interface \textit{Web} do
 Mezuro. Desenvolvido em Ruby on Rails, atualmente utiliza as versões 2.3.0 do
 Ruby e 4.2.4 do Rails. Versões estas que estão em constante mudança, pois os
 mantenedores têm como intuito usufruir o que há de mais recente das funcionalidades
-dessa tecnologia. Esta será a principal camada trabalhada neste trabalho de
-conclusão de curso, pois é nela que há a interação com o usuário.
+dessa tecnologia. Esta é a camada de interação com o usuário, principal foco
+para a análise exploratória deste trabalho.
 
 Ela está disponível em dois idiomas: português e inglês. Quase todas as rotas
 do site são acessíveis publicamente, sem necessidade de inscrição na plataforma.
@@ -337,8 +341,9 @@ Na página destinada à exibição dos projetos, uma lista semelhante à Figura
 \ref{fig:mezuro-projetos-v2} é mostrada. Se o usuário for o dono projeto, além do
 botão \textbf{Mostrar}, é acrescido o botão \textbf{Editar}. Caso contrário, o
 único acesso é o de visualização do projeto. Para criar um projeto, basta
-informar o nome, descrição e (caso queira) a Url de alguma imagem relacionada.
-Ao visualizar o projeto, o usuário pode conferir os repositórios adicionados.
+informar o nome, descrição e (caso queira) a \textit{URL} de alguma imagem
+relacionada. Ao visualizar o projeto, o usuário pode conferir os repositórios
+adicionados.
 
 \begin{figure}[!htb]
 	\centering
@@ -374,7 +379,9 @@ necessário informar: nome, descrição, licença, tipo de sistema de
 versionamento, endereço acessível para o repositório de código, qual ramo
 deseja-se que seja realizada a avaliação (se \textit{master},
 \textit{dev}, ou \textit{prod}, por exemplo), a frequência com deseja-se que o
-projeto seja reprocessado e a Configuração de Métrica.
+projeto seja reprocessado e a Configuração de Métrica. A frequência de
+reprocessamento gera um gráfico de qualidade por tempo de acordo com as várias
+avaliações do código que são feitas.
 
 \begin{figure}[!htb]
 	\centering
