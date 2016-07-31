@@ -83,7 +83,7 @@ referência \cite{archSPB}. As sete máquinas são:
       \item Segundo Proxy Reverso
       \item Repositórios Git
       \item Listas de e-mail
-      \item Backend final de e-mail
+      \item Back-End final de e-mail
     \end{itemize}
 
   \item \textbf{E-mail}
@@ -154,7 +154,7 @@ possível adicionar um repositório para avaliação independentemente do servi�
 (Github, Gitlab, Bitbucket, etc), basta ser utilizado o sistema de controle de
 versão Git ou SVN. Comparação esta que reforça o estudo da visualização de
 software como possível auxílio e contribuição ao Mezuro. A categorização
-completa dos softwares do SPB está no Anexo \ref{chap:anexoB}
+completa dos softwares do SPB está no final da próxima seção deste capítulo.
 
 \begin{figure}[!htb]
 	\centering
@@ -183,8 +183,6 @@ portanto iniciar a avaliação de softwares escritos em PHP e com código-fonte
 disponibilizado (compactado ou versionado).
 
 \newpage
-
-% TODO: adicionar projetos em Java
 
 \section{O uso do Mezuro e do Code Climate}
 
@@ -239,7 +237,7 @@ linguagens de marcação (HTML, Markdown, Textile, RDOC, reStructured Text).
 Esses \textit{badges} (Figura \ref{fig:codeclimate_badges}) podem ser utilizados
 para expor a nota do projeto, a porcentagem de cobertura de teste e a contagem
 de \textit{issues} identificadas pelo Code Climate \cite{codeClimateDoc}. A
-equipe do Mezuro em 2013 mapeou a possibilidade de incorpoaração de \textit{badges}
+equipe do Mezuro em 2013 mapeou a possibilidade de incorporação de \textit{badges}
 na plataforma. Porém, pouco se discutiu sobre o assunto e a demanda continua em
 aberto\footnote{\url{https://github.com/mezuro/prezento/issues/11}}.
 
@@ -342,18 +340,53 @@ métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
 conjunto fechado ideal para todo projeto, é possível afirmar que também não há
 uma visualização única para todas as Configurações ou conjunto de métricas.
 
-% TODO: tabelas com os resultados dos projetos? Mas já adicionei no Anexo B.
-%   - Mezuro - FEITO
-%   - Code Climate - FEITO
-%   - Comparação: realizei a comparação por texto - FEITO
-%   - Terminar essa tabela com a adição dos softwares em Java.
+Adicionalmente, também foram inseridos no Mezuro para avaliação, 5 projetos dos
+17 desenvolvidos em Java, com o intuito de ser um contraponto ao Code Climate
+por esta não compreender a análise de projetos em Java, C, ou C++. Infelizmente
+nenhuma das \textit{builds} resultou em resultados concretos.
+
+\newpage
+
+% TODO: Terminar essa tabela com a adição dos softwares em Java
+%   - Aguardando análise no Mezuro
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.85]
+    {tabelas/spb_1_v2-crop.eps}
+  \caption{Categorização - Softwares SPB - Parte 1}
+  \label{fig:softwares_spb_1}
+\end{figure}
+
+\newpage
+
+% TODO: add linha com a descrição das colunas nesta imagem
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.85]
+    {tabelas/spb_2_v2-crop.eps}
+  \caption{Categorização - Softwares SPB - Parte 2}
+  \label{fig:softwares_spb_2}
+\end{figure}
+
+\newpage
+
+As tabelas das Figuras \ref{fig:softwares_spb_1} e \ref{fig:softwares_spb_2}
+mostram a categorização dos softwares do SPB.
+As cores de fundo das colunas ``Link Mezuro'' e ``Link CodeClimate'',
+representam o resultado das análises realizadas por estas ferramentas. Se verde,
+a análise foi realizada com sucesso. Se amarelo, a análise foi concluída, porém
+as métricas não foram carregadas. E quando o fundo é vermelho, a análise não
+obteve êxito. As linhas que estão destacadas com o fundo azul são os projetos em
+Java que foram adicionados ao Mezuro.
 
 \section{Exemplo da Análise por Projeto: Xemelê}
 
 O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
 software para o gerenciamento de ambientes integrados com sites, blogs, chats,
 \textit{wikis} e e-mails. Desenvolvido na linguagem de programação PHP e
-utilizando outros recursos, como HTML, Javascript, JQuery e banco de dados MySQL.
+utilizando outros recursos, como HTML, Javascript, jQuery e banco de dados MySQL.
 
 A análise realizada pelo Mezuro desta ferramenta, retornou a nota zero para o
 projeto como um todo. E a métrica de destaque, relacionada com o arquivo
