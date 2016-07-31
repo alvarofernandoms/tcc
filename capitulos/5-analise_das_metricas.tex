@@ -1,10 +1,9 @@
 \chapter{Análise Exploratória do Projeto Mezuro}
-% TODO: organizar as seções
 
 O objetivo deste capítulo é registrar os resultados da Análise Exploratória da
 plataforma Mezuro. As seções apresentam o contexto em que esta análise foi
 realizada, ou seja, quais projetos foram adicionados. Também destaque-se os
-resultados obtidos, a comparação com o CodeClimate e uma pequena discussão dos
+resultados obtidos, a comparação com o Code Climate e uma pequena discussão dos
 resultados.
 
 Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 45\% é
@@ -58,9 +57,8 @@ A integração das ferramentas acima citadas é realizada por meio do
 ambientes colaborativos e agregados. Em resumo, é uma plataforma para
 autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
 
-\subsection{Arquitetura do SPB}
-
-São necessárias 7 máquinas/servidores para executar atualmente o Portal do
+Do ponto de vista arquitetural, são necessárias 7 máquinas/servidores para
+executar atualmente o Portal do
 Software Público Brasileiro. Cada máquina representa uma função distinta. O
 acesso \textit{SSH} à essas máquinas é limitado à configurações de ordem de
 prioridade e portas específicas. Os detalhes podem ser verificados na
@@ -119,7 +117,7 @@ referência \cite{archSPB}. As sete máquinas são:
 Foi realizado uma categorização dos softwares disponibilizados no Portal do
 Software Público Brasileiro, como insumo que corroborará com as hipóteses
 levantadas neste trabalho. A adição dos softwares do SPB à ferramentas de
-monitoramento (Mezuro e CodeClimate\footnote{\url{https://codeclimate.com/}})
+monitoramento (Mezuro e Code Climate\footnote{\url{https://codeclimate.com/}})
 foi planejada para que o código seja avaliado e para que haja um incentivo aos
 desenvolvedores e administradores das comunidades do Portal ao monitoramento de
 seus projetos. Esta adição ou contribuição foi registrada e está disponível
@@ -140,7 +138,7 @@ desenvolvedores interessados em contribuir/evoluir os softwares; sejam usuários
 finais que também contribuem com registro de problemas, ou issues, ou \textit{bugs}.
 
 Por padrão, no momento da disponibilização de um novo software no SPB, já são
-criadas "instâncias" de cada uma das ferramentas que compõem o Portal. Bastando
+criadas ``instâncias'' de cada uma das ferramentas que compõem o Portal. Bastando
 ao administrador adequar o código-fonte ao versionamento com o Git. Por exemplo
 o software ``xpto'', teria o seguinte domínio para acesso ao código fonte:
 softwarepublico.gov.br/gitlab/xpto/xpto.
@@ -149,9 +147,9 @@ Como solução, durante a categorização, foi realizado o ``commit inicial'' pa
 aqueles softwares que disponibilizaram o código-fonte por meio de arquivo
 compactado. Como forma de centralização e organização, foi criado a organização
 ``spb-metrics'' no Github\footnote{\url{https://github.com/spb-metrics}}, pois
-para avaliação no CodeClimate, os repositórios precisam estar neste serviço e
+para avaliação no Code Climate, os repositórios precisam estar neste serviço e
 serem públicos. De outra maneira, ou em outro serviço, a avaliação teria um
-custo estipulado pelas regras de negócio do próprio CodeClimate. Já no Mezuro é
+custo estipulado pelas regras de negócio do próprio Code Climate. Já no Mezuro é
 possível adicionar um repositório para avaliação independentemente do serviço
 (Github, Gitlab, Bitbucket, etc), basta ser utilizado o sistema de controle de
 versão Git ou SVN. Comparação esta que reforça o estudo da visualização de
@@ -184,10 +182,65 @@ disponibilizado (compactado ou versionado).
 
 \newpage
 
-\section{O uso do Mezuro e do CodeClimate}
+% TODO: adicionar projetos em Java
 
-A análise de projetos em PHP no CodeClimate é a junção da análise dos seguintes
-motores de análises \cite{enginesCodeClimate}:
+\section{O uso do Mezuro e do Code Climate}
+
+O Code Climate é uma plataforma aberta e extensível de análise estática de código
+que ajuda desenvolvedores a manter o seu software com determinado nível de
+qualidade. Esta análise é feita a cada novo \textit{commit},
+\textit{pull request} ou \textit{branch}. A vinculação da conta é feita através
+do Github e a avaliação do código é gratuita enquanto o repositório estiver em
+uma conta no Github e for público necessariamente. Esta gratuidade é até um dos
+slogans da ferramenta: \textit{Code Climate is 100\% free for Open Source,
+forever. Add your Open Source GitHub repo.} (O Code Climate é 100\% grátis para
+projetos de código aberto, para sempre. Adicione o seu repositório público do
+Github.) Para repositórios privados ou de outros sistemas de hospedagem remota de
+código (Gitlab, Bitbucket), é cobrado uma taxa de 25 dólares até a data de
+escrita deste trabalho. Porém, uma alternativa para projetos privados é utilizar
+a interface de linha de comandos com o comando do próprio Code Climate (Code
+Climate - CLI\footnote{https://github.com/codeclimate/codeclimate}) e executar a
+análise localmente ou em um container Docker \cite{codeClimateDoc}.
+
+Atualmente, o Code Climate faz a análise dos códigos nas seguintes linguagens:
+CSS, Go, Javascript, PHP, Python e Ruby. E também para as seguintes ferramentas,
+tecnologias, linguagens ou \textit{frameworks}: Apex, CoffeScript, Ember, ESLint,
+Haskell, Haxe, RubyMotion, Rails, SCSS, Swift e Vim Script \cite{codeClimateDoc}.
+Em comparação com o Mezuro, a análise de C, C++ e Java é um diferencial, graças
+ao Analizo, como citado no Capítulo \ref{chap:mezuro}.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/github_workflow_with_codeclimate.eps}
+  \caption{Fluxo de submissão do Github com o Code Climate incorporado}
+  \label{fig:github_workflow_with_codeclimate}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/codeclimate_badges.eps}
+  \caption{Insígnias/Emblemas do Code Climate}
+  \label{fig:codeclimate_badges}
+\end{figure}
+
+\newpage
+
+Alguns dos diferenciais do Code Climate são: exposição de trechos de códigos que
+apresentam possíveis problemas e/ou necessitam de refatoração; a incorporação da
+análise prévia de um \textit{pull request} no fluxo de submissão do Github (vide
+Figura \ref{fig:github_workflow_with_codeclimate}); e a
+atribuição de \textit{badges} (insígnias, emblemas) para ser utilizado em uma
+página \textit{Web} ou no \textit{README} do Github, disponíveis em seis
+linguagens de marcação (HTML, Markdown, Textile, RDOC, reStructured Text).
+Esses \textit{badges} (Figura \ref{fig:codeclimate_badges}) podem ser utilizados
+para expor a nota do projeto, a porcentagem de cobertura de teste e a contagem
+de \textit{issues} identificadas pelo Code Climate \cite{codeClimateDoc}.
+
+Um ponto em semelhança com o Mezuro é a utilização do mesmo \textit{engine}
+geral para a linguagem PHP: o PHPMD. A análise de projetos em PHP no Code Climate
+é a junção da avaliação dos seguintes motores de análises \cite{codeClimateDoc}:
 
 \begin{itemize}
   \item \textbf{CSSLint:} como esperado de uma ferramenta \textit{lint}, esse
@@ -208,33 +261,60 @@ motores de análises \cite{enginesCodeClimate}:
 	expressões demasiadamente complicadas, e parâmetros ou métodos não utilizados.
 \end{itemize}
 
-A Figura \ref{fig:form_codeClimate} mostra o formulário para a importação de um
-repositório e análise no CodeClimate. Basta informar o nome do repositório; a
-própria ferramenta identifica qual a linguagem predominante e organiza as
-\textit{engines} necessárias para a coleta e análise das métricas.
-
 \begin{figure}[h]
   \centering
     \includegraphics[keepaspectratio=true,scale=0.5]
     {figuras/form_codeClimate.eps}
-  \caption{CodeClimate - Formulário adição de repositório para análise}
+  \caption{Code Climate - Formulário adição de repositório para análise}
   \label{fig:form_codeClimate}
 \end{figure}
 
-A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
-análise dos projetos em PHP do SPB.
+A Figura \ref{fig:form_codeClimate} mostra o formulário para a importação de um
+repositório e análise no Code Climate. Basta informar o nome do repositório; a
+própria ferramenta identifica qual a linguagem predominante e organiza as
+\textit{engines} necessárias para a coleta e análise das métricas.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/codeclimate_abas.eps}
+  \caption{Code Climate - Abas da Página dos Resultados da Análise}
+	\label{fig:codeclimate_abas}
+\end{figure}
+
+No Code Climate, o resultado é exposto em uma página com as abas representadas
+na Figura \ref{fig:codeclimate_abas}. Cada uma com determinado propósito:
+\textit{Feed}, para mostrar um resumo das análises a cada \textit{commit}; a aba
+\textit{Code} mostra a nota de cada um dos arquivos, o número de linhas (\textit{LOC}),
+a quantidade de vezes que ele foi modificado (\textit{Churn}) e a quantidade de
+\textit{issues} relacionadas com aquele arquivo; a aba \textit{Issues} lista as
+métricas coletadas com os trechos dos códigos onde foram atribuídos os problemas,
+podendo ser filtrado por categoria e \textit{engine}; na aba \textit{Branches},
+é exposto a lista de ramos de desenvolvimento do projeto, onde o usuário pode
+comparar cada um com o ramo principal; a aba \textit{Trends} mostra por meio de
+gráficos, a evolução da nota e da qualidade do código; e finalmente, na aba
+\textit{Builds} há a exibição da lista das vezes que o projeto foi ``construído''
+para a análise, com sucesso ou não.
 
 \begin{figure}[!htb]
 	\centering
     \includegraphics[keepaspectratio=true,scale=0.6]
     {figuras/is_codeclimate_php_success.eps}
-  \caption{Porcentagens de Softwares com Análise bem sucedida no CodeClimate}
+  \caption{Porcentagens de Softwares com Análise bem sucedida no Code Climate}
   \label{fig:is_codeclimate_php_success}
 \end{figure}
 
+A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
+análise dos projetos em PHP do SPB. Mais de 50\% conseguiram ter uma
+\textit{build} bem sucedida, valor este que expõe, de certa forma, a baixa
+qualidade dos softwares disponibilizados no SPB. Estes resultados da análise
+exploratória demonstram que, em parte, os desafios encontrados na adição dos
+projetos no Mezuro não estavam relacionados diretamente com o próprio Mezuro, e
+sim com os projetos em PHP.
+
 \newpage
 
-Considerando estes motores e ferramentas utilizadas pelo CodeClimate, pode-se
+Considerando estes motores e ferramentas utilizadas pelo Code Climate, pode-se
 observar que nem todo projeto pode ser analisado por um conjunto de métricas ou
 definições de estilo pré estabelecida. Fato este que intensifica a utilização do
 Mezuro em que o usuário é capaz de criar as Configurações com o conjunto de
@@ -242,17 +322,44 @@ métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
 conjunto fechado ideal para todo projeto, é possível afirmar que também não há
 uma visualização única para todas as Configurações ou conjunto de métricas.
 
-% TODO: trazer essa comparação
+Foram adicionados 31 softwares do SPB em ambas as ferramentas (Mezuro e
+Code Climate), desenvolvidos em PHP e Python. Estas adições resultaram na
+análise descrita nos próximos parágrafos.
+No Mezuro, dos 31 softwares adicionados, somente 4 obtiveram sucesso na
+avaliação.
+
+No Code Climate, 16 softwares realizaram a \textit{build} da avaliação com
+sucesso. Nos que falharam, alguns dos erros foram encontrados em três das
+\textit{engines}: ora em \textit{duplication}, ora na \textit{phpmd}, ora na
+\textit{eslint}. E um dos processos gerou o erro 500. Em todas as falhas, é
+sugerido ao usuário entrar em contato com o suporte da ferramenta. As falhas
+são relacionadas com erros de \textit{time out}. A sugestão é a exclusão de
+arquivos com bibliotecas de terceiros, \textit{assets} de produção (como
+arquivos minimizados) e talvez arquivos de testes automatizados.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+    {figuras/is_codeclimate_php_success.eps}
+  \caption{Porcentagens de Softwares com Análise bem sucedida no Code Climate}
+  \label{fig:is_codeclimate_php_success}
+\end{figure}
+
+A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
+análise dos projetos em PHP do SPB. Mais de 50\% conseguiram ter uma
+\textit{build} bem sucedida, valor este que expõe, de certa forma, a baixa
+qualidade dos softwares disponibilizados no SPB. Estes resultados da análise
+exploratória demonstram que, em parte, os desafios encontrados na adição dos
+projetos no Mezuro não estavam relacionados diretamente com o próprio Mezuro, e
+sim com os projetos em PHP.
 
 % TODO: tabelas com os resultados dos projetos? Mas já adicionei no Anexo B.
-%   - Mezuro
-%   - CodeClimate
-%   - Comparação
+%   - Mezuro - FEITO
+%   - Code Climate - FEITO
+%   - Comparação: realizei a comparação por texto - FEITO
+%   - Terminar essa tabela com a adição dos softwares em Java.
 
-\section{Exemplo da Análise por Projeto: Xêmele}
-
-% TODO: add figuras: da inserção ou resultados do Xêmele?
-% TODO: explicar
+\section{Exemplo da Análise por Projeto: Xemelê}
 
 O Xemelê\footnote{\url{https://softwarepublico.gov.br/social/xemele}} é um
 software para o gerenciamento de ambientes integrados com sites, blogs, chats,
@@ -264,44 +371,119 @@ projeto como um todo. E a métrica de destaque, relacionada com o arquivo
 \textbf{functions.php} da raiz do projeto, está relacionada com o método
 \textbf{recent\_comments} em que é recomendado a remoção da expressão
 \textit{else} da linha 52 e a simplificação do código para trabalhar sem esta
-expressão de condição.
+expressão de condição. Link para a avaliação no Mezuro
+\footnote{\url{http://mezuro.org/pt/repositories/114}}.
 
-Link para a avaliação no Mezuro\footnote{\url{http://mezuro.org/pt/repositories/114}}.
-
-Já a nota dada ao projeto pelo CodeClimate foi a de 2.18/4. E os arquivos com
+Já a nota dada ao projeto pelo Code Climate foi a de 2.18/4. E os arquivos com
 notas \textbf{F} e \textbf{D} são os arquivos Javascript \textit{js/jquery.cycle.js}
 e \textit{js/jquery.js}, respectivamente. Além disso, a ferramenta mostra para o
 usuário 4 páginas de possíveis problemas encontrados, nas diversas categorias,
 tais como, problemas com complexidade, duplicação de código, estilo nos arquivos
 CSS, clareza, possíveis ou risco de \textit{bugs} e problemas com compatibilidade. E o
 mesmo destaque dado ao arquivo \textbf{functions.php} pelo Mezuro, também foi
-destacado no CodeClimate, mesmo assim, foi atribuído a maior nota possível, nota
+destacado no Code Climate, mesmo assim, foi atribuído a maior nota possível, nota
 \textbf{A}. Por fim, é destacado que as \textit{engines} que apontaram estes possíveis
 erros são: \textit{csslint}, \textit{duplication}, \textit{eslint} e
-\textit{phpmd}
+\textit{phpmd} Link para a avaliação no Code Climate
+\footnote{\url{https://codeclimate.com/github/spb-metrics/xemele}}.
 
-Link para a avaliação no CodeClimate\footnote{\url{https://codeclimate.com/github/spb-metrics/xemele}}.
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-repositorio-view.eps}
+  \caption{Mezuro - Página de Repositório}
+	\label{fig:mezuro-repositorio-view-xemele}
+\end{figure}
+
+A Figura \ref{fig:mezuro-repositorio-view-xemele}
+mostra os resultados da análise\footnote{\url{http://mezuro.org/pt/repositories/114}}
+de um dos softwares do SPB, o Xemelê
+\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_feed.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Feed}}
+	\label{fig:codeclimate_feed}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_code_tab.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Code} (parcial)}
+	\label{fig:codeclimate_code_tab}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_issues_tab_phpmd.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Issues} (PHPMD)}
+	\label{fig:codeclimate_issues_tab_phpmd}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_issues_tab_duplication.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Issues} (Duplication)}
+	\label{fig:codeclimate_issues_tab_duplication}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_issues_tab_csslint.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Issues} (CSSLint)}
+	\label{fig:codeclimate_issues_tab_csslint}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_issues_tab_eslint.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Issues} (ESLint)}
+	\label{fig:codeclimate_issues_tab_eslint}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_trends_tab.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Trends}}
+	\label{fig:codeclimate_trends_tab}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/codeclimate_builds_tab.eps}
+  \caption{Code Climate - Xemelê - Aba \textit{Builds}}
+	\label{fig:codeclimate_builds_tab}
+\end{figure}
+
+
+As imagens acima, mostram parte dos resultados obtidos na análise do Xemelê no
+Code Climate. A quantidade de informação é significativamente maior que no Mezuro.
+Isso é devido ao fato de que, no Code Climate, análises do CSS, código duplicado
+e de código Javascript foram feitas. Porém, considerando as análises de código
+Javascript, o resultado exposto é referente à análise de bibliotecas de
+terceiros (jQuery) e não necessariamente do projeto Xemelê.
 
 \section{Melhorias de Back-End no Mezuro}
 
-Foram adicionados 31 softwares do SPB em ambas as ferramentas (Mezuro e
-CodeClimate), desenvolvidos em PHP e Python. Estas adições resultaram na
-análise descrita nos próximos parágrafos.
-
-% TODO: "Mesmo não sendo o objetivo deste trabalho, a análise levou a indicação de
-% algumas melhorias de back-end..."
-
-No Mezuro, dos 31 softwares adicionados, somente 4 obtiveram sucesso na
-avaliação. Alguns dos problemas encontrados são: falta de espaço em disco para
-o download dos projetos, falha no redirecionamento após a adição do projeto,
-queda dos serviços no servidor de produção, lentidão no processo e falhas de
-processamento. A equipe do Mezuro esteve sempre a disposição para auxiliar na
-explanação e resolução destas falhas, seja via canal no IRC, via e-mail ou via
-\textit{issues} no Github do projeto. Estes problemas foram de fato detectados
-pela equipe na análise dos \textit{logs} e nos relatos feitos, e foram
-registrados nos seguintes links:
-
-% TODO: foi catalogado os seguintes problemas
+Mesmo não sendo o objetivo deste trabalho, a análise exploratória levou à
+indicação de algumas melhorias de Back-End. Não era esperado encontrar certos
+problemas com as avaliações dos projetos, porém alguns dos problemas encontrados
+são: falta de espaço em disco para o download dos projetos, falha no
+redirecionamento após a adição do projeto, queda dos serviços no servidor de
+produção, lentidão no processo e falhas de processamento. A equipe do Mezuro
+esteve sempre a disposição para auxiliar na explanação e resolução destas
+falhas, seja via canal no IRC, via e-mail ou via \textit{issues} no Github do
+projeto. Estes impedimentos foram de fato detectados pela equipe na análise dos
+\textit{logs} e nos relatos feitos. Foi catalogado os seguintes problemas:
 
 \begin{itemize}
   \item \textbf{Capacidade de Disco}:
@@ -309,25 +491,26 @@ registrados nos seguintes links:
 
       \item Handle full disk (Lidar com o disco cheio)
       \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/203}}:
-        parece que quando o disco está cheio, o processamento para e vai para o
-        estado de finalizado/pronto e não comunica mais nada ao usuário.
+        suspeita-se que quando o disco está cheio, o processamento para, levando
+        o processo de análise para o estado de finalizado/pronto, mas não
+        informando ao usuário tal problema e/ou o estado.
 
-        A sugestão para tratar desse erro é talvez verificar a capacidade do
+        A sugestão para tratar desse erro é verificar a capacidade do
         disco antes do download e/ou notificar sobre os erros ocorridos.
 
       \item Schedule removal job for repositories with no periodicity (Tarefa
       agendada de remoção de repositórios sem frequência de reprocessamento)
       \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/204}}:
         é considerado desnecessário manter um repositório em que não foi
-        configurado uma frequência de reprocessamento. Isso pode ajudar com os
-        problemas de capacidade de disco.
+        configurado uma frequência de reprocessamento. Esta solução pode sanar
+        os problemas de capacidade de disco.
 
       \item Store SCM reference on a given processing (Armazenar a referência ao
       sistema de controle de versão de um projeto em um determinado
       processamento)
       \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/205}}:
-        isso pode auxiliar na correlação entre o repositório/código apagado do
-        disco com os resultados no futuro.
+        solução esta que pode auxiliar na correlação entre o repositório/código
+        apagado do disco com os resultados no futuro.
 
       \item Is the aggregation working correctly? (A agregação está funcionando
       corretamente?)
@@ -351,7 +534,7 @@ registrados nos seguintes links:
       períodos de processamento redundante)
       \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/208}}:
         muitas chamadas para os métodos de processamento estão sendo feitas, o
-        que gera um muitos processos programados e muito desperdício de tempo.
+        que gera muitos processos e muito desperdício de tempo.
 
         Uma solução é a separação de diferentes filas de requisições para
         diferentes eventos.
@@ -361,36 +544,24 @@ registrados nos seguintes links:
       \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/209}}:
         A sugestão é a separação de três filas de requisição de processamento,
         com prioridades distintas. Maior para novos repositórios avaliados,
-        isolar os processamentos periódicos e baixa prioridade para os
-        reprocessamentos.
+        baixa prioridade para os reprocessamentos e o isolamento dos
+        processamentos periódicos
 
     \end{itemize}
   \item \textbf{Falhas de Processamento}:
     \begin{itemize}
       \item Handle `Metric configuration has already been taken` error (Lidar
       com o erro ``Configuração de Métrica já foi selecionada'')
-      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}}.
+      \footnote{\url{https://github.com/mezuro/kalibro\_processor/issues/210}};
 
       \item Failed processing (Falha no Processamento)
       \footnote{\url{https://github.com/mezuro/kolekti\_radon/issues/3}}:
-        determinado erro tem feito o processamento da avaliação falhar. A
-        investigação e prevenção deste erro será feita.
+        um erro não determinado tem feito o processamento da avaliação falhar.
+        A investigação e prevenção deste erro pode ser uma solução;
 
       \item Docker runner timeout (Agente de execução do Docker está retornando
       erro de tempo esgotado
       \footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd/issues/11}}:
-        determinado processo está esgotando o tempo de execução e sendo
-        finalizado
+        um processo está esgotando o tempo de execução e sendo finalizado.
     \end{itemize}
 \end{itemize}
-
-No CodeClimate, 16 softwares realizaram a \textit{build} da avaliação com
-sucesso. Nos que falharam, alguns dos erros foram encontrados em três das
-\textit{engines}: ora em \textit{duplication}, ora na \textit{phpmd}, ora na
-\textit{eslint}. E um dos processos gerou o erro 500. Em todas as falhas, é
-sugerido ao usuário entrar em contato com o suporte da ferramenta. As falhas
-são relacionadas com erros de \textit{time out}. A sugestão é a exclusão de
-arquivos com bibliotecas de terceiros, \textit{assets} de produção (como
-arquivos minimizados) e talvez arquivos de testes automatizados.
-
-% TODO: Resumo/discussão dos projetos de SPB
