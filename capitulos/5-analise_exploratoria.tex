@@ -6,7 +6,7 @@ realizada, ou seja, quais projetos foram adicionados. Também destaque-se os
 resultados obtidos, a comparação com o Code Climate e uma pequena discussão dos
 resultados.
 
-Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 45\% é
+Desta forma, é ressaltado a seleção dos projetos do SPB. Dos 71 projetos, 47\% é
 desenvolvido em PHP. Quantidade esta que foi decisiva na seleção de quais
 softwares seriam avaliados, além de conciliar com o intuito da equipe de
 desenvolvimento do SPB de incorporá-lo neste portal.
@@ -57,6 +57,14 @@ A integração das ferramentas acima citadas é realizada por meio do
 ambientes colaborativos e agregados. Em resumo, é uma plataforma para
 autenticação, buscas e inserção de conteúdo no SPB \cite{aboutSPB}.
 
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/arquitetura_spb.eps}
+  \caption{Representação da Arquitetura do SPB}
+  \label{fig:arquitetura_spb}
+\end{figure}
+
 Do ponto de vista arquitetural, são necessárias 7 máquinas/servidores para
 executar atualmente o Portal do
 Software Público Brasileiro. Cada máquina representa uma função distinta. O
@@ -104,14 +112,6 @@ referência \cite{archSPB}. As sete máquinas são:
   \end{itemize}
 \end{itemize}
 
-\begin{figure}[!htb]
-	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
-    {figuras/arquitetura_spb.eps}
-  \caption{Representação da Arquitetura do SPB}
-  \label{fig:arquitetura_spb}
-\end{figure}
-
 \subsection{Categorização dos Projetos do SPB}
 
 Foi realizado uma categorização dos softwares disponibilizados no Portal do
@@ -156,17 +156,9 @@ versão Git ou SVN. Comparação esta que reforça o estudo da visualização de
 software como possível auxílio e contribuição ao Mezuro. A categorização
 completa dos softwares do SPB está no Anexo \ref{chap:anexoB}
 
-As Figuras \ref{fig:is_software_gitlab_spb} e \ref{fig:linguagens_softwares_spb_v2}
-mostram respectivamente o percentual de softwares com repositório Git no SPB e
-em qual linguagem foram escritos predominantemente. Com 45\%, PHP é a linguagem
-em que é desenvolvido a maioria dos softwares do Portal SPB. Seguido por Java,
-com 18\% e outras (Python, C++, Perl), sendo menos de 5\% cada. Foi decidido
-portanto iniciar a avaliação de softwares escritos em PHP e com código-fonte
-disponibilizado (compactado ou versionado).
-
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
+    \includegraphics[keepaspectratio=true,scale=0.45]
     {figuras/is_software_gitlab_spb.eps}
   \caption{Porcentagem de Softwares Versionados no Gitlab do SPB}
   \label{fig:is_software_gitlab_spb}
@@ -179,6 +171,16 @@ disponibilizado (compactado ou versionado).
   \caption{Linguagens em que os Softwares do SPB são desenvolvidos}
   \label{fig:linguagens_softwares_spb_v2}
 \end{figure}
+
+\newpage
+
+As Figuras \ref{fig:is_software_gitlab_spb} e \ref{fig:linguagens_softwares_spb_v2}
+mostram respectivamente o percentual de softwares com repositório Git no SPB e
+em qual linguagem foram escritos predominantemente. Com 47\%, PHP é a linguagem
+em que é desenvolvido a maioria dos softwares do Portal SPB. Seguido por Java,
+com 23\% e outras (Python, C++, Perl), sendo menos de 5\% cada. Foi decidido
+portanto iniciar a avaliação de softwares escritos em PHP e com código-fonte
+disponibilizado (compactado ou versionado).
 
 \newpage
 
@@ -236,7 +238,10 @@ página \textit{Web} ou no \textit{README} do Github, disponíveis em seis
 linguagens de marcação (HTML, Markdown, Textile, RDOC, reStructured Text).
 Esses \textit{badges} (Figura \ref{fig:codeclimate_badges}) podem ser utilizados
 para expor a nota do projeto, a porcentagem de cobertura de teste e a contagem
-de \textit{issues} identificadas pelo Code Climate \cite{codeClimateDoc}.
+de \textit{issues} identificadas pelo Code Climate \cite{codeClimateDoc}. A
+equipe do Mezuro em 2013 mapeou a possibilidade de incorpoaração de \textit{badges}
+na plataforma. Porém, pouco se discutiu sobre o assunto e a demanda continua em
+aberto\footnote{\url{https://github.com/mezuro/prezento/issues/11}}.
 
 Um ponto em semelhança com o Mezuro é a utilização do mesmo \textit{engine}
 geral para a linguagem PHP: o PHPMD. A análise de projetos em PHP no Code Climate
@@ -263,11 +268,13 @@ geral para a linguagem PHP: o PHPMD. A análise de projetos em PHP no Code Clima
 
 \begin{figure}[h]
   \centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
+    \includegraphics[keepaspectratio=true,scale=0.48]
     {figuras/form_codeClimate.eps}
-  \caption{Code Climate - Formulário adição de repositório para análise}
+  \caption{Code Climate - Formulário de adição de repositório para análise}
   \label{fig:form_codeClimate}
 \end{figure}
+
+\newpage
 
 A Figura \ref{fig:form_codeClimate} mostra o formulário para a importação de um
 repositório e análise no Code Climate. Basta informar o nome do repositório; a
@@ -298,29 +305,11 @@ para a análise, com sucesso ou não.
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.6]
+    \includegraphics[keepaspectratio=true,scale=0.4]
     {figuras/is_codeclimate_php_success.eps}
   \caption{Porcentagens de Softwares com Análise bem sucedida no Code Climate}
   \label{fig:is_codeclimate_php_success}
 \end{figure}
-
-A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
-análise dos projetos em PHP do SPB. Mais de 50\% conseguiram ter uma
-\textit{build} bem sucedida, valor este que expõe, de certa forma, a baixa
-qualidade dos softwares disponibilizados no SPB. Estes resultados da análise
-exploratória demonstram que, em parte, os desafios encontrados na adição dos
-projetos no Mezuro não estavam relacionados diretamente com o próprio Mezuro, e
-sim com os projetos em PHP.
-
-\newpage
-
-Considerando estes motores e ferramentas utilizadas pelo Code Climate, pode-se
-observar que nem todo projeto pode ser analisado por um conjunto de métricas ou
-definições de estilo pré estabelecida. Fato este que intensifica a utilização do
-Mezuro em que o usuário é capaz de criar as Configurações com o conjunto de
-métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
-conjunto fechado ideal para todo projeto, é possível afirmar que também não há
-uma visualização única para todas as Configurações ou conjunto de métricas.
 
 Foram adicionados 31 softwares do SPB em ambas as ferramentas (Mezuro e
 Code Climate), desenvolvidos em PHP e Python. Estas adições resultaram na
@@ -337,14 +326,6 @@ são relacionadas com erros de \textit{time out}. A sugestão é a exclusão de
 arquivos com bibliotecas de terceiros, \textit{assets} de produção (como
 arquivos minimizados) e talvez arquivos de testes automatizados.
 
-\begin{figure}[!htb]
-	\centering
-    \includegraphics[keepaspectratio=true,scale=0.6]
-    {figuras/is_codeclimate_php_success.eps}
-  \caption{Porcentagens de Softwares com Análise bem sucedida no Code Climate}
-  \label{fig:is_codeclimate_php_success}
-\end{figure}
-
 A Figura \ref{fig:is_codeclimate_php_success} mostra o percentual de sucesso na
 análise dos projetos em PHP do SPB. Mais de 50\% conseguiram ter uma
 \textit{build} bem sucedida, valor este que expõe, de certa forma, a baixa
@@ -352,6 +333,14 @@ qualidade dos softwares disponibilizados no SPB. Estes resultados da análise
 exploratória demonstram que, em parte, os desafios encontrados na adição dos
 projetos no Mezuro não estavam relacionados diretamente com o próprio Mezuro, e
 sim com os projetos em PHP.
+
+Considerando os motores e ferramentas utilizadas pelo Code Climate, pode-se
+observar que nem todo projeto pode ser analisado por um conjunto de métricas ou
+definições de estilo pré estabelecida. Fato este que intensifica a utilização do
+Mezuro em que o usuário é capaz de criar as Configurações com o conjunto de
+métricas que desejar, adaptando assim ao seu projeto. Portanto, se não há um
+conjunto fechado ideal para todo projeto, é possível afirmar que também não há
+uma visualização única para todas as Configurações ou conjunto de métricas.
 
 % TODO: tabelas com os resultados dos projetos? Mas já adicionei no Anexo B.
 %   - Mezuro - FEITO
@@ -397,12 +386,13 @@ erros são: \textit{csslint}, \textit{duplication}, \textit{eslint} e
 
 A Figura \ref{fig:mezuro-repositorio-view-xemele}
 mostra os resultados da análise\footnote{\url{http://mezuro.org/pt/repositories/114}}
-de um dos softwares do SPB, o Xemelê
-\footnote{\url{https://softwarepublico.gov.br/social/xemele}}.
+de um dos softwares do SPB, o Xemelê.
+
+\newpage
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_feed.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Feed}}
 	\label{fig:codeclimate_feed}
@@ -410,15 +400,17 @@ de um dos softwares do SPB, o Xemelê
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_code_tab.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Code} (parcial)}
 	\label{fig:codeclimate_code_tab}
 \end{figure}
 
+\newpage
+
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_issues_tab_phpmd.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Issues} (PHPMD)}
 	\label{fig:codeclimate_issues_tab_phpmd}
@@ -426,15 +418,17 @@ de um dos softwares do SPB, o Xemelê
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_issues_tab_duplication.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Issues} (Duplication)}
 	\label{fig:codeclimate_issues_tab_duplication}
 \end{figure}
 
+\newpage
+
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_issues_tab_csslint.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Issues} (CSSLint)}
 	\label{fig:codeclimate_issues_tab_csslint}
@@ -442,15 +436,17 @@ de um dos softwares do SPB, o Xemelê
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_issues_tab_eslint.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Issues} (ESLint)}
 	\label{fig:codeclimate_issues_tab_eslint}
 \end{figure}
 
+\newpage
+
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_trends_tab.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Trends}}
 	\label{fig:codeclimate_trends_tab}
@@ -458,12 +454,11 @@ de um dos softwares do SPB, o Xemelê
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.3]
+    \includegraphics[keepaspectratio=true,scale=0.35]
     {figuras/codeclimate_builds_tab.eps}
   \caption{Code Climate - Xemelê - Aba \textit{Builds}}
 	\label{fig:codeclimate_builds_tab}
 \end{figure}
-
 
 As imagens acima, mostram parte dos resultados obtidos na análise do Xemelê no
 Code Climate. A quantidade de informação é significativamente maior que no Mezuro.
@@ -476,10 +471,10 @@ terceiros (jQuery) e não necessariamente do projeto Xemelê.
 
 Mesmo não sendo o objetivo deste trabalho, a análise exploratória levou à
 indicação de algumas melhorias de Back-End. Não era esperado encontrar certos
-problemas com as avaliações dos projetos, porém alguns dos problemas encontrados
+problemas com as avaliações dos projetos, porém, alguns deles
 são: falta de espaço em disco para o download dos projetos, falha no
 redirecionamento após a adição do projeto, queda dos serviços no servidor de
-produção, lentidão no processo e falhas de processamento. A equipe do Mezuro
+produção, lentidão e falhas de processamento. A equipe do Mezuro
 esteve sempre a disposição para auxiliar na explanação e resolução destas
 falhas, seja via canal no IRC, via e-mail ou via \textit{issues} no Github do
 projeto. Estes impedimentos foram de fato detectados pela equipe na análise dos
