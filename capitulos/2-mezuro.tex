@@ -1,30 +1,42 @@
 \chapter{Mezuro}\label{chap:mezuro}
 
-O Mezuro foi planejado para ser uma ferramenta de extração, análise e
-interpretação de métricas de código-fonte. De uma forma geral, ele é dividido
-em duas partes: para o processamento e para o cálculo é utilizado o Kalibro, que
-é um \textit{webservice}; e o Prezento para a interface gráfica (uma aplicação
-\textit{Web}) \cite{meirellesCibse2015}. Sob a licença
-\textit{Affero General Public License version 3} (AGPLv3), o Mezuro permite que
-o usuário crie, salve e edite ``configurações'' que são um conjunto de
-métricas escolhidas por este e um ``grupo de leitura'' para provimento de uma
-interface gráfica de um conjunto de leitura que tenha algum sentido quando
-agrupadas, por exemplo: com a pontuação x, a métrica terá o ``rótulo'' ``BOM'' e
-será atribuído a ela a cor amarela; com a pontuação x + 2, a métrica terá o
-``rótulo'' ``ÓTIMO'' e estará com a cor verde. As cores são para destacar a
-interpretação e são definidas com valores hexadecimal \cite{camarinhaOSS2015}.
+O Mezuro, sob a licença \textit{Affero General Public License version 3} (AGPLv3),
+foi planejado para ser uma ferramenta de extração, análise e interpretação de
+métricas de código-fonte. De uma forma geral, ele é dividido em duas partes:
+para chamar as ferramentas de extração e análise dos resultados é usado o
+Kalibro, que é um \textit{webservice}; e o Prezento para a interface gráfica que
+consulta os dados gerados pelo Kalibro (uma aplicação \textit{Web})
+\cite{meirellesCibse2015}. O Mezuro permite que o usuário configure, de acordo
+com suas necessidades, o processo de análise feito pelo Kalibro através de
+\cite{camarinhaOSS2015}:
+
+\begin{description}
+  \item \textbf{Configurações}: que são um conjunto de métricas. Considerando o
+  trabalho de \citeonline{meirelles2013monitoramento} e a possibilidade de
+  criação de novas configurações pela comunidade, espara-se que as mais
+  representativas e mais utilizadas sejam em algum momento um padrão, ou
+  concenso;
+  \item \textbf{Grupos de Leitura}:  para provimento de uma
+  interface gráfica de um conjunto de leitura que tenha algum sentido quando
+  agrupadas, por exemplo: com a pontuação x, a métrica terá o ``rótulo'' ``BOM'' e
+  será atribuído a ela a cor amarela; com a pontuação x + 2, a métrica terá o
+  ``rótulo'' ``ÓTIMO'' e estará com a cor verde. As cores são para destacar a
+  interpretação e são definidas com valores hexadecimal.
+\end{description}
 
 Em 2013, o Mezuro foi totalmente reescrito em Ruby, com objetivo de manter na
-mesma tecnologia as camadas da arquitetura. Mudança justificada também pela
-necessidade do processamento dos cálculos e da análise. A carga de requisições,
-mais a quantidade de núcleos que o servidor possuía, faziam com que a versão
-original do Kalibro ficasse debilitado em seu fluxo de execuções. Outra vantagem
+mesma tecnologia as camadas da arquitetura, começando pelo Prezento (camada de
+apresentação). Mudança justificada também pela necessidade do processamento dos
+cálculos e da análise. Em sua versão original, o Kalibro, escrito em Java,
+começou a apresentar alguns problemas: a carga de requisições mais a quantidade
+de núcleos que o servidor de produção possuía, faziam com que essa versão
+original ficasse debilitada em seu fluxo de execuções. Surgiram então o
+\textit{Kalibro Processor} e o \textit{Kalibro Configuration}. Outra vantagem
 dessa reescrita é a facilidade com que novos contribuidores puderam/poderão
-entender todo o funcionamento dessa parte do Mezuro. \cite{meirellesCibse2015}.
+entender todo o funcionamento do Mezuro. \cite{meirellesCibse2015}.
 
-A camada de apresentação do Mezuro é o Prezento, desenvolvido durante esse
-processo de reescrita utilizando o \textit{framework} para desenvolvimento de
-aplicações \textit{Web} Ruby on
+O Prezento foi desenvolvido durante esse processo de reescrita utilizando o
+\textit{framework} para desenvolvimento de aplicações \textit{Web} Ruby on
 Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}}.
 %
 É nesta camada que está o foco das análises feitas neste trabalho.
@@ -33,21 +45,21 @@ Rails\footnote{\url{http://guides.rubyonrails.org/getting_started.html}}.
 
 Para entender a plataforma Mezuro e usá-la adequadamente, deve-se compreender
 o que são métricas de código-fonte e que o seu monitoramento está ligado a
-avaliação da qualidade interna de um produto de software.
+avaliação da qualidade interna (que se reflete na externa) de um produto de
+software.
 
 Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
 produtividade e qualidade do software. Podem ser dinâmicas ou estáticas, onde a
 diferença reside na excução ou não do programa (medições apenas do código-fonte),
-respectivamente. Existem dois grandes conjuntos delas:
+respectivamente. Existem dois grandes conjuntos de métricas estáticas:
 métricas tradicionais e métricas de orientação a objetos. São métricas
-tradicionais: métricas de tamanho (ex. Linhas de Código - LOC), métricas de
-complexidade (ex. Complexidade Ciclomática), métricas manutenibilidade, dentre
-outras (Tamanho Médio dos Módulos, Uso de Variável, Número de Funções, por
-exemplo). E são métricas de orientação a objetos: métricas de classes (ex.
-Encapsulamento dos Atributos), métricas de métodos (ex. Média de Complexidade
-dos Métodos), métricas de acoplamento (ex. Acoplamento Aferente), métricas de
-herança (ex. Medida de Polimorfismo) e métricas de sistema (ex. Reúso de
-Classe) \cite{meirelles2013monitoramento}.
+tradicionais, métricas de: tamanho (ex. Linhas de Código - LOC), complexidade
+(ex. Complexidade Ciclomática), manutenibilidade, dentre outras (Tamanho Médio
+dos Módulos, Uso de Variável, Número de Funções, por exemplo). E são métricas de
+orientação a objetos, métricas de: classes (ex. Encapsulamento dos Atributos),
+métodos (ex. Média de Complexidade dos Métodos), acoplamento (ex. Acoplamento
+Aferente), herança (ex. Medida de Polimorfismo) e sistema (ex. Reúso de Classe)
+\cite{meirelles2013monitoramento}.
 
 Um dos principais coletores de métricas do Mezuro é o Analizo\footnote{\url{http://www.analizo.org/}},
 que funciona como um conjunto de ferramentas extensível para análise de
@@ -93,10 +105,10 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
 uma configuração como possível ponto inicial para a análise, baseada no trabalho
 de mestrado de \citeonline{de2013kalibro}. Esta configuração está disponível no site do
-Mezuro com o seguinte nome: ``Java / C / C++"
+Mezuro com o seguinte nome: ``Java / C / C++''
 \footnote{\url{http://mezuro.org/pt/kalibro_configurations/1}}. Configuração
 esta que talvez seja refatorada, pois muitas versões do coletor Analizo já foram
-lançadas desde a data de publicação desta dissetação de mestrado.
+lançadas desde a data de publicação desta dissertação de mestrado.
 
 Para projetos escritos em PHP, o Mezuro utiliza o Code Climate PHPMD
 \footnote{\url{https://github.com/codeclimate/codeclimate-phpmd}}.
@@ -174,14 +186,14 @@ conjunto as métricas são \cite{PichlerPHPMD}:
 \end{itemize}
 
 Todas essas 35 regras são utilizadas no Mezuro, e estão na Configuração com nome
-``CodeClimate PHPMD"\footnote{\url{http://mezuro.org/pt/kalibro_configurations/18}}.
+``CodeClimate PHPMD''\footnote{\url{http://mezuro.org/pt/kalibro_configurations/18}}.
 
 Outro coletor de métricas utilizado pelo Mezuro é o MetricFu
 \footnote{\url{https://github.com/metricfu/metric_fu/}}: uma gem que agrega
 ferramentas de análise de código Ruby. As métricas são: \textit{Flog, Flay,
 Saikuro, Churn, Reek, Roodi, Code Statistics,} \textit{Rails Best Practices}, e
 (opcionalmente) \textit{RCov}. Porém, o Mezuro disponibiliza apenas três dessas,
-podendo o usuário utilizar a Configuração já estabelecida, ``Ruby"
+podendo o usuário utilizar a Configuração já estabelecida, ``Ruby''
 \footnote{\url{http://mezuro.org/pt/kalibro_configurations/2}}.
 %
 As métricas são\cite{rubySadist}:
@@ -201,8 +213,8 @@ Literais Multilinhas e Linhas em Branco) \cite{radonDoc}.
 
 \section{Arquitetura e principais funcionalidades do Mezuro}
 
-Em resumo, a arquitetura do Mezuro é composta por três serviços, como
-demonstrado na Figura \ref{fig:mezuro_arch_v2}.
+Em resumo, a arquitetura do Mezuro é composta por três aplicações \textit{Web}:
+dois serviços e um cliente, como demonstrado na Figura \ref{fig:mezuro_arch_v2}.
 
 \begin{figure}[!htb]
 	\centering
@@ -212,9 +224,7 @@ demonstrado na Figura \ref{fig:mezuro_arch_v2}.
 	\label{fig:mezuro_arch_v2}
 \end{figure}
 
-\newpage
-
-Onde os serviços são:
+As aplicações são:
 
 \begin{itemize}
   \item \textit{Prezento}\footnote{\url{https://github.com/mezuro/prezento}}:
@@ -287,7 +297,7 @@ ser divididas em dois grupos:
 Com esse conjunto de funcionalidades, o Mezuro apresenta-se como uma ferramenta
 inovadora. Neste trabalho, destaca-se, portanto, que o Mezuro é uma ferramenta
 com grande potencial, e funcionalidades inovadoras e úteis. A arquitetura
-modularizada gera uma abordagem de interpretação adequada par ao monitoramento
+modularizada gera uma abordagem de interpretação adequada para o monitoramento
 das métricas. Por isso, o foco deste trabalho é melhorar a camada de interface
 \textit{Web} de interação com o usuário, para exatamente aproveitar/alavancar este
 potencial.
@@ -297,14 +307,14 @@ potencial.
 O Prezento é a camada da interface \textit{Web} do
 Mezuro. Desenvolvido em Ruby on Rails, atualmente utiliza as versões 2.3.0 do
 Ruby e 4.2.4 do Rails. Versões estas que estão em constante mudança, pois os
-mantenedores têm como intuito usufruir o que há de mais recente das funcionalidades
+mantenedores têm como intuito usufruir do que há de mais recente das funcionalidades
 dessa tecnologia. Esta é a camada de interação com o usuário, principal foco
 para a análise exploratória deste trabalho.
 
-Ela está disponível em dois idiomas: português e inglês. Quase todas as rotas
+Ela está disponível em dois idiomas: português e inglês. E quase todas as rotas
 do site são acessíveis publicamente, sem necessidade de inscrição na plataforma.
-Porém, Caso o usuário queira criar Configurações de Métrica, Grupos de Leitura,
-e/ou adicionar projetos para a avaliação é necessário realizar o cadastro.
+Porém, caso o usuário queira criar e editar qualquer conteúdo é necessário
+\textit{login}.
 
 Ao acessar a página inicial\footnote{\url{http://mezuro.org/}}, é exposto ao
 usuário uma breve explicação sobre a plataforma. No menu superior fixo, estão
@@ -404,7 +414,7 @@ avaliações do código que são feitas.
 \newpage
 
 As Configurações de Métrica seguem o mesmo padrão: visualização em lista, com
-botões de ``Mostrar" e ``Editar" (caso seja dono da Configuração). Para a criação
+botões de ``Mostrar'' e ``Editar'' (caso seja dono da Configuração). Para a criação
 de uma nova Configuração, basta informar o Nome e a Descrição. Posteriormente, na
 exibição desta Configuração criada, é possível adicionar quais métricas irão
 compor esta. Na escolha da métrica, é exposto ao usuário os 4 coletores
@@ -489,6 +499,7 @@ a nota, e uma cor.
 \newpage
 
 % TODO: adicionar a página de resultados de outro software que não o Xemelê
+% TODO: o que são métricas hotspot?
 
 A página de exibição dos resultados da avaliação é composta por informações do
 repositório, do processamento, árvore de módulos, resultados de métricas de
