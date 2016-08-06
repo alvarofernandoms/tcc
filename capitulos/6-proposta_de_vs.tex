@@ -1,13 +1,101 @@
-\chapter{Proposta de melhorias para a apresentação dos resultados do Mezuro}
+\chapter{Proposta de Melhorias para a Apresentação dos Resultados do Mezuro}
+
+Este capítulo é dedicado à exposição das propostas de melhorias de apresentação
+ou visualização dos repositórios analisados pelo Mezuro. Na primeira seção, são
+apresentadas as telas desenhadas pelo aluno com base na experiência com outras
+ferramentas de avaliação de código-fonte. E também, outras pequenas evoluções
+na disposição dos itens já existentes no Mezuro. A segunda seção trata da
+disposição de possíveis técnicas de VS aplicáveis ao Mezuro, bem como um pequeno
+exemplo de uso, seguido da apresentação dos resultados de uma pesquisa com as
+visualizações criadas neste exemplo de uso.
+
+Inicialmente, foi considerado como uma abordagem ideal a aplicação dessas
+técnicas de visualização de software, que era o objetivo do TCC 1. Isso
+justifica todo o estudo e levantamento bibliográfico do Capítulo
+\ref{chap:visualizacao}. Porém, após todos os desafios apresentados no Capítulo
+anterior a este, uma nova aposta de evolução foi levantada e é a descrita no
+restante deste capítulo, como segundo conjunto de contribuições.
 
 % TODO: Seção 6.1 = proposta de evolução de apresentação dos dados do Mezuro
 % - aplicação do design
 % TODO: quais são essas evoluções
-%
-% Seção 6.2 - Discussão/Avaliação de técnicas de VS no Mezuro
-% "existe essa proposta do experimento, mas não recomendamos no momento...""
 
-\section{D3 - Data-Driven Documents}
+\section{Proposta de Evolução}
+
+A seguir são dispostas os protótipos das telas idealizadas pelo aluno. São
+pequenas modificações na disposições de elementos já presentes na página de
+\textit{view} dos repositórios adicionados no Mezuro (vide Figura
+\ref{fig:mezuro-repositorio-view-xemele}). O objetivo destas evoluções é sanar
+uma hipótese levantada durante o desenvolvimento deste trabalho: se a melhoria do
+\textit{design} já não é uma primeira abordagem desejável antes  de um esforço
+em aplicar técnicas de VS. As evoluções são:
+
+% TODO: prototipar e adicionar figuras
+
+\subsection{Design Sprint}
+
+A equipe do Mezuro, no final de 2015, realizou um método/processo chamado de
+\textit{Design Sprint}. Este método, desenvolvido pela Google Ventures tem como
+objetivo o pensamento voltado para a exibição e \textit{layout} de um produto,
+com conceitos baseados no desenvolvimento ágil \cite{designSprintDoc}.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/home-DS-flow-ill.eps}
+  \caption{Estágios da \textit{Design Sprint}}
+  \label{fig:home-DS-flow-ill}
+\end{figure}
+
+A Figura \ref{fig:home-DS-flow-ill} mostra os seis estágios da \textit{Sprint},
+de um dos métodos possíveis de se construir este processo. A ideia é concentrar
+a equipe toda, grande ou pequena, no desenvolvimento de novas interfaces e
+experiências para o usuário do produto. A \textit{Sprint} em si não se deve
+levar menos de 2 dias para isso, ou mais de 5. Porém, é recomendado que haja um
+planejamento prévio (cerca de um dia) e uma avaliação após a \textit{Sprint}
+(metade de um dia), ambos com todos da equipe de desenvolvimento, designers e
+envolvidos presentes.
+
+Os seis passos e os seus encadeamentos são bem claros:
+\begin{enumerate}
+  \item \textbf{Understand (Entender)}: Quais são as necessidades do usuário, de
+	negócio e as capacidades tecnológicas?
+	\item \textbf{Define (Definir)}: Qual é a estratégia chave ou o foco?
+	\item \textbf{Diverge (Divergir)}: Como vamos explorar todas as ideias
+	possíveis?
+	\item \textbf{Decide (Decidir)}: Selecionar as melhoras ideias até o momento.
+	\item \textbf{Prototype (Prototipar)}: Criar um artefato que permita o teste
+	com usuários
+	\item \textbf{Validate (Validar)}: Testar as ideias com usuários, envolvidos e
+	pessoas do meio técnico.
+\end{enumerate}
+
+O guia completo de como executar uma \textit{Design Sprint} pode ser encontrado
+online no site de desenvolvedores da Google.
+\footnote{\url{https://developers.google.com/design-sprint/downloads/DesignSprintMethods.pdf}}
+
+\subsection{Outras Propostas}
+
+Considerando o material disponibilizado ao aluno (e disponível publicamente) da
+\textit{Design Sprint} realizada pela equipe do Mezuro e a experiência obtida
+da Análise Exploratória, são propostos estes outros \textit{sketches}. São telas
+relacionadas com a interação do usuário e com o objetivo de tornar o Mezuro mais
+atrativo a novos usuários. As propostas são:
+
+% TODO: add figuras da barra de menu e telas de login e sign up
+
+
+% Seção 6.2 - Discussão/Avaliação de técnicas de VS no Mezuro
+% "existe essa proposta do experimento, mas não recomendamos no momento..."
+
+\section{Avaliação de Técnicas de VS no Mezuro}
+
+Nesta seção é exposto o exemplo de uso utilizando a biblioteca Javascript D3.js;
+as justificativas e escolhas de projetos para este exemplo; e a exposição da
+pesquisa de avaliação feita com estudantes e pessoas envolvidas com o
+desenvolvimento do Mezuro.
+
+\subsection{D3 - Data-Driven Documents}
 
 D3.js (\textit{Data-Driven-Documents}) é uma biblioteca Javascript construída
 inicialmente por \citeonline{bostock2011d3}, que tem como um dos seus objetivos
@@ -44,7 +132,7 @@ galeria de exemplos que podem se adaptar ao proposto neste trabalho.
 
 https://github.com/mbostock/d3/wiki/Gallery
 
-\section{Exemplo de Uso}
+\subsection{Exemplo de Uso}
 
 Como prova de conceito, foi realizado a adaptação de três visualizações dos
 exemplos disponíveis na galeria da biblioteca D3. A primeira, feita por Thomas
@@ -173,3 +261,11 @@ feita por Lars Kotthoff (Node Link with Interaction - Collapsible Indented
 Tree) como a melhor para interpretação das métricas e também para identificar
 com mais claridade os pontos críticos. Os resultados completos estão no Apêndice
 \ref{chap:apendiceA}.
+
+\subsection{Discussão Final}
+
+A proposta inicial de aplicação de técnicas de VS foi revogado ao longo do
+desenvolvimento deste trabalho. Porém, os resultados propostos neste experimento
+podem ser um passo inicial nesta direção. Considerando o estado atual do Mezuro,
+é recomendado, portanto, que a apresentação dos resultados das métricas com as
+visualizações propostas no exemplo de uso não seja trabalhada de fato.
