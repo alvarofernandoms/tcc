@@ -16,10 +16,6 @@ justifica todo o estudo e levantamento bibliográfico do Capítulo
 anterior a este, uma nova aposta de evolução foi levantada e é a descrita no
 restante deste capítulo, como segundo conjunto de contribuições.
 
-% TODO: Seção 6.1 = proposta de evolução de apresentação dos dados do Mezuro
-% - aplicação do design
-% TODO: quais são essas evoluções
-
 \section{Proposta de Evolução}
 
 A seguir são dispostas os protótipos das telas idealizadas pelo aluno. São
@@ -30,7 +26,67 @@ uma hipótese levantada durante o desenvolvimento deste trabalho: se a melhoria 
 \textit{design} já não é uma primeira abordagem desejável antes  de um esforço
 em aplicar técnicas de VS. As evoluções são:
 
-% TODO: prototipar e adicionar figuras
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.45]
+    {figuras/mezuro-repositorio-view-about-right.eps}
+  \caption{Proposta 1 - Informações à direita}
+  \label{fig:mezuro-repositorio-view-about-right}
+\end{figure}
+
+\newpage
+
+A Figura \ref{fig:mezuro-repositorio-view-about-right} mostra a proposta de
+posicionar as informações sobre o repositório, na tela de exibição dos
+resultados à direita e trazer o que é mais importante para a avaliação do código
+para o topo da tela. Também é proposto a subdivisão das informações ``Sobre''
+e as ``Informações de Processamento'' para os menus dispostos ao lado do título
+do Software, e cada um sendo um aba de conteúdo. A primeira para os resultados,
+a segunda contendo as informações gerais do repositório e a terceira com as
+informações de processamento.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.35]
+    {figuras/mezuro-repositorio-view-hamburguer-close.eps}
+  \caption{Proposta 2.1 - Informações escondidas - \textit{Menu Hamburger}}
+  \label{fig:mezuro-repositorio-view-hamburguer-close}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.35]
+    {figuras/mezuro-repositorio-view-hamburguer-open.eps}
+  \caption{Proposta 2.2 - Informações expostas - \textit{Menu Hamburger}}
+  \label{fig:mezuro-repositorio-view-hamburguer-open}
+\end{figure}
+
+\newpage
+
+As propostas das Figuras \ref{fig:mezuro-repositorio-view-hamburguer-close} e
+\ref{fig:mezuro-repositorio-view-hamburguer-open} são uma possível solução para
+novamente trazer o que há de mais importante na avaliação, que são as métricas.
+As informações, portanto, ficariam escondidas e acessíveis através do menu
+\textit{hamburger} do lado esquerdo do nome do repositório. Ao clicar, o
+conteúdo da página afastaria o suficiente para expor as informações e o menu
+seria substituído por um símbolo de fechar (letra X).
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.45]
+    {figuras/arvore-lateral.eps}
+  \caption{Proposta 3 - Árvore de Módulos na lateral esquerda}
+  \label{fig:arvore-lateral}
+\end{figure}
+
+A última proposta de evolução da exibição dos resultados no Mezuro, é a exposta
+na Figura \ref{fig:arvore-lateral}. A sugestão é: trazer a ``Árvore de Módulos''
+já construída na ferramenta, para a esquerda e construí-la de forma semelhante
+à estrutura de editores de código-fonte comumente utilizado por desenvolvedores.
+Outro ponto importante nessa nova disposição, seria a inclusão das cores de
+destaque, que veriam de acordo com as cores já definidas no ``Grupo de Leitura''
+e representariam os diretórios/arquivos críticos. Outra proposta é dividir cada
+uma das métricas em abas centralizadas e divididas por uma barra vertical.
 
 \subsection{Design Sprint}
 
@@ -41,11 +97,13 @@ com conceitos baseados no desenvolvimento ágil \cite{designSprintDoc}.
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
+    \includegraphics[keepaspectratio=true,scale=0.45]
     {figuras/home-DS-flow-ill.eps}
   \caption{Estágios da \textit{Design Sprint}}
   \label{fig:home-DS-flow-ill}
 \end{figure}
+
+\newpage
 
 A Figura \ref{fig:home-DS-flow-ill} mostra os seis estágios da \textit{Sprint},
 de um dos métodos possíveis de se construir este processo. A ideia é concentrar
@@ -82,15 +140,65 @@ da Análise Exploratória, são propostos estes outros \textit{sketches}. São t
 relacionadas com a interação do usuário e com o objetivo de tornar o Mezuro mais
 atrativo a novos usuários. As propostas são:
 
-% TODO: add figuras da barra de menu e telas de login e sign up
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.35]
+    {figuras/mezuro-cadastro-github.eps}
+  \caption{Proposta 4.1 - Cadastro e \textit{Login} com o Github}
+  \label{fig:mezuro-cadastro-github}
+\end{figure}
 
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+    {figuras/singup_mezuro_github.eps}
+  \caption{Proposta 4.2 - Tela de \textit{Login} no Github}
+  \label{fig:singup_mezuro_github}
+\end{figure}
+
+A Figura \ref{fig:mezuro-cadastro-github} mostra a proposta de opção ao usuário
+de realizar o cadastro e o \textit{login} com a conta do Github ou com e-mail.
+E a Figura \ref{fig:singup_mezuro_github} mostra como seria a interação com o
+usuário na tela de \textit{login} gerada pelo próprio Github.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.45]
+    {figuras/barra-superior.eps}
+  \caption{Proposta 5 - Nova Barra Superior}
+  \label{fig:barra-superior}
+\end{figure}
+
+A proposta da Figura \ref{fig:barra-superior} demonstra a modificação dos
+seguintes aspectos: imagem do usuário (vinda do Gravatar ou da conta do Github)
+ao invés do nome literal; modificação do texto da linguagem para a bandeira da
+nação correspondente; e retirada do menu ``Início'', pois já é uma convenção de
+páginas \textit{Webs} que a imagem do site seja o retorno para o seu início.
+O aluno acredita que a foto do usuário irá trazer mais pessoalidade e avivamento
+ao Mezuro.
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.45]
+    {figuras/size_content_1.eps}
+  \caption{Proposta 6 - Largura da disposição do conteúdo}
+  \label{fig:size_content_1}
+\end{figure}
+
+\newpage
+
+A última proposta, Figura \ref{fig:size_content_1}, visa sugerir a diminuição da
+largura em que o conteúdo do site é exposto. A disposição seria então
+centralizada, com o tamanho de 960px em uma tela de 1320px disponíveis, cerca de
+72\% da tela. Nas versões para \textit{tablets} e celulares, essa proporção de
+largura poderia ocupar 100\% da tela.
 
 % Seção 6.2 - Discussão/Avaliação de técnicas de VS no Mezuro
 % "existe essa proposta do experimento, mas não recomendamos no momento..."
 
 \section{Avaliação de Técnicas de VS no Mezuro}
 
-Nesta seção é exposto o exemplo de uso utilizando a biblioteca Javascript D3.js;
+Nesta seção é exposto: o exemplo de uso utilizando a biblioteca Javascript D3.js;
 as justificativas e escolhas de projetos para este exemplo; e a exposição da
 pesquisa de avaliação feita com estudantes e pessoas envolvidas com o
 desenvolvimento do Mezuro.
@@ -120,7 +228,8 @@ três preocupações: compatibilidade, depuração e desempenho \cite{bostock201
 
 A biblioteca D3.js é licenciada sob a \textit{BSD licenses}, que é compatível
 com a licença do Mezuro (\textit{AGPL} - \textit{Version} 3) e possui uma vasta
-galeria de exemplos que podem se adaptar ao proposto neste trabalho.
+galeria\footnote{\url{https://github.com/mbostock/d3/wiki/Gallery}} de exemplos
+que podem se adaptar ao proposto neste trabalho.
 
 \begin{figure}[!htb]
 	\centering
@@ -129,8 +238,6 @@ galeria de exemplos que podem se adaptar ao proposto neste trabalho.
   \caption{Galeria de Exemplos da biblioteca D3.js \cite{galleryD3}}
   \label{fig:d3_gallery}
 \end{figure}
-
-https://github.com/mbostock/d3/wiki/Gallery
 
 \subsection{Exemplo de Uso}
 
