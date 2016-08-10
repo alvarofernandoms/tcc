@@ -100,8 +100,6 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 		\end{itemize}
 \end{itemize}
 
-% TODO: pegar o nome completo do Morais, e referenciar o se trabalho de mestrado
-
 Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
 uma configuração como possível ponto inicial para a análise, baseada no trabalho
 de mestrado de \citeonline{de2013kalibro}. Esta configuração está disponível no site do
@@ -498,12 +496,18 @@ a nota, e uma cor.
 
 \newpage
 
-% TODO: adicionar a página de resultados de outro software que não o Xemelê
-% TODO: o que são métricas hotspot?
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+    {figuras/mezuro-repositorio-view-terracota.eps}
+  \caption{Mezuro - Repositório - Resultados}
+	\label{fig:mezuro-repositorio-view-terracota}
+\end{figure}
 
-A página de exibição dos resultados da avaliação é composta por informações do
+A página de exibição dos resultados da avaliação (Figura
+\ref{fig:mezuro-repositorio-view-terracota}) é composta por informações do
 repositório, do processamento, árvore de módulos, resultados de métricas de
-\textit{hotspot} e resultados de métrica.
+\textit{hotspot} (pontos críticos do software) e resultados de métrica.
 As métricas são expotas por conjuntos de resultados: métricas \textit{hotspot} e
 demais métricas. Na opção de ``Árvore de Módulos'', é possível navegar nos
 diretórios do projeto e verificar os resultados para determinada camada do
