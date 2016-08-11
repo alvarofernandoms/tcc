@@ -2,29 +2,38 @@
 
 % TODO: SUPER TAREFA! Organizar imagens/figuras antes dos textos que as explicam
 
+A chamada ``crise do software'' \cite{arthur1985measuring} foi a grande
+responsável pela necessidade de averiguação e evolução da qualidade do produto
+da engenharia de software. Os requisitos que definem a qualidade de um sistema
+e também estão envolvidos com a sua complexidade são
+\cite{behkamal2009customizing}: execução correta das funcionalidades previstas;
+confiabilidade; usabilidade; eficiência; manutenibilidade; e portabildiade. Para
+o desenvolvimento de um software, são levados em consideração aspectos como
+tamanho e interação entre os diversos componentes \cite{koscianski2007qualidade},
+podendo ferir um ou mais dos requisitos da \citeonline{behkamal2009customizing}.
+
 Aspectos da qualidade não são claros em muitos softwares atualmente e existe
 uma grande complexidade em entender o seu funcionamento. A visualização de
 software pode auxiliar e ou facilitar o entendimento destes aspectos e pode
-reduzir essa complexidade. Não faltam dados disponíveis publicamente para
-auxiliar na geração desse entendimento: código-fonte, históricos de evolução do
-repositório, conjuntos de testes, relatórios de erros e suas soluções, trocas
-de mensagens entre membros do projeto em listas de e-mail, artigos escritos por
-acadêmicos que buscam fama, entre outros \cite{messias2012}
-\cite{benkler2006wealth}.
+reduzir essa complexidade \cite{messias2012} \cite{benkler2006wealth}. Não
+faltam dados disponíveis publicamente para auxiliar na geração desse
+entendimento: código-fonte, históricos de evolução do repositório, conjuntos de
+testes, relatórios de erros e suas soluções, trocas de mensagens entre membros
+do projeto em listas de e-mail, artigos escritos por acadêmicos que buscam fama,
+entre outros \cite{messias2012} \cite{benkler2006wealth}.
 
-É preciso processar esses dados de forma correta. E considerando também que
-desenvolvedores são cruciais para o sucesso de um projeto e os valores
+Desenvolvedores são cruciais para o sucesso de um projeto. Os valores
 numéricos dos vários locais com dados disponibilizados publicamente em que é
-possível coletar os dados citados no parágrafo anterior, eventualmente podem não ter
-uma boa apresentação. Os dados podem ser de pouco valor, pois são numerosos e
-difíceis de avaliar. Uma possível solução: visualização de informação
+possível coletar os dados citados no parágrafo anterior, eventualmente podem não
+ter uma boa apresentação. Os dados podem ser de pouco valor, pois são numerosos
+e difíceis de avaliar. Uma possível solução: visualização de informação
 \cite{messias2012}. Visualizações de informação é toda aquela representação
 desenvolvida por computador que tem como objetivo a geração e aplicação de
-conhecimento. Podem ser interativas ou não, e podem influenciar analistas de
-dados nas tomadas de decisões e na transmissão desses conhecimentos a partir de
-dados complexos \cite{card1999readings}. Um problema da Visualização de Software
-(VS) é selecionar uma técnica, pois nenhuma técnica específica funciona para
-todos os problemas.
+conhecimento \cite{card1999readings}. Podem ser interativas ou não, e podem
+influenciar analistas de dados nas tomadas de decisões e na transmissão desses
+conhecimentos a partir de dados complexos \cite{card1999readings}. Um problema
+da Visualização de Software (VS) é selecionar uma técnica, pois nenhuma técnica
+específica funciona para todos os problemas.
 
 O software livre apresenta certas vantagens em detrimento do software restrito.
 Geralmente licenciado sob as definições da
@@ -46,7 +55,7 @@ características \cite{raymond1999cathedral}.
 
 Neste trabalho, é apresentada uma análise exploratória da plataforma \textbf{livre}
 Mezuro\footnote{\url{http://mezuro.org/}}, que é uma ferramenta de monitoramento
-de código-fonte. O primeiro objetivo pensado para esta análise foi verificar a
+de código-fonte. Primeiramente foi-se pensado para esta análise a verificação da
 necessidade de aplicação de técnicas de Visualização de Software na plataforma
 Mezuro. Isso porque, é estabelicido como motivação identificar os motivos do
 baixo número de usuários e número de projetos no Mezuro, em comparação, por
@@ -75,13 +84,12 @@ avaliação de métricas de código-fonte.
 
 \section{Organização do Trabalho}
 
-% TODO: alterar esta organização
-
-O trabalho está organizado da seguinte maneira: capítulo 2, onde será tratado o
-Mezuro como principal ferramenta, foco da análise exploratória; capítulo 3, onde
-será tratada a Visualização de Software como principal base para o
-referencial teórico e revisão bibliográfica do estudo sobre VS; capítulo 4,
-que trata da metodologia para o desenvolvimento do mesmo; no capítulo 5 é
-apresentada a análise das métricas de código-fonte dos projetos do SPB via
-Mezuro, com explicação de um dos casos de uso; capítulo 6, com a proposta de VS
-para o Mezuro; e o capítulo 7 com as conclusões e trabalhos futuros;
+O trabalho está organizado da seguinte maneira: Capítulo \ref{chap:mezuro}, onde
+será tratado o Mezuro como principal ferramenta, foco da análise exploratória;
+Capítulo \ref{chap:visualizacao}, onde será tratada a Visualização de Software
+como principal base para o referencial teórico e revisão bibliográfica do estudo
+sobre VS; Capítulo \ref{chap:metodologia}, que trata da metodologia para o
+desenvolvimento do mesmo; no Capítulo \ref{chap:analise_exploratoria} é
+apresentada a análise exploratória de fato do Mezuro, com explicação de um dos
+casos de uso; Capítulo \ref{chap:proposta}, com a proposta de melhoria para o
+Mezuro; e o Capítulo \ref{chap:conclusao} com as conclusões e trabalhos futuros.
