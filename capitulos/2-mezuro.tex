@@ -13,15 +13,15 @@ com suas necessidades, o processo de análise feito pelo Kalibro através de
 \begin{description}
   \item \textbf{Configurações}: que são um conjunto de métricas. Considerando o
   trabalho de \citeonline{meirelles2013monitoramento} e a possibilidade de
-  criação de novas configurações pela comunidade, espara-se que as mais
+  criação de novas configurações pela comunidade, espera-se que as mais
   representativas e mais utilizadas sejam em algum momento um padrão, ou
-  concenso;
+  consenso;
   \item \textbf{Grupos de Leitura}:  para provimento de uma
   interface gráfica de um conjunto de leitura que tenha algum sentido quando
   agrupadas, por exemplo: com a pontuação x, a métrica terá o ``rótulo'' ``BOM'' e
   será atribuído a ela a cor amarela; com a pontuação x + 2, a métrica terá o
   ``rótulo'' ``ÓTIMO'' e estará com a cor verde. As cores são para destacar a
-  interpretação e são definidas com valores hexadecimal.
+  interpretação e são definidas com valores hexadecimais.
 \end{description}
 
 Em 2013, o Mezuro foi totalmente reescrito em Ruby, com objetivo de manter na
@@ -48,9 +48,9 @@ o que são métricas de código-fonte e que o seu monitoramento está ligado a
 avaliação da qualidade interna (que se reflete na externa) de um produto de
 software.
 
-Métricas de código estão ligadas ao desenvolvimento, planejamento, custos,
+Métricas de código estão ligadas ao desenvolvimento, planejamento, custo,
 produtividade e qualidade do software. Podem ser dinâmicas ou estáticas, onde a
-diferença reside na excução ou não do programa (medições apenas do código-fonte),
+diferença reside na execução ou não do programa (medições apenas do código-fonte),
 respectivamente. Existem dois grandes conjuntos de métricas estáticas:
 métricas tradicionais e métricas de orientação a objetos. São métricas
 tradicionais, métricas de: tamanho (ex. Linhas de Código - LOC), complexidade
@@ -67,7 +67,7 @@ código-fonte de múltiplas linguagens. Particularmente importante para o Mezuro
 pois é ele que analisa métricas de C, C++ e Java, e foi o primeiro coletor
 adicionado. São disponibilizadas 47 métricas para o usuário utilizar-se e montar
 determinada configuração de métricas de acordo com as necessidades. Dentre estas
-47, é destacado os dois grupos relacionados à métricas no nível de projeto e as
+47, é destacado os dois grupos relacionados às métricas no nível de projeto e às
 métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 
 \begin{itemize}
@@ -100,7 +100,7 @@ métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
 		\end{itemize}
 \end{itemize}
 
-Para projetos desenvolvidos em em Java, C e C++, a equipe do Mezuro já propõe
+Para projetos desenvolvidos em Java, C e C++, a equipe do Mezuro já propõe
 uma configuração como possível ponto inicial para a análise, baseada no trabalho
 de mestrado de \citeonline{de2013kalibro}. Esta configuração está disponível no site do
 Mezuro com o seguinte nome: ``Java / C / C++''
@@ -254,11 +254,12 @@ kolekti\_cc\_phpmd\footnote{\url{https://github.com/mezuro/kolekti\_cc\_phpmd}}.
 
 Outro componente desenvolvido pela equipe do Mezuro, é o \textbf{Likeno}. A
 função principal dele é conectar serviços através de uma API RESTful. Parte do
-é extraído do \textit{Kalibro Client}, porém simplificando e estabelecendo uma
-prática de reuso para projetos que não tenham relação com Mezuro. O
-\textit{Likeno} também foi empacotado como uma \textit{Gem} e é similar à outras
-APIs, como a \textit{ActiveResource}\footnote{\url{https://github.com/rails/activeresource}}
-e a \textit{her}\footnote{\url{https://github.com/remiprev/her}}.
+código foi extraído do \textit{Kalibro Client}, porém simplificando e
+estabelecendo uma prática de reuso para projetos que não tenham relação com o
+Mezuro. O \textit{Likeno} também foi empacotado como uma \textit{Gem} e é
+similar à outras APIs, como a \textit{ActiveResource}
+\footnote{\url{https://github.com/rails/activeresource}} e a \textit{her}
+\footnote{\url{https://github.com/remiprev/her}}.
 
 Dada essa arquitetura baseada em serviços, as principais funcionalidades podem
 ser divididas em dois grupos:
@@ -292,13 +293,12 @@ ser divididas em dois grupos:
     \end{itemize}
 \end{itemize}
 
-Com esse conjunto de funcionalidades, o Mezuro apresenta-se como uma ferramenta
-inovadora. Neste trabalho, destaca-se, portanto, que o Mezuro é uma ferramenta
+Neste trabalho, destaca-se, portanto, que o Mezuro é uma ferramenta
 com grande potencial, e funcionalidades inovadoras e úteis. A arquitetura
 modularizada gera uma abordagem de interpretação adequada para o monitoramento
 das métricas. Por isso, o foco deste trabalho é melhorar a camada de interface
-\textit{Web} de interação com o usuário, para exatamente aproveitar/alavancar este
-potencial.
+\textit{Web} de interação com o usuário, para exatamente aproveitar/alavancar
+este potencial.
 
 \section{Mezuro: Prezento}
 
@@ -386,8 +386,8 @@ Figura \ref{fig:mezuro-repositorios-v2}. Na criação de um repositório, é
 necessário informar: nome, descrição, licença, tipo de sistema de
 versionamento, endereço acessível para o repositório de código, qual ramo
 deseja-se que seja realizada a avaliação (se \textit{master},
-\textit{dev}, ou \textit{prod}, por exemplo), a frequência com deseja-se que o
-projeto seja reprocessado e a Configuração de Métrica. A frequência de
+\textit{dev}, ou \textit{prod}, por exemplo), a frequência com que deseja-se que
+o projeto seja reprocessado e a Configuração de Métrica. A frequência de
 reprocessamento gera um gráfico de qualidade por tempo de acordo com as várias
 avaliações do código que são feitas.
 
