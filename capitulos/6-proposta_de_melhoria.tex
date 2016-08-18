@@ -89,58 +89,6 @@ destaque, que veriam de acordo com as cores já definidas no ``Grupo de Leitura'
 e representariam os diretórios/arquivos críticos. Outra proposta é dividir cada
 uma das métricas em abas centralizadas e divididas por uma barra vertical.
 
-\subsection{Design Sprint}
-
-A equipe do Mezuro, no final de 2015, realizou um método/processo chamado de
-\textit{Design Sprint}. Este método, desenvolvido pela Google Ventures tem como
-objetivo o pensamento voltado para a exibição e \textit{layout} de um produto,
-com conceitos baseados no desenvolvimento ágil \cite{designSprintDoc}.
-
-\begin{figure}[!htb]
-	\centering
-    \includegraphics[keepaspectratio=true,scale=0.45]
-    {figuras/home-DS-flow-ill.eps}
-  \caption{Estágios da \textit{Design Sprint}}
-  \label{fig:home-DS-flow-ill}
-\end{figure}
-
-\newpage
-
-A Figura \ref{fig:home-DS-flow-ill} mostra os seis estágios da \textit{Sprint},
-de um dos métodos possíveis de se construir este processo. A ideia é concentrar
-a equipe toda, grande ou pequena, no desenvolvimento de novas interfaces e
-experiências para o usuário do produto. A \textit{Sprint} em si não se deve
-levar menos de 2 dias para isso, ou mais de 5. Porém, é recomendado que haja um
-planejamento prévio (cerca de um dia) e uma avaliação após a \textit{Sprint}
-(metade de um dia), ambos com todos da equipe de desenvolvimento, designers e
-envolvidos presentes.
-
-Os seis passos e os seus encadeamentos são bem claros:
-\begin{enumerate}
-  \item \textbf{Understand (Entender)}: Quais são as necessidades do usuário, de
-	negócio e as capacidades tecnológicas?
-	\item \textbf{Define (Definir)}: Qual é a estratégia chave ou o foco?
-	\item \textbf{Diverge (Divergir)}: Como vamos explorar todas as ideias
-	possíveis?
-	\item \textbf{Decide (Decidir)}: Selecionar as melhoras ideias até o momento.
-	\item \textbf{Prototype (Prototipar)}: Criar um artefato que permita o teste
-	com usuários
-	\item \textbf{Validate (Validar)}: Testar as ideias com usuários, envolvidos e
-	pessoas do meio técnico.
-\end{enumerate}
-
-O guia completo de como executar uma \textit{Design Sprint} pode ser encontrado
-online no site de desenvolvedores da Google.
-\footnote{\url{https://developers.google.com/design-sprint/downloads/DesignSprintMethods.pdf}}
-
-\subsection{Outras Propostas}
-
-Considerando o material disponibilizado ao aluno (e disponível publicamente) da
-\textit{Design Sprint} realizada pela equipe do Mezuro e a experiência obtida
-da Análise Exploratória, são propostos estes outros \textit{sketches}. São telas
-relacionadas com a interação do usuário e com o objetivo de tornar o Mezuro mais
-atrativo a novos usuários. As propostas são:
-
 \begin{figure}[!htb]
 	\centering
     \includegraphics[keepaspectratio=true,scale=0.35]
@@ -157,6 +105,9 @@ atrativo a novos usuários. As propostas são:
   \label{fig:singup_mezuro_github}
 \end{figure}
 
+Também  são propostas telas relacionadas com a interação do usuário e com o
+objetivo de tornar o Mezuro mais atrativo a novos usuários.
+%
 A Figura \ref{fig:mezuro-cadastro-github} mostra a proposta de opção ao usuário
 de realizar o cadastro e o \textit{login} com a conta do Github ou com e-mail.
 E a Figura \ref{fig:singup_mezuro_github} mostra como seria a interação com o
@@ -273,66 +224,7 @@ métricas são:
   \item \textbf{SC} (\textit{Structural Complexity} - Complexidade estrutural)
 \end{itemize}
 
-A segunda adaptação foi baseada no trabalho de Michael Bostock, \textit{Node
-Link Tree, Radial Reingold – Tilford Tree}
-\footnote{\url{http://bl.ocks.org/tpreusse/2bc99d74a461b8c0acb1}}. E a terceira
-é adaptada de uma das visualizações criadas por Lars
-Kotthoff\footnote{\url{http://bl.ocks.org/larskotthoff/7022289}}.
 
-Para a exibição destas adaptações, foi realizado a construção de uma aplicação
-Rails simplificada, apenas com o carregamento de páginas estáticas e hospedada
-na plataforma Heroku. Pode ser acessada através do domínio
-\href{https://visualizationtest.herokuapp.com/}{visualizationtest.herokuapp.com}.
-
-Com o propósito de ser um teste de visualização de software, esta exibição foi
-submetida à avaliação de estudantes e pessoas envolvidas com a Engenharia de
-Software. Utilizou-se da ferramenta Google Forms para tal pesquisa. Foi exposto
-o seguinte texto de introdução:
-
-
-\begin{itemize}
-  \item[] \textit{Olá!}
-  \item[] \textit{Esse questionário tem o objetivo de me ajudar com o meu
-	projeto de TCC.}
-  \item[] \textit{A primeira considera três métricas básicas (número de
-	métodos, número de métodos públicos e o número total de módulos) de um
-	projeto qualquer.}
-  \item[] \textit{A segunda e a terceira são métricas coletadas do projeto da
-	engine para jogos do professor Edson Alves da Costa Junior(1) e considerando
-	apenas três classes (Animation, MouseButtonEvent e Level). As métricas são da
-	configuração geral para projetos JAVA/C/C++ do Mezuro(2).}
-	\item[] \textit{Por favor, acesse https://visualizationtest.herokuapp.com/ e
-	navegue pelos três links. Veja se achou intuitivo e fácil de utilizar. Após
-	ter passadas pelas três visualizações, responda essas perguntas:}
-	\item[] \textit{Referências}
-	\item[] \textit{(1) https://github.com/fgagamedev/IJE}
-	\item[] \textit{(2) http://mezuro.org/pt/kalibro\_configurations/1}
-\end{itemize}
-
-E as perguntas foram:
-
-\begin{itemize}
-  \item[] \textit{Qual das visualizações você considera melhor para a
-	interpretação das métricas?}
-		\begin{itemize}
-			\item {Random Radar Chart by Thomas Preusse (adapted)}
-			\item {Node Link Tree by Mike Bostock (adapted)}
-			\item {Node Link With Interation by Lars Kotthoff (adapted)}
-		\end{itemize}
-  \item[] \textit{Qual delas foi mais claro identificar os
-	pontos/classes/métricas críticos e que merecem atenção?}
-		\begin{itemize}
-			\item {Random Radar Chart by Thomas Preusse (adapted)}
-			\item {Node Link Tree by Mike Bostock (adapted)}
-			\item {Node Link With Interation by Lars Kotthoff (adapted)}
-		\end{itemize}
-  \item[] \textit{Por favor, caso tenha algum comentário, críticas e sugestões,
-	utilize o campo abaixo:}
-\end{itemize}
-
-As figura \ref{fig:radar}, \ref{fig:node_link_tree} e
-\ref{fig:node_link_tree_with_interaction} mostram estas adaptações disponíveis
-na pequena aplicação Rails.
 
 \begin{figure}[!htb]
 	\centering
@@ -358,20 +250,50 @@ na pequena aplicação Rails.
   \label{fig:node_link_tree_with_interaction}
 \end{figure}
 
-\newpage
+A segunda adaptação foi baseada no trabalho de Michael Bostock, \textit{Node
+Link Tree, Radial Reingold – Tilford Tree}
+\footnote{\url{http://bl.ocks.org/tpreusse/2bc99d74a461b8c0acb1}}. E a terceira
+é adaptada de uma das visualizações criadas por Lars
+Kotthoff\footnote{\url{http://bl.ocks.org/larskotthoff/7022289}}.
 
-\newpage
+Para a exibição destas adaptações, foi realizado a construção de uma aplicação
+Rails simplificada, apenas com o carregamento de páginas estáticas e hospedada
+na plataforma Heroku. Pode ser acessada através do domínio
+\href{https://visualizationtest.herokuapp.com/}{visualizationtest.herokuapp.com}.
 
+
+Com o propósito de ser um teste de visualização de software, esta exibição foi
+submetida à avaliação de estudantes e pessoas envolvidas com a Engenharia de
+Software, perguntando:
+
+\begin{itemize}
+  \item[] \textit{Qual das visualizações você considera melhor para a
+	interpretação das métricas?}
+		\begin{itemize}
+			\item {Random Radar Chart by Thomas Preusse (adapted)}
+			\item {Node Link Tree by Mike Bostock (adapted)}
+			\item {Node Link With Interation by Lars Kotthoff (adapted)}
+		\end{itemize}
+  \item[] \textit{Qual delas foi mais claro identificar os
+	pontos/classes/métricas críticos e que merecem atenção?}
+		\begin{itemize}
+			\item {Random Radar Chart by Thomas Preusse (adapted)}
+			\item {Node Link Tree by Mike Bostock (adapted)}
+			\item {Node Link With Interation by Lars Kotthoff (adapted)}
+		\end{itemize}
+\end{itemize}
+
+As figura \ref{fig:radar}, \ref{fig:node_link_tree} e
+\ref{fig:node_link_tree_with_interaction} mostram estas adaptações disponíveis
+na pequena aplicação Rails.
+%
 Com um total de 18 participantes, aproximadamente 60\% escolheu a visualização
 feita por Lars Kotthoff (Node Link with Interaction - Collapsible Indented
 Tree) como a melhor para interpretação das métricas e também para identificar
 com mais claridade os pontos críticos. Os resultados completos estão no Apêndice
 \ref{chap:apendiceA}.
 
-\subsection{Discussão Final}
+Em suma, a proposta inicial de aplicação de técnicas de VS foi revogado ao
+longo do desenvolvimento deste trabalho. Porém, os resultados propostos neste
+experimento podem ser um passo inicial nesta direção. 
 
-A proposta inicial de aplicação de técnicas de VS foi revogado ao longo do
-desenvolvimento deste trabalho. Porém, os resultados propostos neste experimento
-podem ser um passo inicial nesta direção. Considerando o estado atual do Mezuro,
-é recomendado, portanto, que a apresentação dos resultados das métricas com as
-visualizações propostas no exemplo de uso não seja trabalhada de fato.
