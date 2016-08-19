@@ -11,9 +11,6 @@ desenvolvido em PHP. Quantidade esta que foi decisiva na seleção de quais
 softwares seriam avaliados, além de conciliar com o intuito da equipe de
 desenvolvimento do SPB de incorporar o Mezuro neste Portal.
 
-O resultado dessa análise exploratória é o primeiro conjunto de contribuições
-des te trabalho.
-
 \section{Exemplo de Uso: Projetos do Software Público Brasileiro}
 
 O Software Público Brasileiro (SPB) é uma inciativa do Governo Federal que visa
@@ -26,9 +23,6 @@ governos e sociedade, pela similaridade de demandas entre os órgãos e entidade
 públicas, pela racionalização dos recursos humanos, materiais e de tecnologia
 da informação para seu atendimento e pelo acervo de soluções desenvolvidas
 pelos diferentes poderes e esferas governamentais \cite{santos2011in01}.
-
-Este capítulo trata da análise das métricas do código-fonte dos projetos do SPB
-via Mezuro.
 
 O SPB portanto é uma plataforma \textit{Web} de colaboração integrada. É composto por um
 conjunto de ferramentas. São elas \cite{aboutSPB}:
@@ -123,7 +117,7 @@ levantadas neste trabalho. A adição dos softwares do SPB à ferramentas de
 monitoramento (Mezuro e Code Climate\footnote{\url{https://codeclimate.com/}})
 foi planejada para que o código seja avaliado e para que haja um incentivo aos
 desenvolvedores e administradores das comunidades do Portal ao monitoramento de
-seus projetos. Esta adição ou contribuição foi registrada e está disponível
+seus projetos. Essa adição ou contribuição foi registrada e está disponível
 para acesso por meio deste trabalho ou na lista de discussão para
 desenvolvedores do SPB.
 
@@ -135,10 +129,11 @@ código-fonte em outros serviços (Github, Bitbucket). Fato esse que já auxilio
 neste primeiro desafio de adicionar determinados softwares para avaliação no
 Mezuro. Porém, se considerarmos o SPB como a plataforma de colaboração
 integrada, colaboração que é um dos objetivos fundamentais ao Governo Federal
-com o Portal, o infortúnio de ter aproximadamente três-quartos dos softwares
+com o Portal, o contratempo de ter aproximadamente três-quartos dos softwares
 não versionados é algo que atinge toda a comunidade que utiliza o SPB: sejam
 desenvolvedores interessados em contribuir/evoluir os softwares; sejam usuários
-finais que também contribuem com registro de problemas, ou issues, ou \textit{bugs}.
+finais que também contribuem com registro de problemas, ou issues, ou
+\textit{bugs}.
 
 Por padrão, no momento da disponibilização de um novo software no SPB, já são
 criadas ``instâncias'' de cada uma das ferramentas que compõem o Portal. Bastando
@@ -161,7 +156,7 @@ completa dos softwares do SPB está no final da próxima seção deste capítulo
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.45]
+    \includegraphics[keepaspectratio=true,scale=0.4]
     {figuras/is_software_gitlab_spb.eps}
   \caption{Porcentagem de Softwares Versionados no Gitlab do SPB}
   \label{fig:is_software_gitlab_spb}
@@ -169,7 +164,7 @@ completa dos softwares do SPB está no final da próxima seção deste capítulo
 
 \begin{figure}[!htb]
 	\centering
-    \includegraphics[keepaspectratio=true,scale=0.5]
+    \includegraphics[keepaspectratio=true,scale=0.45]
     {figuras/linguagens_softwares_spb_v2.eps}
   \caption{Linguagens em que os Softwares do SPB são desenvolvidos}
   \label{fig:linguagens_softwares_spb_v2}
@@ -195,10 +190,9 @@ qualidade. Esta análise é feita a cada novo \textit{commit},
 \textit{pull request} ou \textit{branch}. A vinculação da conta é feita através
 do Github e a avaliação do código é gratuita enquanto o repositório estiver em
 uma conta no Github e for público necessariamente. Esta gratuidade é até um dos
-slogans da ferramenta: \textit{Code Climate is 100\% free for Open Source,
-forever. Add your Open Source GitHub repo.} (O Code Climate é 100\% grátis para
+slogans da ferramenta: \textit{O Code Climate é 100\% grátis para
 projetos de código aberto, para sempre. Adicione o seu repositório público do
-Github.) Para repositórios privados ou de outros sistemas de hospedagem remota de
+Github}. Para repositórios privados ou de outros sistemas de hospedagem remota de
 código (Gitlab, Bitbucket), é cobrado uma taxa de 25 dólares até a data de
 escrita deste trabalho. Porém, uma alternativa para projetos privados é utilizar
 a interface de linha de comandos com o comando do próprio Code Climate (Code
@@ -593,3 +587,8 @@ projeto. Estes impedimentos foram de fato detectados pela equipe na análise dos
         um processo está esgotando o tempo de execução e sendo finalizado.
     \end{itemize}
 \end{itemize}
+
+\section{Considerações Finais da Análise Exploratória}
+
+% TODO: falta fechar o capítulo 5, interpretando/resumindo as análises feitas
+% para fazer uma conexão com o próximo capítulo

@@ -52,23 +52,33 @@ Métricas de código estão ligadas ao desenvolvimento, planejamento, custo,
 produtividade e qualidade do software. Podem ser dinâmicas ou estáticas, onde a
 diferença reside na execução ou não do programa (medições apenas do código-fonte),
 respectivamente. Existem dois grandes conjuntos de métricas estáticas:
-métricas tradicionais e métricas de orientação a objetos. São métricas
-tradicionais, métricas de: tamanho (ex. Linhas de Código - LOC), complexidade
-(ex. Complexidade Ciclomática), manutenibilidade, dentre outras (Tamanho Médio
-dos Módulos, Uso de Variável, Número de Funções, por exemplo). E são métricas de
-orientação a objetos, métricas de: classes (ex. Encapsulamento dos Atributos),
-métodos (ex. Média de Complexidade dos Métodos), acoplamento (ex. Acoplamento
-Aferente), herança (ex. Medida de Polimorfismo) e sistema (ex. Reúso de Classe)
-\cite{meirelles2013monitoramento}.
+métricas tradicionais e métricas de orientação a objetos
+\cite{meirelles2013monitoramento}. São métricas tradicionais, métricas de:
+\begin{itemize}
+  \item Tamanho (ex. Linhas de Código - LOC);
+  \item Complexidade (ex. Complexidade Ciclomática);
+  \item Manutenibilidade;
+  \item Dentre outras (Tamanho Médio dos Módulos, Uso de Variável, Número de
+  Funções, por exemplo).
+\end{itemize}
+E são métricas de orientação a objetos, métricas de:
+\begin{itemize}
+  \item Classes (ex. Encapsulamento dos Atributos);
+  \item Métodos (ex. Média de Complexidade dos Métodos);
+  \item Acoplamento (ex. Acoplamento Aferente);
+  \item Herança (ex. Medida de Polimorfismo);
+  \item Sistema (ex. Reúso de Classe).
+\end{itemize}
 
 Um dos principais coletores de métricas do Mezuro é o Analizo\footnote{\url{http://www.analizo.org/}},
 que funciona como um conjunto de ferramentas extensível para análise de
 código-fonte de múltiplas linguagens. Particularmente importante para o Mezuro,
 pois é ele que analisa métricas de C, C++ e Java, e foi o primeiro coletor
 adicionado. São disponibilizadas 47 métricas para o usuário utilizar-se e montar
-determinada configuração de métricas de acordo com as necessidades. Dentre estas
-47, é destacado os dois grupos relacionados às métricas no nível de projeto e às
-métricas no nível de módulo \cite{terceiro2010analizo}. São elas:
+determinada configuração de métricas de acordo com as necessidades. No contexto
+das métricas do fornecidas pelo Analizo, tem-se dois grupos relacionados às
+métricas no nível de projeto e às métricas no nível de módulo
+\cite{terceiro2010analizo}. São elas:
 
 \begin{itemize}
   \item \textbf{Métricas Nível de Projeto}
