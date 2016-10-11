@@ -76,7 +76,7 @@ código-fonte de múltiplas linguagens. Particularmente importante para o Mezuro
 pois é ele que analisa métricas de C, C++ e Java, e foi o primeiro coletor
 adicionado. São disponibilizadas 47 métricas para o usuário utilizar-se e montar
 determinada configuração de métricas de acordo com as necessidades. No contexto
-das métricas do fornecidas pelo Analizo, tem-se dois grupos relacionados às
+das métricas fornecidas pelo Analizo, tem-se dois grupos relacionados às
 métricas no nível de projeto e às métricas no nível de módulo
 \cite{terceiro2010analizo}. São elas:
 
@@ -116,7 +116,8 @@ de mestrado de \citeonline{de2013kalibro}. Esta configuração está disponível
 Mezuro com o seguinte nome: ``Java / C / C++''
 \footnote{\url{http://mezuro.org/pt/kalibro_configurations/1}}. Configuração
 esta que talvez seja refatorada, pois muitas versões do coletor Analizo já foram
-lançadas desde a data de publicação desta dissertação de mestrado.
+lançadas desde a data de publicação da dissertação de mestrado do
+\citeonline{de2013kalibro}.
 
 Para projetos escritos em PHP, o Mezuro utiliza o Code Climate PHPMD
 \footnote{\url{https://github.com/codeclimate/codeclimate-phpmd}}.
@@ -154,13 +155,13 @@ conjunto as métricas são \cite{PichlerPHPMD}:
             Superglobals
 			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
             de Classes - CamelCaseClassName;
-			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
             de Atributos - CamelCasePropertyName;
-			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
             de Métodos - CamelCaseMethodName;
-			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
             de Parâmetros - CamelCaseParameterName;
-			\item É Considerado boa prática utilizar \textit{camelCase} na declaração
+			\item É Considerado boa prática utilizar \textit{CamelCase} na declaração
             de Variáveis - CamelCaseVariableName.
 		\end{itemize}
   \item \textbf{Regras de Projeto - Design Rules}:
@@ -184,7 +185,7 @@ conjunto as métricas são \cite{PichlerPHPMD}:
             maiúsculas - ConstantNamingConventions;
       \item Verifica métodos com retorno do tipo booleano - BooleanGetMethodName.
 		\end{itemize}
-  \item \textbf{Regras de Código não Utilizado - Unsed Code Rules}:
+  \item \textbf{Regras de Código não Utilizado - \textit{Unsed Code Rules}}:
     \begin{itemize}
       \item Detecta atributos privados que não são utilizados - UnusedPrivateField;
       \item Detecta atributos locais que não são utilizados - UnusedLocalVariable;
@@ -243,14 +244,14 @@ As aplicações são:
         para o gerenciamento das configurações.
 \end{itemize}
 
-A decisão de dividir o Kalibro em serviços separados foi tomada para deixar
-cada um deles com menos responsabilidades, facilitando a manutenção e evolução
-\cite{camarinhaOSS2015}. E a comunicação entre estes serviços é feita através
+A decisão de dividir o Kalibro em serviços separados, segundo
+\citeonline{camarinhaOSS2015}, foi tomada para deixar
+cada um deles com menos responsabilidades, facilitando a manutenção e evolução.
+E a comunicação entre estes serviços é feita através
 do Kalibro Client\footnote{\url{https://github.com/mezuro/kalibro\_client}}:
 um quarto software também escrito em Ruby, mantendo a escolha de centralização
-em uma única tecnologia. E, como demonstra Figura \ref{fig:mezuro_arch_v2},
-para simplificar a implementação, também foi decidido que a comunicação entre
-os serviços seria RESTful.
+em uma única tecnologia. E para simplificar a implementação, também foi decidido
+que a comunicação entre os serviços seria RESTful.
 
 O outro elemento presente na imagem, chamado \textbf{Kolekti}\footnote{\url{https://github.com/mezuro/kolekti}},
 é uma \textit{Rubygem} responsável pela extração e abstração dos coletores
@@ -267,12 +268,12 @@ função principal dele é conectar serviços através de uma API RESTful. Parte
 código foi extraído do \textit{Kalibro Client}, porém simplificando e
 estabelecendo uma prática de reuso para projetos que não tenham relação com o
 Mezuro. O \textit{Likeno} também foi empacotado como uma \textit{Gem} e é
-similar à outras APIs, como a \textit{ActiveResource}
+similar a outras APIs, como a \textit{ActiveResource}
 \footnote{\url{https://github.com/rails/activeresource}} e a \textit{her}
 \footnote{\url{https://github.com/remiprev/her}}.
 
 Dada essa arquitetura baseada em serviços, as principais funcionalidades podem
-ser divididas em dois grupos:
+ser divididas em dois grupos, segundo \citeonline{manzo2014}:
 
 \begin{itemize}
   \item Projeto
@@ -299,7 +300,7 @@ ser divididas em dois grupos:
         \item Criação de grupos de leitura para a interpretação textual dos
         resultados das métricas;
         \item Combinações de métricas nativas para criação de análises compostas
-        e mais complexas.''
+        e mais complexas.
     \end{itemize}
 \end{itemize}
 
@@ -518,7 +519,7 @@ A página de exibição dos resultados da avaliação (Figura
 \ref{fig:mezuro-repositorio-view-terracota}) é composta por informações do
 repositório, do processamento, árvore de módulos, resultados de métricas de
 \textit{hotspot} (pontos críticos do software) e resultados de métrica.
-As métricas são expotas por conjuntos de resultados: métricas \textit{hotspot} e
+As métricas são expostas por conjuntos de resultados: métricas \textit{hotspot} e
 demais métricas. Na opção de ``Árvore de Módulos'', é possível navegar nos
 diretórios do projeto e verificar os resultados para determinada camada do
 sistema. Por exemplo: caso o usuário queira visualizar as métricas da classe

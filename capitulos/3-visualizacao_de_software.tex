@@ -1,8 +1,8 @@
 \chapter{Visualização de Software}\label{chap:visualizacao}
 
 Na primeira parte deste trabalho, investigamos algumas técnicas de visualização
-de software, como primeira abordagem para melhor a apresentação dos valores das
-métricas no Mezuro. Isso porque, a visualização de um dado com propriedades
+de software, como primeira abordagem para melhorar a apresentação dos valores
+das métricas no Mezuro. Isso porque, a visualização de um dado com propriedades
 visuais como posição, tamanho, forma e cor, potencializam as habilidades
 sensoriais do ser humano. Possivelmente o usuário irá extrair observações e
 conclusões sobre os dados, e também poderá moldar esse conhecimento adquirido
@@ -23,8 +23,8 @@ contidas nos dados \cite{de2003visual}:
 \end{enumerate}
 
 Visualização da informação é portanto relacionada a \textbf{grandes conjuntos}
-de dados. Um \textbf{conjunto} é um o número de atributos ou dimensões que o
-identifica. Quantidade de dimensões é o mesmo que \textbf{dimensionalidade}.
+de dados. Um \textbf{conjunto} pode ser um o número determinado de atributos ou
+dimensões. E quantidade de dimensões é o mesmo que \textbf{dimensionalidade}.
 
 Os tipos de dados comuns são \cite{de2003visual}: bidimensionais e
 multidimensionais.
@@ -56,11 +56,11 @@ Os multidimensionais necessitam da aplicação de uma técnica
   \centering
     \includegraphics[keepaspectratio=true,scale=0.3]
     {figuras/parallel.eps}
-  \caption{Exemplo de Coordenadas Paralelas}
+  \caption{Exemplo de Coordenadas Paralelas \cite{galleryD3}}
   \label{fig:parallel}
 \end{figure}
 
-Portanto, segundo \citeonline{diehl2007software}, Visualização de Software
+Portanto, segundo \citeonline{diehl2007software}, Visualização de Software (VS)
 é uma subárea da Visualização de Informação. E os objetivos dela são: ``auxiliar
 a compreensão de sistemas complexos de software e melhorar a produtividade do
 processo de desenvolvimento'' \cite{messias2012}. É a representação gráfica de
@@ -102,16 +102,16 @@ estático e a organização do sistema em módulos \cite{diehl2007software}.
 Propriedades interessantes \cite{messias2012}:
 
 \begin{itemize}
-	\item Exatidão: linguagens de programação exacerbadamente definidas;
+	\item Exatidão: linguagens de programação definidas;
 	\item Grande escala: sistemas que possuem uma quantidade grande de linhas
 	de código;
 	\item Relações e hierarquias entre entidades do código;
 	\item Diversos atributos que expressam as características dessas entidades.
 \end{itemize}
 
-Ferramentas de geração de visualização da categoria estrutura compartilham o
-mesmo modelo conceitual: a geração de um grafo que relaciona em seus vértices
-as propriedades anteriormente citadas.
+É comum que as ferramentas de geração de visualização da categoria estrutura
+compartilhem o mesmo modelo conceitual: a geração de um grafo que relaciona em
+seus vértices as propriedades anteriormente citadas.
 
 Exemplos de Visualização da estrutura de software: \textit{CodeCity}
 \cite{wettel2008codecity} e \textit{Team Assessment} \cite{telea2009case}.
@@ -129,13 +129,13 @@ suas dependências internas (Figura \ref{fig:heb}).
 \end{figure}
 
 Métricas podem ser incluídas em visualizações da estrutura. Na ferramenta
-SolidSX (Figura \ref{fig:solidSX}), \citeonline{reniers2011visual} inclui
+SolidSX (Figura \ref{fig:solidSX}), \citeonline{reniers2011visual} incluem
 algumas métricas como linhas de código, comentários e complexidade. Essa
 ferramenta une três técnicas:
 
 \begin{itemize}
 	\item \textit{TreeMap} - disposição das hierarquias do código;
-	\item \textit{HEB};
+	\item \textit{HEB - Hierarchical Edge Bundles};
 	\item \textit{TableLens} - módulos são linhas e métricas são colunas de uma
 	tabela, mapeando as métricas e destacando-as por cores.
 \end{itemize}
@@ -150,25 +150,26 @@ ferramenta une três técnicas:
 
 \subsection{Comportamento}
 
-Nesta categoria o software é executado. Análise do que acontece, em tempo de execução, dada
-determinada entrada. Técnica: sequência de estado. Combinar dados e código para
-analisar interação com a memória. Dependendo do paradigma de programação, pode
-haver uma relação entre os métodos ou funções e a comunicação entre os objetos
-\cite{cornelissen2009systematic} \cite{diehl2007software}.
+Nesta categoria o software é executado. É quando é feita a análise do que
+acontece, em tempo de execução, dada uma determinada entrada. A principal
+técnica utilizada é a de sequência de estado, tendo como objetivo combinar dados
+e código para analisar interação com a memória. Dependendo do paradigma de
+programação, pode haver uma relação entre os métodos ou funções e a comunicação
+entre os objetos \cite{cornelissen2009systematic} \cite{diehl2007software}.
 
 Aplicações dessa categoria:
 
 \begin{itemize}
-	\item Análise de traces de execução;
+	\item Análise de \textit{traces} de execução;
 	\item Visualização dinâmica e recuperação de arquitetura;
 	\item Animação de algoritmos;
 	\item Depuração visual;
 	\item Apoio visual à atividade de teste.
 \end{itemize}
 
-Exemplo da ferramenta \textit{Tarantula} \cite{jones2002visualization} -
-Depuração visual, execução de testes, destaque com escala que vai de vermelho
-(falha) até verde (sucesso).
+Exemplo de ferramenta desta categoria: \textit{Tarantula} \cite{jones2002visualization}.
+Nela a depuração é visual e os testes são executados. Os pontos de destaque
+possuem uma escala que vai de vermelho (falha) até verde (sucesso).
 
 \subsection{Evolução}
 
@@ -193,4 +194,4 @@ Na segunda parte desde trabalho, avaliamos que a aplicação de técnica de
 visualização de software seria parte de um processo de evolução do Prezento.
 Para isso, a  implementação de melhorias menores e mais simples são um primeiro
 passo antes de se pensar em VS em si, conforme é discutido no Capítulo
-\label{chap:proposta}.
+\ref{chap:proposta}.
