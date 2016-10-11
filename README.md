@@ -6,6 +6,7 @@ Titulo: Análise Exploratória do Projeto Mezuro: uma Proposta de Evolução da
 Apresentação das Métricas de Código-fonte
 
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
+Coorientador: Bel. Rafael Reggiani Manzo
 
 ## Resumo
 
@@ -25,6 +26,8 @@ Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
 
 Template para Trabalhos de Conclusão de Cursos (TCC) na Faculdade do
 Gama (FGA) em Latex.
+
+https://github.com/fga-unb/template-latex-tcc
 
 Licenciado em Creative Commons Atribuição 3.0:
 http://creativecommons.org/licenses/by/3.0/
